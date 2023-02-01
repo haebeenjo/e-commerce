@@ -1,11 +1,5 @@
-'use strict';
-<<<<<<< HEAD
-const { Model } = require('sequelize');
-=======
-const {
-  Model
-} = require('sequelize');
->>>>>>> a06df25fe00b32c75264b7321fb1cd58f21bc10d
+"use strict";
+const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
   class Carts extends Model {
     /**
@@ -15,28 +9,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.Carts.belongsTo(models.Users, { foreignKey: "user_id" });
+      models.Carts.belongsTo(models.Items, { foreignKey: "item_id" });
     }
   }
-<<<<<<< HEAD
   Carts.init(
     {
       cartId: { primaryKey: true, type: DataTypes.BIGINT },
     },
     {
       sequelize,
-      modelName: 'Carts',
+      modelName: "Carts",
     }
   );
   return Carts;
 };
-=======
-  Carts.init({
-    cartId: {primaryKey:true, type:DataTypes.BIGINT},
-    
-  }, {
-    sequelize,
-    modelName: 'Carts',
-  });
-  return Carts;
-};
->>>>>>> a06df25fe00b32c75264b7321fb1cd58f21bc10d
