@@ -8,9 +8,7 @@ class SignupController {
   postSignup = async (req, res, next) => {
     try {
       const { email, phone_number, password, name, address} = //, point, blacklist
-        req.body;
-        console.log("44", req.body);
-        
+        req.body;        
 
       const re_email = /^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,3}$/;
     //   const re_phone_number = /^[0-9]{3}-[0-9]{3,4}-[0-9]{4}$/;
@@ -78,7 +76,6 @@ class SignupController {
       );
       res.status(200).json({ result: 'success', data: createUserData });
     } catch (err) {
-      console.log(err.message)
       res.status(400).json({
         errorMessage: '요청한 데이터 형식이 올바르지 않습니다.',
       });

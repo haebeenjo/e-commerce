@@ -21,7 +21,6 @@ class SignupService {
 
     findAllUser = async(email) => {
         const findUsesrData = await this.userRepository.findAllUser(email);
-        console.log("ser",email);
         return findUsesrData.map(user => {
             return {
                 userId: user.userId,

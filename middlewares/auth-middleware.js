@@ -6,7 +6,6 @@ const { Users } = require('../models');
 
 module.exports = (req, res, next) => {
   const token = req.cookies.token;
-  console.log(token);
 
   if (!token) {
     res
@@ -25,7 +24,6 @@ module.exports = (req, res, next) => {
 
     Users.findByPk(id).then((user) => {
       res.locals.user = user;
-      // console.log(user);
       next();
     });
   } catch (err) {
