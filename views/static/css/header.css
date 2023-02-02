@@ -1,0 +1,45 @@
+@import url("_variables.css");
+
+header {
+  width: 100%;
+  height: 66px;
+  background-color: var(--main-color);
+  color: var(--sub-color-1);
+}
+
+.header_wrap {
+  position: relative;
+  /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+  width: 1460px;
+  margin: auto;
+  padding: 8px 32px;
+  height: 66px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 26px;
+  cursor: pointer;
+  width: 120px;
+}
+
+.gnb {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  right: 32px;
+  bottom: 20px;
+  width: 450px;
+}
+
+.user_point {
+  position: absolute;
+  right: 32px;
+  bottom: 4px;
+  font-size: 14px;
+  color: var(--sub-color-2);
+}
