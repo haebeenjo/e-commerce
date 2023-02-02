@@ -14,13 +14,16 @@ class AdminOrderRepository {
     }
   };
 
-  // findItemName = async () => {
-  //   try {
-  //     const findItemName = await this.ItemModel.findOne({});
-  //     return;
-  //   } catch (error) {
-  //     throw error;
-  //   }
-  // };
+  adminOrderStatus = async (orderId, status) => {
+    try {
+      const orderStatusUpdate = await this.OrderModel.update(
+        { status },
+        { where: { orderId } }
+      );
+      return orderStatusUpdate;
+    } catch (error) {
+      throw error;
+    }
+  };
 }
 module.exports = AdminOrderRepository;

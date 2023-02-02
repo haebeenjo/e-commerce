@@ -19,6 +19,14 @@ class AdminOrderService {
       throw error;
     }
   };
+
+  adminOrderStatus = async (orderId, status) => {
+    const adminOrderStatus = await this.adminOrderRepository.adminOrderStatus(
+      orderId,
+      status
+    );
+    return adminOrderStatus;
+  };
 }
 
 module.exports = AdminOrderService;
