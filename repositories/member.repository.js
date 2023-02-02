@@ -11,6 +11,26 @@ class MemberRepository {
       throw error;
     }
   };
+
+  blackList = async (email, blacklist) => {
+    try {
+      if (blacklist === true) {
+        const blackList = await this.MemberModel.increment(
+          { blacklist: 1 },
+          { where: { email } }
+        );
+        return blackList;
+      } else {
+        const blackList = await this.MemberModel.decrement(
+          { blacklist: 1 },
+          { where: { email } }
+        );
+        return blackList;
+      }
+    } catch (error) {
+      throw error;
+    }
+  };
 }
 
 module.exports = MemberRepository;

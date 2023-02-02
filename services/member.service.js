@@ -21,6 +21,15 @@ class MemberService {
       throw error;
     }
   };
+
+  blackList = async (email, blacklist) => {
+    try {
+      const blackList = await this.memberRepository.blackList(email, blacklist);
+      return blackList;
+    } catch (error) {
+      throw error;
+    }
+  };
 }
 
 module.exports = MemberService;
