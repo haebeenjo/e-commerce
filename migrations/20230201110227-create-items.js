@@ -2,24 +2,27 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Orders', {
-      orderId: {
+    await queryInterface.createTable('Items', {
+      itemId: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.BIGINT,
+        type: Sequelize.BIGINT
       },
-      status: {
-        type: Sequelize.STRING,
+      item_name: {
+        type: Sequelize.STRING
       },
-      name: {
-        type: Sequelize.STRING,
+      price: {
+        type: Sequelize.BIGINT
       },
-      phone_number: {
-        type: Sequelize.STRING,
+      detail: {
+        type: Sequelize.STRING
       },
-      address: {
-        type: Sequelize.STRING,
+      img: {
+        type: Sequelize.STRING
+      },
+      item_status: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -30,10 +33,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now'),
-      },
+      }
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Orders');
-  },
+    await queryInterface.dropTable('Items');
+  }
 };

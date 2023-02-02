@@ -3,25 +3,36 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Categories', {
-      id: {
+      categoryId: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.BIGINT
       },
-      email: {
-        type: Sequelize.STRING
+      office: {
+        type: Sequelize.BOOLEAN
       },
-      password: {
-        type: Sequelize.STRING
+      design: {
+        type: Sequelize.BOOLEAN
+      },
+      developer: {
+        type: Sequelize.BOOLEAN
+      },
+      music: {
+        type: Sequelize.BOOLEAN
+      },
+      sports: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('now'),
       }
     });
   },

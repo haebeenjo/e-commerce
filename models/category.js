@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     design: DataTypes.BOOLEAN,
     developer: DataTypes.BOOLEAN,
     music: DataTypes.BOOLEAN,
-    sports: DataTypes.BOOLEAN,
+    sports: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Category',

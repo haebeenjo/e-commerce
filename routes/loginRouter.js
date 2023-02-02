@@ -1,4 +1,4 @@
-// routes/login.route.js
+// routes/loginRouter.js
 
 const express = require("express");
 const router = express.Router();

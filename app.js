@@ -1,9 +1,13 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 
-const router = require('./src/routes');
-const app = express();
 
+const app = express();
+app.use(cookieParser());
+app.use(express.json());
+
+
+const router = require('./routes');
 
 app.use('/api', router);
 
