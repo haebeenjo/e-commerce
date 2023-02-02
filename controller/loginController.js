@@ -1,8 +1,8 @@
-const loginService = require('../services/loginservice');
+// const loginService = require('../services/loginservice');
 
-const loginController {
-  loginService = new loginService
+// const loginController {
+//   loginService = new loginService
 
-}
+// }
 
-module.exports = loginController
+// module.exports = loginController
