@@ -8,5 +8,4 @@ const loginController = new LoginController();
 
 router.post('/', loginController.postLogin);
 
-
 module.exports = router;

@@ -19,11 +19,11 @@ class LoginService {
             process.env.SECRET_KEY,
             { expiresIn: "1d" }
             );
+
         return{
             token: token 
         }
     }
-
 }
 
 module.exports = LoginService;

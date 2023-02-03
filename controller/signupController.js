@@ -7,12 +7,10 @@ class SignupController {
   
   postSignup = async (req, res, next) => {
     try {
-      const { email, phone_number, password, name, address} = //, point, blacklist
+      const { email, phone_number, password, name, address} =
         req.body;        
 
       const re_email = /^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,3}$/;
-    //   const re_phone_number = /^[0-9]{3}-[0-9]{3,4}-[0-9]{4}$/;
-    //   const re_password = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{4,10}$/; //  4 ~ 10자 영문, 숫자 조합
 
       if (email.search(re_email) === -1) {
         res.status(412).send({
@@ -20,25 +18,7 @@ class SignupController {
         });
         return;
       }
-    //   if (phone_number.search(re_phone_number) === -1) {
-    //     res.status(412).send({
-    //       errorMessage:
-    //         '핸드폰 번호를 숫자, -을 포함한 휴대전화 형식에 맞게 입력해주세요.',
-    //     });
-    //     return;
-    //   }
-    //   if (password.search(re_password) === -1) {
-    //     res.status(412).send({
-    //       errorMessage: '비밀번호를 4~10자 영문, 숫자 조합으로 입력해주세요.',
-    //     });
-    //     return;
-    //   }
-    //   if (password.search(name) !== -1) {
-    //     res.status(412).send({
-    //       errorMessage: '비밀번호에 이름이 포함되어 있습니다.',
-    //     });
-    //     return;
-    //   }
+
       if (!address) {
         res.status(412).send({
           errorMessage: '주소를 입력해주세요.',
@@ -65,7 +45,7 @@ class SignupController {
         });
         return;
       }
-      const hashPassword = crypto.createHash('sha512').update(req.body.password).digest('hex');//update(req.body.password + 10)
+      const hashPassword = crypto.createHash('sha512').update(req.body.password).digest('hex');
 
       const createUserData = await this.signupService.createUser(
         email,
