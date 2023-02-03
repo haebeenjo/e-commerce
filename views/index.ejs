@@ -7,6 +7,7 @@
     <title>일아쌰이마쎄</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
@@ -16,13 +17,14 @@
     <link rel="stylesheet" href="/css/adminOrder.css" />
     <link rel="stylesheet" href="/css/mypage.css" />
     <link rel="stylesheet" href="/css/userOrderList.css" />
+    <link rel="stylesheet" href="/css/admin.css" />
   </head>
   <body>
     <main>
       <%- include("components/header") %>
 
       <!-- mypage -->
-      <% if (pageName === "mypage") { %><!---->
+      <% if (pageName === "adminOrder") { %><!---->
       <%- include("mypage/myPageLnb") %><!---->
       <% } else if (pageName === "userorderlist") {%><!---->
       <%- include("mypage/myPageUser") %><!---->
@@ -32,6 +34,17 @@
       <!---->
 
       <!-- admin -->
+      <%- include("admin/adminOrder") %> <% } else if (pageName === "adminItem")
+      { %> <%- include("mypage/myPageLnb") %><!---->
+      <%- include("admin/adminItem") %> <% } else if (pageName ===
+      "adminMember") { %> <%- include("mypage/myPageLnb") %><!---->
+      <%- include("admin/adminMember") %> <% } else if (pageName ===
+      "adminSales") { %> <%- include("mypage/myPageLnb") %><!---->
+      <%- include("admin/adminSales") %> <% } else if (pageName ===
+      "itemregister") { %> <%- include("mypage/myPageLnb") %><!---->
+      <%- include("admin/itemregister") %> <% } else if (pageName ===
+      "itemstatus") { %> <%- include("mypage/myPageLnb") %><!---->
+      <%- include("admin/itemstatus") %> <% } %>
     </main>
   </body>
 </html>

@@ -11,17 +11,16 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Items.hasMany(models.Carts, { foreignKey: 'item_id' });
       models.Items.hasMany(models.Orders, { foreignKey: 'item_id' });
-      models.Category.belongsTo(models.Items, { foreignKey: 'categoryId' });
     }
   }
   Items.init(
     {
-      itemId: { primaryKey: true, type: DataTypes.BIGINT },
+      itemId: { primaryKey: true, type: DataTypes.BIGINT, autoIncrement: true },
       item_name: DataTypes.STRING,
       price: DataTypes.BIGINT,
       detail: DataTypes.STRING,
       img: DataTypes.STRING,
-      item_status: DataTypes.STRING,
+      item_status: { type: DataTypes.STRING, defaultValue: '판매 중' },
     },
     {
       sequelize,
