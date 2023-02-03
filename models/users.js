@@ -21,8 +21,8 @@ module.exports = (sequelize, DataTypes) => {
       name: DataTypes.STRING,
       phone_number: DataTypes.STRING,
       address: DataTypes.STRING,
-      point: DataTypes.BIGINT,
-      blacklist: DataTypes.BOOLEAN,
+      point: { type: DataTypes.BIGINT, defaultValue: 1000000 },
+      blacklist: { type: DataTypes.BOOLEAN, defaultValue: 0 },
     },
     {
       sequelize,
