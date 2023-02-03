@@ -5,13 +5,14 @@ class ItemsController {
 
   createItem = async (req, res, next) => {
     try {
-      const { item_name, price, detail, img, category_id } = req.body;
+      const { item_name, price, detail, category_id } = req.body;
+      const img = req.files.path;
       const adminId = res.locals.admin_id;
 
       // if (!adminId) {
       //   return res
       //     .status(401)
-      //     .json({ message: '로그인 후 이용이 가능합니다.' });
+      //     .json({ message: '권한이 없습니다.' });
       // }
 
       if (!item_name | !price | !detail | !img) {
