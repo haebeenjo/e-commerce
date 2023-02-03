@@ -28,7 +28,9 @@
       <%- include("components/header") %>
 
       <!-- mypage -->
-      <% if (pageName === "mypage") { %> <%- include("mypage/myPageLnb") %>
+      <% if (pageName === "mypage") { %> <%- include("mypage/myPageLnb") %> <% }
+      else if (pageName === 'itemstatus') { %> <%- include('admin/itemstatus')
+      %>
 
       <!-- admin -->
       <% } else if (pageName === "itemregister") { %> <%-

@@ -13,4 +13,8 @@ router.get('/item/register', (req, res) => {
   res.render('index.ejs', { pageName: 'itemregister' });
 });
 
+router.get('/item/status', (req, res) => {
+  res.render('index.ejs', { pageName: 'itemstatus' });
+});
+
 module.exports = router;

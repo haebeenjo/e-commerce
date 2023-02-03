@@ -16,6 +16,6 @@ router.put('/:itemId', itemController.putItem);
 
 router.delete('/:itemId', itemController.deleteItem);
 
-router.get('/itemStatus', itemController.getItemlist);
+router.get('/Status', itemController.getItemlist);
 
 module.exports = router;
