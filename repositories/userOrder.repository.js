@@ -43,6 +43,7 @@ ORDER BY Orders.createdAt DESC;
       type: QueryTypes.SELECT,
       replacements: [userId],
     });
+    console.log(result);
     return result;
   };
 }

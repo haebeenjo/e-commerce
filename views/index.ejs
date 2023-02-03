@@ -24,16 +24,11 @@
       <%- include("components/header") %>
 
       <!-- mypage -->
-      <% if (pageName === "adminOrder") { %><!---->
-      <%- include("mypage/myPageLnb") %><!---->
-      <% } else if (pageName === "userorderlist") {%><!---->
-      <%- include("mypage/myPageUser") %><!---->
-      <%- include("user/userOrderList") %><!---->
-      <% } %><!---->
 
       <!---->
 
-      <!-- admin -->
+      <% if (pageName === "adminOrder") { %><!---->
+      <%- include("mypage/myPageLnb") %><!---->
       <%- include("admin/adminOrder") %> <% } else if (pageName === "adminItem")
       { %> <%- include("mypage/myPageLnb") %><!---->
       <%- include("admin/adminItem") %> <% } else if (pageName ===
@@ -44,7 +39,11 @@
       "itemregister") { %> <%- include("mypage/myPageLnb") %><!---->
       <%- include("admin/itemregister") %> <% } else if (pageName ===
       "itemstatus") { %> <%- include("mypage/myPageLnb") %><!---->
-      <%- include("admin/itemstatus") %> <% } %>
+      <%- include("admin/itemstatus") %> <% } else if (pageName ===
+      "userorderlist") {%><!---->
+      <%- include("mypage/myPageUser") %><!---->
+      <%- include("user/userOrderList") %><!---->
+      <% } %><!---->
     </main>
   </body>
 </html>

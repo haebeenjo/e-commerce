@@ -1,38 +1,8 @@
 @import url('_variables.css');
 @import url('reset.css');
 
-.user_order_h2 {
-  position: absolute;
-  top: 80px;
-  left: 150px;
-  font-size: 30px;
-  font-weight: 600;
-  margin: 40px;
-  padding-left: 230px;
-}
-
-.user_order_list_page {
-  margin: 40px;
-  padding-top: 50px;
-  padding-left: 400px;
-}
-
-.order_card {
-  border: 1px solid black;
-  max-width: 300px;
-}
-
-.order_card_inner {
-  padding: 5px 5px 5px 5px;
-}
-
-.order_image {
-  width: 70px;
-  height: 70px;
-  float: left;
-  object-fit: none;
-}
-
-.card-body {
-  margin-left: 10px;
+.order_item_image {
+  width: 50px;
+  height: 50px;
+  margin: auto;
 }
