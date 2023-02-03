@@ -1,4 +1,5 @@
 @import url('_variables.css');
+@import url('reset.css');
 
 header {
   width: 100%;

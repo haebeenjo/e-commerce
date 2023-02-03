@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>사무용품 쇼핑몰</title>
+    <title>일아쌰이마쎄</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,12 +13,22 @@
     />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/adminOrder.css" />
+    <link rel="stylesheet" href="css/mypage.css" />
   </head>
   <body>
-    <%- include('components/header') %>
+    <main>
+      <%- include("components/header") %>
 
-    <!-- admin -->
-    <% if (locals.components === 'itemregister') { %> <%-
-    include('admin/itemregister') %> <% } %>
+      <!-- mypage -->
+      <% if (pageName === "mypage") { %><!---->
+      <%- include("mypage/myPageLnb") %><!---->
+      <% } %><!---->
+
+      <!-- admin -->
+      <% if (locals.components === 'itemregister') { %> <%-
+      include('admin/itemregister') %> <% } %> <%- include("admin/adminOrder")
+      %>
+    </main>
   </body>
 </html>

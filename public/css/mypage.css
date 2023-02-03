@@ -1,0 +1,40 @@
+@import url("_variables.css");
+@import url("reset.css");
+
+.lnb_wrapper {
+  position: relative;
+  width: 400px;
+  height: 100vh;
+  /* padding: 80px 0 0 150px; */
+  border-right: 1px solid var(--sub-color-4);
+  float: left;
+}
+
+.lnb_title {
+  position: absolute;
+  top: 80px;
+  left: 150px;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.lnb {
+  position: absolute;
+  top: 145px;
+  left: 162px;
+  /* margin: 18px 0 0 12px; */
+}
+
+.lnb > a > li {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 2;
+  letter-spacing: 2px;
+  color: var(--sub-color-4);
+  cursor: pointer;
+}
+
+.lnb > a > li.select {
+  font-weight: 600;
+  color: var(--sub-color-1);
+}
