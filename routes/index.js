@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-// 상품 등록, 수정, 삭제, 상태변경
+// 상품 등록, 수정, 삭제
 const itemRouter = require('./item.router');
 
 const memberRouter = require('./member.router');

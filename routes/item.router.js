@@ -10,9 +10,12 @@ const path = require('path');
 const upload = multer({ dest: 'uploads/' }); // 입력한 파일이 uploads/ 폴더 내에 저장된다.
 
 // 단일 파일 업로드
-router.post('/item', upload.single('file'), itemController.createItem);
-router.put('/item/:itemId', itemController.putItem);
+router.post('/register', upload.single('file'), itemController.createItem);
 
-router.delete('/item/:itemId', itemController.deleteItem);
+router.put('/:itemId', itemController.putItem);
+
+router.delete('/:itemId', itemController.deleteItem);
+
+router.get('/itemStatus', itemController.getItemlist);
 
 module.exports = router;

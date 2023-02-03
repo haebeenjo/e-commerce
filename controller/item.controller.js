@@ -90,6 +90,17 @@ class ItemsController {
       res.status(400).json({ message: '상품 삭제에 실패하였습니다.' });
     }
   };
+
+  getItemlist = async (req, res, next) => {
+    try {
+      const itemlist = await this.itemsService.getItems();
+      res.status(200).json({ data: itemlist });
+    } catch (err) {
+      res.status(500).json({
+        errorMessage: err.message,
+      });
+    }
+  };
 }
 
 module.exports = ItemsController;

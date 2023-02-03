@@ -61,6 +61,11 @@ class ItemsService {
       console.log('service err: ', err);
     }
   };
+
+  getItems = async () => {
+    const items = await this.itemsRepository.findAllItem();
+    return items;
+  };
 }
 
 module.exports = ItemsService;

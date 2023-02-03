@@ -31,6 +31,11 @@ class ItemsRepository {
     const destroyed = await this.itemsModel.destroy({ where: { itemId } });
     return destroyed;
   };
+
+  findAllItem = async () => {
+    const items = await this.itemsModel.findAll();
+    return items;
+  };
 }
 
 module.exports = ItemsRepository;
