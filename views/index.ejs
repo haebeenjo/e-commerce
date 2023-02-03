@@ -1,24 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>사무용품 쇼핑몰</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
-      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
-      crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/header.css" />
   </head>
   <body>
-    <%- include('components/nav') %>
+    <header>
+      <div class="header_wrap">
+        <a href="index.ejs"><h1>일아쌰이마쎄</h1></a>
+        <ul class="gnb">
+          <a href=""><li class="office">Office</li></a>
+          <a href=""><li class="design">Design</li></a>
+          <a href=""><li class="developer">Developer</li></a>
+          <a href=""><li class="music">Music</li></a>
+          <a href=""><li class="sports">Sports</li></a>
+        </ul>
+        <ul class="member_wrap">
+          <a href="">
+            <li class="header_login">로그인</li>
+          </a>
+          <a href="">
+            <li class="header_register">회원가입</li>
+          </a>
+          <!-- <a href="">
+            <li class="header_register">로그아웃</li>
+          </a>
+          <a href="">
+            <li class="header_login">장바구니</li>
+          </a>
+          <a href="">
+            <li class="header_register">마이페이지</li>
+          </a> -->
+        </ul>
+        <p class="user_point">잔여 포인트 : 1,000,000</p>
+      </div>
+    </header>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
+    <main></main>
   </body>
 </html>
