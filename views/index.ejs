@@ -11,10 +11,11 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/adminOrder.css" />
-    <link rel="stylesheet" href="css/mypage.css" />
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/adminOrder.css" />
+    <link rel="stylesheet" href="/css/mypage.css" />
+    <link rel="stylesheet" href="/css/userOrderList.css" />
   </head>
   <body>
     <main>
@@ -23,10 +24,14 @@
       <!-- mypage -->
       <% if (pageName === "mypage") { %><!---->
       <%- include("mypage/myPageLnb") %><!---->
+      <% } else if (pageName === "userorderlist") {%><!---->
+      <%- include("mypage/myPageUser") %><!---->
+      <%- include("user/userOrderList") %><!---->
       <% } %><!---->
 
+      <!---->
+
       <!-- admin -->
-      <%- include("admin/adminOrder") %>
     </main>
   </body>
 </html>

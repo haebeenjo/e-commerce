@@ -7,22 +7,37 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.BIGINT
+        type: Sequelize.BIGINT,
       },
       item_name: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       price: {
-        type: Sequelize.BIGINT
+        type: Sequelize.BIGINT,
       },
       detail: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       img: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
       },
       item_status: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+      },
+      office: {
+        type: Sequelize.BOOLEAN,
+      },
+      design: {
+        type: Sequelize.BOOLEAN,
+      },
+      developer: {
+        type: Sequelize.BOOLEAN,
+      },
+      music: {
+        type: Sequelize.BOOLEAN,
+      },
+      sports: {
+        type: Sequelize.BOOLEAN,
       },
       createdAt: {
         allowNull: false,
@@ -33,10 +48,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now'),
-      }
+      },
     });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Items');
-  }
+  },
 };

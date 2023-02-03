@@ -7,22 +7,22 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.BIGINT
+        type: Sequelize.BIGINT,
       },
       office: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       design: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       developer: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       music: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       sports: {
-        type: Sequelize.BOOLEAN
+        type: Sequelize.BOOLEAN,
       },
       createdAt: {
         allowNull: false,
@@ -33,10 +33,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now'),
-      }
+      },
     });
   },
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable('Categories');
-  }
+  },
 };

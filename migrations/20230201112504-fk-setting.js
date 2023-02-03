@@ -73,7 +73,6 @@ module.exports = {
       onDelete: 'cascade',
       onUpdate: 'cascade',
     });
-    
   },
 
   async down(queryInterface, Sequelize) {
@@ -82,5 +81,5 @@ module.exports = {
     await queryInterface.removeColumn('Orders', 'user_id');
     await queryInterface.removeColumn('Orders', 'item_id');
     await queryInterface.removeColumn('Items', 'category_id');
-  }
+  },
 };
