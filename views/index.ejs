@@ -16,7 +16,9 @@
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/admin.css" />
     <link rel="stylesheet" href="/css/mypage.css" />
+    <link rel="stylesheet" href="/css/itemregister.css" />
   </head>
+
   <body>
     <main>
       <%- include("components/header") %>
@@ -34,7 +36,9 @@
       "itemregister") { %> <%- include("mypage/myPageLnb") %><!---->
       <%- include("admin/itemregister") %> <% } else if (pageName ===
       "itemstatus") { %> <%- include("mypage/myPageLnb") %><!---->
-      <%- include("admin/itemstatus") %> <% } %>
+      <%- include("admin/itemstatus") %> <% } else if (pageName ===
+      "itemdetail") { %> <%- include("mypage/myPageLnb") %><!---->
+      <%- include("admin/itemdetail") %> <% } %>
     </main>
   </body>
 </html>

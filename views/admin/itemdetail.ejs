@@ -1,9 +1,9 @@
-<script src="/js/admin/itemregister.js"></script>
+<!-- <script src="/js/admin/itemregister.js"></script> -->
 
 <!-- 전체 양식: https://codepen.io/RajRajeshDn/pen/QWwypRy -->
 <div class="wrapper">
-  <div class="title">Registration Form</div>
-  <div class="form" id="item_form">
+  <div class="title">Edit Form</div>
+  <div class="form">
     <div class="inputfield">
       <label>상품 이름</label>
       <input type="text" class="input" />
@@ -19,15 +19,15 @@
     <div class="inputfield">
       <label>카테고리</label>
       <!-- <div class="custom_select">
-        <select>
-          <option value="">Select</option>
-          <option value="office">office</option>
-          <option value="design">design</option>
-          <option value="developer">developer</option>
-          <option value="music">music</option>
-          <option value="sports">sports</option>
-        </select>
-      </div> -->
+          <select>
+            <option value="">Select</option>
+            <option value="office">office</option>
+            <option value="design">design</option>
+            <option value="developer">developer</option>
+            <option value="music">music</option>
+            <option value="sports">sports</option>
+          </select>
+        </div> -->
     </div>
     <!-- 체크박스: https://codepen.io/tutsplus/pen/bgqYJz -->
     <div class="inputfield">
@@ -42,14 +42,21 @@
       <input type="checkbox" id="c5" name="cc" />
       <label for="c5"><span></span>sports</label>
     </div>
+    <div class="inputfield">
+      <input type="radio" id="r1" name="rr" />
+      <label for="r1"><span></span>판매 중</label>
+      <p>
+        <input type="radio" id="r2" name="rr" />
+        <label for="r2"><span></span>일시 품절</label>
+      </p>
+    </div>
 
     <div class="inputfield">
       <label>제품 설명</label>
       <input type="text" class="input" />
     </div>
     <div class="inputfield">
-      <input onclick="itemRequest()" type="button" value="save" class="btn" />
+      <input type="submit" value="save" class="btn" />
     </div>
-    <div id="itemList"></div>
   </div>
 </div>
