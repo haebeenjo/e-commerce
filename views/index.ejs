@@ -21,7 +21,9 @@
       <%- include("components/header") %>
 
       <!-- mypage -->
-      <%- include("mypage/myPageLnb") %>
+      <% if (pageName === "mypage") { %><!---->
+      <%- include("mypage/myPageLnb") %><!---->
+      <% } %><!---->
 
       <!-- admin -->
       <%- include("admin/adminOrder") %>
