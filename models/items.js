@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.Items.hasMany(models.Carts, { foreignKey: "item_id" });
       models.Items.hasMany(models.Orders, { foreignKey: "item_id" });
-      models.Category.belongsTo(models.Items, { foreignKey: "categoryId" });
     }
   }
   Items.init({
@@ -23,6 +22,11 @@ module.exports = (sequelize, DataTypes) => {
     detail: DataTypes.STRING,
     img: DataTypes.STRING,
     item_status: DataTypes.STRING,
+    office: DataTypes.BOOLEAN,
+    design: DataTypes.BOOLEAN,
+    developer: DataTypes.BOOLEAN,
+    music: DataTypes.BOOLEAN,
+    sports: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Items',

@@ -24,6 +24,21 @@ module.exports = {
       item_status: {
         type: Sequelize.STRING
       },
+      office: {
+        type: Sequelize.BOOLEAN
+      },
+      design: {
+        type: Sequelize.BOOLEAN
+      },
+      developer: {
+        type: Sequelize.BOOLEAN
+      },
+      music: {
+        type: Sequelize.BOOLEAN
+      },
+      sports: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

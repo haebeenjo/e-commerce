@@ -9,8 +9,28 @@ class ItemService {
 		return items;
   };
 
-  findCategoryItem = async (categoryId) => {
-    const catagory = await this.itemRepository.findCategoryItem(categoryId);
+  findOfficeItem = async () => {
+    const catagory = await this.itemRepository.findOfficeItem();
+    return catagory;
+  };
+
+  findDesignItem = async () => {
+    const catagory = await this.itemRepository.findDesignItem();
+    return catagory;
+  };
+
+  findDeveloperItem = async () => {
+    const catagory = await this.itemRepository.findDeveloperItem();
+    return catagory;
+  };
+
+  findMusicItem = async () => {
+    const catagory = await this.itemRepository.findMusicItem();
+    return catagory;
+  };
+
+  findSportsItem = async () => {
+    const catagory = await this.itemRepository.findSportsItem();
     return catagory;
   };
 

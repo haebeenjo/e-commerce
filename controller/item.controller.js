@@ -26,17 +26,55 @@ class ItemController {
     };
   };
 
-	findCategoryItem = async (req, res, next) => {
-		const { categoryId } = req.params
+	findOfficeItem = async (req, res, next) => {
 		try {
-			const categoryItem = await this.itemService.findCategoryItem(categoryId);
+			const categoryItem = await this.itemService.findOfficeItem();
 			res.status(200).json({ data : categoryItem });
     } catch (err) {
       console.log(err);
-      res.status(400).json({ message: '카테고리별 조회 실패' });
+      res.status(400).json({ message: '카테고리 조회 실패' });
     };
 	};
 
+  findDesignItem = async (req, res, next) => {
+		try {
+			const categoryItem = await this.itemService.findDesignItem();
+			res.status(200).json({ data : categoryItem });
+    } catch (err) {
+      console.log(err);
+      res.status(400).json({ message: '카테고리 조회 실패' });
+    };
+	};
+
+  findDeveloperItem = async (req, res, next) => {
+		try {
+			const categoryItem = await this.itemService.findDeveloperItem();
+			res.status(200).json({ data : categoryItem });
+    } catch (err) {
+      console.log(err);
+      res.status(400).json({ message: '카테고리 조회 실패' });
+    };
+	};
+
+  findMusicItem = async (req, res, next) => {
+		try {
+			const categoryItem = await this.itemService.findMusicItem();
+			res.status(200).json({ data : categoryItem });
+    } catch (err) {
+      console.log(err);
+      res.status(400).json({ message: '카테고리 조회 실패' });
+    };
+	};
+
+  findSportsItem = async (req, res, next) => {
+		try {
+			const categoryItem = await this.itemService.findSportsItem();
+			res.status(200).json({ data : categoryItem });
+    } catch (err) {
+      console.log(err);
+      res.status(400).json({ message: '카테고리 조회 실패' });
+    };
+	};
 
 	findOneItem = async (req, res, next) => {
 		const { id } = req.params

@@ -15,8 +15,28 @@ class ItemRepository {
     return {lastPage, rows}
   };
 
-  findCategoryItem = async (category_id) => {
-    const catagory = await this.itemsModel.findAll({ where: { category_id } });
+  findOfficeItem = async () => {
+    const catagory = await this.itemsModel.findAll({ where: { office: 1 } });
+    return catagory;
+  };
+
+  findDesignItem = async () => {
+    const catagory = await this.itemsModel.findAll({ where: { design: 1 } });
+    return catagory;
+  };
+
+  findDeveloperItem = async () => {
+    const catagory = await this.itemsModel.findAll({ where: { developer:1 } });
+    return catagory;
+  };
+
+  findMusicItem = async () => {
+    const catagory = await this.itemsModel.findAll({ where: { music: 1 } });
+    return catagory;
+  };
+
+  findSportsItem = async () => {
+    const catagory = await this.itemsModel.findAll({ where: { sports: 1 } });
     return catagory;
   };
 

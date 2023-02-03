@@ -59,21 +59,6 @@ module.exports = {
       onDelete: 'cascade',
       onUpdate: 'cascade',
     });
-    await queryInterface.addColumn('Items', 'category_id', {
-      type: Sequelize.BIGINT,
-    });
-    await queryInterface.addConstraint('Items', {
-      fields: ['category_id'],
-      type: 'foreign key',
-      name: 'Items_category_id_fk',
-      references: {
-        table: 'Categories',
-        field: 'categoryId',
-      },
-      onDelete: 'cascade',
-      onUpdate: 'cascade',
-    });
-    
   },
 
   async down(queryInterface, Sequelize) {
@@ -81,6 +66,5 @@ module.exports = {
     await queryInterface.removeColumn('Carts', 'item_id');
     await queryInterface.removeColumn('Orders', 'user_id');
     await queryInterface.removeColumn('Orders', 'item_id');
-    await queryInterface.removeColumn('Items', 'category_id');
   }
 };
