@@ -13,7 +13,7 @@
     />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/adminOrder.css" />
+    <link rel="stylesheet" href="css/admin.css" />
     <link rel="stylesheet" href="css/mypage.css" />
   </head>
   <body>
@@ -21,12 +21,15 @@
       <%- include("components/header") %>
 
       <!-- mypage -->
-      <% if (pageName === "mypage") { %><!---->
+      <% if (pageName === "adminOrder") { %><!---->
       <%- include("mypage/myPageLnb") %><!---->
-      <% } %><!---->
-
-      <!-- admin -->
-      <%- include("admin/adminOrder") %>
+      <%- include("admin/adminOrder") %> <% } else if (pageName === "adminItem")
+      { %> <%- include("mypage/myPageLnb") %><!---->
+      <%- include("admin/adminItem") %> <% } else if (pageName ===
+      "adminMember") { %> <%- include("mypage/myPageLnb") %><!---->
+      <%- include("admin/adminMember") %> <% } else if (pageName ===
+      "adminSales") { %> <%- include("mypage/myPageLnb") %><!---->
+      <%- include("admin/adminSales") %> <% } %>
     </main>
   </body>
 </html>
