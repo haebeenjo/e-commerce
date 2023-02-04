@@ -35,7 +35,10 @@ class UserOrderService {
         item_name: order.item_name,
         status: order.status,
         price: order.price,
-        createdAt: order.createdAt,
+        createdAt: order.createdAt
+          .toISOString()
+          .substring(0, 10)
+          .replaceAll('-', '.'),
         orderId: order.orderId,
       };
     });

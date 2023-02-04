@@ -18,7 +18,12 @@ function cartList() {
       let empty_html = `<tr
       ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
     >
-      <td></td>
+      <td><div class="container">
+      <div class="round">
+        <input type="checkbox" checked id="checkbox" />
+        <label for="checkbox"></label>
+      </div>
+    </div></td>
       <td>${itemId}</td>
       <td>
         <img class="order_item_image" src="${img}" />

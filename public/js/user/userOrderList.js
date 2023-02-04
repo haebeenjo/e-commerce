@@ -20,7 +20,6 @@ function orderList() {
       let empty_html = `<tr
       ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
     >
-      <td></td>
       <td>${orderId}</td>
       <td>
         <img class="order_item_image" src="${img}" />
