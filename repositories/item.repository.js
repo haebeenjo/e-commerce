@@ -1,41 +1,49 @@
 const { Items } = require('../models');
 
-class ItemsRepository {
+class ItemRepository {
   constructor(ItemsModel) {
     this.itemsModel = ItemsModel;
   }
 
-  createItem = async (item_name, price, detail, img, category_id) => {
-    const created = await this.itemsModel.create({
-      item_name,
-      price,
-      detail,
-      img,
-      category_id,
+  findAllItems = async (perPage, startIndex) => {
+    const { count, rows } = await this.itemsModel.findAndCountAll({
+      order: [['itemId']],
+      offset: startIndex,
+      limit: perPage,
     });
-    return created;
+    const lastPage = Math.ceil(count / perPage);
+    return { lastPage, rows };
   };
 
-  findItemById = async (itemId) => {
-    const item = await this.itemsModel.findByPk(itemId);
+  findOfficeItem = async () => {
+    const catagory = await this.itemsModel.findAll({ where: { office: 1 } });
+    return catagory;
+  };
+
+  findDesignItem = async () => {
+    const catagory = await this.itemsModel.findAll({ where: { design: 1 } });
+    return catagory;
+  };
+
+  findDeveloperItem = async () => {
+    const catagory = await this.itemsModel.findAll({ where: { developer: 1 } });
+    return catagory;
+  };
+
+  findMusicItem = async () => {
+    const catagory = await this.itemsModel.findAll({ where: { music: 1 } });
+    return catagory;
+  };
+
+  findSportsItem = async () => {
+    const catagory = await this.itemsModel.findAll({ where: { sports: 1 } });
+    return catagory;
+  };
+
+  findOneItem = async (itemId) => {
+    const item = await this.itemsModel.findOne({ where: { itemId } });
     return item;
-  };
-
-  putItem = async (item) => {
-    const updated = await item.save();
-
-    return updated;
-  };
-
-  deleteItem = async (itemId) => {
-    const destroyed = await this.itemsModel.destroy({ where: { itemId } });
-    return destroyed;
-  };
-
-  findAllItem = async () => {
-    const items = await this.itemsModel.findAll();
-    return items;
   };
 }
 
-module.exports = ItemsRepository;
+module.exports = ItemRepository;

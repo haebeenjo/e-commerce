@@ -16,11 +16,10 @@ module.exports = (sequelize, DataTypes) => {
   Orders.init(
     {
       orderId: { primaryKey: true, type: DataTypes.BIGINT },
-      status: { type: DataTypes.STRING, defaultValue: '주문 확인 중' },
+      status: DataTypes.STRING,
       name: DataTypes.STRING,
       phone_number: DataTypes.STRING,
       address: DataTypes.STRING,
-      order_price: DataTypes.BIGINT,
     },
     {
       sequelize,
