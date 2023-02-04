@@ -1,10 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
+// 메인페이지
 router.get("/", (req, res) => {
   res.render("index.ejs", { pageName: "" });
 });
+// 로그인, 회원가입 관련 페이지
+router.get("/login", (req, res) => {
+  res.render("index.ejs", { pageName: "login" });
+});
 
+// Admin 페이지
 router.get("/adminOrder", (req, res) => {
   res.render("index.ejs", { pageName: "adminOrder" });
 });
