@@ -4,6 +4,10 @@ const router = express.Router();
 router.get('/', (req, res) => {
   res.render('index.ejs', { pageName: '' });
 });
+// 로그인, 회원가입 관련 페이지
+router.get('/login', (req, res) => {
+  res.render('index.ejs', { pageName: 'login' });
+});
 
 router.get('/adminOrder', (req, res) => {
   res.render('index.ejs', { pageName: 'adminOrder' });
