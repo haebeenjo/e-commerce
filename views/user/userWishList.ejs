@@ -7,41 +7,12 @@
           <th></th>
           <th>상품 번호</th>
           <th>상품 이미지</th>
-          <th>주문 날짜</th>
           <th>상품 명</th>
-          <th>상태</th>
           <th>가격</th>
         </tr>
       </thead>
-      <tbody>
-        <tr
-          ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
-        >
-          <td></td>
-          <td>{{ orderId }}</td>
-          <td>
-            <img class="order_item_image" src="/images/keyboard.jpeg" />
-          </td>
-          <td>{{ createdAt }}</td>
-          <td>{{ item_name }}</td>
-          <td>{{ status }}</td>
-          <td>{{ order_price }}</td>
-        </tr>
-        <tr
-          ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
-        >
-          <td></td>
-          <td>{{ orderId }}</td>
-          <td>
-            <img class="order_item_image" src="/images/keyboard.jpeg" />
-          </td>
-          <td>{{ createdAt }}</td>
-          <td>{{ item_name }}</td>
-          <td>{{ status }}</td>
-          <td>{{ order_price }}</td>
-        </tr>
-      </tbody>
+      <tbody id="cart_list"></tbody>
     </table>
   </div>
 </div>
-<!-- <script src="js/admin.js"></script> -->
+<script src="js/user/userWishList.js"></script>

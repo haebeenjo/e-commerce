@@ -10,6 +10,10 @@ router.get('/userorderlist', (req, res) => {
   res.render('index.ejs', { pageName: 'userorderlist' });
 });
 
+router.get('/usercartlist', (req, res) => {
+  res.render('index.ejs', { pageName: 'usercartlist' });
+});
+
 router.get('/mypageuser', (req, res) => {
   res.render('index.ejs', { pageName: 'mypageuser' });
 });

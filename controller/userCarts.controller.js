@@ -4,7 +4,7 @@ class UserCartController {
   userCartService = new UserCartService();
 
   createCart = async (req, res) => {
-    const { userId } = req.body;
+    const userId = res.locals.user.userId;
     const { itemId } = req.body;
     const createCartData = await this.userCartService.createCart(
       userId,
@@ -14,7 +14,7 @@ class UserCartController {
   };
 
   findCart = async (req, res) => {
-    const { userId } = req.body;
+    const userId = res.locals.user.userId;
     const carts = await this.userCartService.findCart(userId);
 
     res.status(200).json({ carts: carts });

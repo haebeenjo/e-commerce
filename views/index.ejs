@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
@@ -16,12 +17,9 @@
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/adminOrder.css" />
     <link rel="stylesheet" href="/css/mypage.css" />
-<<<<<<< HEAD
     <link rel="stylesheet" href="/css/userOrderList.css" />
     <link rel="stylesheet" href="/css/admin.css" />
-=======
     <link rel="stylesheet" href="/css/sign.css" />
->>>>>>> origin/adminPage
   </head>
   <body>
     <main>
@@ -51,6 +49,9 @@
       "userorderlist") {%><!---->
       <%- include("mypage/myPageUser") %><!---->
       <%- include("user/userOrderList") %><!---->
+      <% } else if (pageName === "usercartlist") {%><!---->
+      <%- include("mypage/myPageUser") %><!---->
+      <%- include("user/userWishList") %><!---->
       <% } %><!---->
     </main>
   </body>

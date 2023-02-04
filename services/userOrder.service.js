@@ -36,6 +36,7 @@ class UserOrderService {
         status: order.status,
         price: order.price,
         createdAt: order.createdAt,
+        orderId: order.orderId,
       };
     });
   };

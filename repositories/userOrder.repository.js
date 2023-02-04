@@ -34,6 +34,7 @@ class UserOrderRepository {
     , Items.img
     , Items.item_name
     , Items.price
+    , Orders.orderId
 FROM Orders AS Orders
 LEFT OUTER JOIN Items ON Orders.item_id = Items.itemId
 WHERE Orders.user_id = ?
@@ -43,7 +44,6 @@ ORDER BY Orders.createdAt DESC;
       type: QueryTypes.SELECT,
       replacements: [userId],
     });
-    console.log(result);
     return result;
   };
 }

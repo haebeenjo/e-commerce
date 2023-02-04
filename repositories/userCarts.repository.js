@@ -21,6 +21,7 @@ class UserCartRepository {
     Items.img
     , Items.item_name
     , Items.price
+    , Items.itemId
 FROM Carts AS Carts
 LEFT OUTER JOIN Items ON Carts.item_id = Items.itemId
 WHERE Carts.user_id = ?
