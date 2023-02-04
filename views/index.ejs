@@ -16,12 +16,20 @@
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/adminOrder.css" />
     <link rel="stylesheet" href="/css/mypage.css" />
+<<<<<<< HEAD
     <link rel="stylesheet" href="/css/userOrderList.css" />
     <link rel="stylesheet" href="/css/admin.css" />
+=======
+    <link rel="stylesheet" href="/css/sign.css" />
+>>>>>>> origin/adminPage
   </head>
   <body>
     <main>
       <%- include("components/header") %>
+
+      <!-- login -->
+      <% if (pageName === "login") { %> <%- include("components/login") %> <% }
+      %>
 
       <!-- mypage -->
 

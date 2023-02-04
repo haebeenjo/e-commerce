@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
+// 메인페이지
 router.get('/', (req, res) => {
   res.render('index.ejs', { pageName: '' });
 });
-
+// 유저 페이지
 router.get('/userorderlist', (req, res) => {
   res.render('index.ejs', { pageName: 'userorderlist' });
 });
@@ -12,29 +13,34 @@ router.get('/userorderlist', (req, res) => {
 router.get('/mypageuser', (req, res) => {
   res.render('index.ejs', { pageName: 'mypageuser' });
 });
-
-router.get("/adminOrder", (req, res) => {
-  res.render("index.ejs", { pageName: "adminOrder" });
+// 로그인, 회원가입 관련 페이지
+router.get('/login', (req, res) => {
+  res.render('index.ejs', { pageName: 'login' });
 });
 
-router.get("/adminItem", (req, res) => {
-  res.render("index.ejs", { pageName: "adminItem" });
+// Admin 페이지
+router.get('/adminOrder', (req, res) => {
+  res.render('index.ejs', { pageName: 'adminOrder' });
 });
 
-router.get("/adminMember", (req, res) => {
-  res.render("index.ejs", { pageName: "adminMember" });
+router.get('/adminItem', (req, res) => {
+  res.render('index.ejs', { pageName: 'adminItem' });
 });
 
-router.get("/adminSales", (req, res) => {
-  res.render("index.ejs", { pageName: "adminSales" });
+router.get('/adminMember', (req, res) => {
+  res.render('index.ejs', { pageName: 'adminMember' });
 });
 
-router.get("/item/register", (req, res) => {
-  res.render("index.ejs", { pageName: "itemregister" });
+router.get('/adminSales', (req, res) => {
+  res.render('index.ejs', { pageName: 'adminSales' });
 });
 
-router.get("/item/status", (req, res) => {
-  res.render("index.ejs", { pageName: "itemstatus" });
+router.get('/item/register', (req, res) => {
+  res.render('index.ejs', { pageName: 'itemregister' });
+});
+
+router.get('/item/status', (req, res) => {
+  res.render('index.ejs', { pageName: 'itemstatus' });
 });
 
 module.exports = router;
