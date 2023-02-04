@@ -18,6 +18,6 @@ router.use('/blackList', memberRouter);
 router.use('/adminOrder', adminOrderRouter);
 router.use('/salesAmount', salesAmountRouter);
 
-router.use('/item', itemRouter);
+router.use('/', itemRouter);
 
 module.exports = router;

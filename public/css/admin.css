@@ -15,6 +15,18 @@
   font-weight: 600;
 }
 
+.admin_order_container > .btn {
+  width: 20%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #0787fe;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+}
+
 /* 아래 링크에서 가져옴 */
 /* https://codepen.io/heraqles/pen/yJXeLG */
 
@@ -174,4 +186,34 @@ table tr:nth-child(odd) td {
 
 .checkbox-wrapper-2 .ikxBAC:checked:hover {
   background-color: var(--sub-color-9);
+}
+
+.btn11 {
+  display: flex;
+}
+.btn1 {
+  width: 20%;
+  height: 10%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #feee07;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  flex: 1;
+}
+
+.btn2 {
+  width: 20%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #e21414;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  flex: 1;
 }
