@@ -29,4 +29,9 @@ router.get("/item/status", (req, res) => {
   res.render("index.ejs", { pageName: "itemstatus" });
 });
 
+router.post("/login", (req, res) => {
+  res.render("index.ejs", { pageName: "login" });
+});
+
+
 module.exports = router;

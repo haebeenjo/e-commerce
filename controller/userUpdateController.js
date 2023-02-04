@@ -7,7 +7,8 @@ class userUpdateController {
   userUpdateService = new userUpdateService();
 
   putUserUpdate = async (req, res, next) => {
-    // const userId = 
+    const userId = req.Users.userId;
+    const { name, email, password } = req.body;
 
 
 
