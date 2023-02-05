@@ -1,8 +1,8 @@
-// controllers/userUpdatecontroller2.js
+// controllers/userUpdate.controller.js
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 
-const userUpdateService = require("../services/userUpdateService");
+const userUpdateService = require("../services/userUpdate.service");
 const { Users } = require("../models");
 
 class userUpdateController {
@@ -20,7 +20,7 @@ class userUpdateController {
         status: "fail",
       });
     }
-    // Check if password change is desired
+    // 비번 바꾸면 쓰는
     if (body.updatePassword) {
       // 바꾸기 전 비번을 db에서 조회/비교
       const currentPasswordHash = crypto

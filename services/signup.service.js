@@ -1,6 +1,6 @@
-// services/signupService.js
+// services/signup.service.js
 
-const UserRepository = require('../repositories/userRepository');
+const UserRepository = require('../repositories/user.repository');
 
 class SignupService {
     userRepository = new UserRepository();

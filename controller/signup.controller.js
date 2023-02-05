@@ -1,6 +1,6 @@
-// controllers/signupController.js
+// controllers/signup.controller.js
 const crypto = require('crypto');
-const SignupService = require('../services/signupService');
+const SignupService = require('../services/signup.service');
 
 class SignupController {
   signupService = new SignupService();

@@ -1,6 +1,6 @@
-// controllers/loginController.js
+// controllers/login.controller.js
 const crypto = require("crypto");
-const LoginService = require("../services/loginService");
+const LoginService = require("../services/login.service");
 
 class LoginController {
   loginService = new LoginService();

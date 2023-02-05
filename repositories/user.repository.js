@@ -39,7 +39,6 @@ class UserRepository {
     });
     return users;
   };
-  // findOneAndUpdate = async 
 }
 
 module.exports = UserRepository;
