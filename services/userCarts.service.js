@@ -24,12 +24,13 @@ class UserCartService {
         item_name: cart.item_name,
         price: cart.price,
         itemId: cart.itemId,
+        cartId: cart.cartId,
       };
     });
   };
 
-  deleteCart = async (itemId) => {
-    const carts = await this.userCartRepository.deleteCart(itemId);
+  deleteCart = async (cartId) => {
+    const carts = await this.userCartRepository.deleteCart(cartId);
     return carts;
   };
 }

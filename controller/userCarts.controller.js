@@ -21,8 +21,8 @@ class UserCartController {
   };
 
   deleteCart = async (req, res) => {
-    const { itemId } = req.body;
-    const carts = await this.userCartService.deleteCart(itemId);
+    const { cartId } = req.body;
+    const carts = await this.userCartService.deleteCart(cartId);
     res.status(200).json({ message: '장바구니에서 삭제되었습니다.' });
   };
 }

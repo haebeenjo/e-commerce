@@ -22,6 +22,7 @@ class UserCartRepository {
     , Items.item_name
     , Items.price
     , Items.itemId
+    , Carts.cartId
 FROM Carts AS Carts
 LEFT OUTER JOIN Items ON Carts.item_id = Items.itemId
 WHERE Carts.user_id = ?
@@ -34,8 +35,8 @@ ORDER BY Carts.createdAt DESC;
     return result;
   };
 
-  deleteCart = async (itemId) => {
-    const result = await this.cartModel.destroy({ where: { item_id: itemId } });
+  deleteCart = async (cartId) => {
+    const result = await this.cartModel.destroy({ where: { cartId } });
   };
 }
 
