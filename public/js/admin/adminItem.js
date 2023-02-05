@@ -16,13 +16,31 @@ function getItems() {
         let itemId = data[i].itemId;
         let item_name = data[i].item_name;
         let item_status = data[i].item_status;
+
+        let category = '';
+        if (data[i].office) {
+          category += "office "
+        }
+        if (data[i].design) {
+          category += "design "
+        }
+        if (data[i].developer) {
+          category += "developer "
+        }
+        if (data[i].music) {
+          category += "music "
+        }
+        if (data[i].sports) {
+          category += "sports "
+        }
+
         console.log(item_name);
         let temp = `<tr
         ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
       >
         <td>${itemId}</td>
         <td>${item_name}</td>
-        <td>${item_name}</td>
+        <td>${category}</td>
         <td>${item_status}</td>
         <td>
           <div class="btn11">
