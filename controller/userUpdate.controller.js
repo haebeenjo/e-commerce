@@ -20,7 +20,7 @@ class userUpdateController {
         status: "fail",
       });
     }
-    // 비번 바꾸면 쓰는
+    // 비번 바꾸면 쓰는 기능들
     if (body.updatePassword) {
       // 바꾸기 전 비번을 db에서 조회/비교
       const currentPasswordHash = crypto

@@ -8,7 +8,7 @@ const memberRouter = require("./member.router");
 const adminOrderRouter = require("./adminOrder.router");
 const salesAmountRouter = require("./salesAmount.router");
 const signupRouter = require("./signup.router");
-const userUpdateRouter = require("./userUpdateRouter");
+const userUpdateRouter = require("./userUpdate.router");
 const loginRouter = require("./login.router");
 
 router.use("/login", loginRouter);
