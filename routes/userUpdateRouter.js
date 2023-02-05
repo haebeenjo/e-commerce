@@ -8,6 +8,6 @@ const authMiddleware = require('../middlewares/auth-middleware');
 const UserUpdateController = require('../controller/userUpdateController');
 const userUpdateController = new UserUpdateController();
 
-router.put('/', authMiddleware, userUpdateController.putUserUpdate);
+router.put('/:userId', authMiddleware, userUpdateController.putUserUpdate);
 
 module.exports = router;
