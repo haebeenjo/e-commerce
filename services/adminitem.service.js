@@ -45,7 +45,6 @@ class adminItemsService {
     sports
   ) => {
     try {
-      console.log("5555555555555555555555555")
       const existItem = await this.adminitemsRepository.findItemById(itemId);
 
       if (!existItem) {
@@ -61,7 +60,6 @@ class adminItemsService {
         (existItem.developer = developer),
         (existItem.music = music),
         (existItem.sports = sports);
-      console.log(existItem, "0000000000000000000000")
       const putItemData = await this.adminitemsRepository.putItem(existItem);
 
       return putItemData;

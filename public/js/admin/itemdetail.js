@@ -1,11 +1,3 @@
-/* 
-const item_name = document.getElementById('item_name').value;
-const price = document.getElementById('price').value;
-const img = document.getElementById('img').value;
-const category = document.getElementById('category').value;
-const detail = document.getElementById('detail').value; 
-*/
-
 function is_checked() {
 
   // 1. checkbox element를 찾습니다.
@@ -48,16 +40,6 @@ function putItem() {
   let music = is_checked()[3];
   let sports = is_checked()[4];
   let item_status = $('input[name=status]:checked').val();
-
-  console.log("item_name", item_name)
-  console.log("img", img)
-  console.log("price", price)
-  console.log("detail", detail)
-  console.log("office", office)
-  console.log("developer", developer)
-  console.log("music", music)
-  console.log("sports", sports)
-  console.log("item_status", item_status)
 
   const formData = new FormData();
   formData.append('item_name', item_name);

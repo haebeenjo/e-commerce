@@ -34,7 +34,6 @@ function getItems() {
           category += "sports "
         }
 
-        console.log(item_name);
         let temp = `<tr
         ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
       >
