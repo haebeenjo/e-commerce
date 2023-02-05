@@ -229,3 +229,11 @@ input[type='radio']:checked + label span {
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -57px
     top no-repeat;
 }
+
+#item_form > div:nth-child(6) > label:nth-child(3){
+  width: 100px;
+}
+
+#item_form > div:nth-child(6) > p {
+  width: 100px;
+}

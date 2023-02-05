@@ -12,8 +12,13 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use('/api', router);
 app.use('/', render);
-app.set('views', path.join(__dirname, './views'));
+// app.set('views', path.join(__dirname, './views')); 
+app.use(express.static('upload'));
 app.use(express.static('public'));
+
+app.set('views', path.join(__dirname, './views'));
+app.use(express.static(path.join(__dirname, './views')));
+
 
 app.listen(process.env.PORT, () => {
   console.log(process.env.PORT, '포트로 서버가 열렸어요!');

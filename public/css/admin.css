@@ -25,6 +25,9 @@
   cursor: pointer;
   border-radius: 5px;
   outline: none;
+  position: relative;
+  left: 80%;
+  top: 100px;
 }
 
 /* 아래 링크에서 가져옴 */
@@ -190,9 +193,13 @@ table tr:nth-child(odd) td {
 
 .btn11 {
   display: flex;
+  width: 50%;
+  height: 50%;
+  
 }
-.btn1 {
-  width: 20%;
+
+#itemList > tr:nth-child(1) > td:nth-child(5) > div > input.btn1 {
+  width: 10px;
   height: 10%;
   padding: 8px 10px;
   font-size: 15px;
@@ -200,20 +207,173 @@ table tr:nth-child(odd) td {
   background: #feee07;
   color: #fff;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 15px;
   outline: none;
   flex: 1;
+  margin: 0px 5px 0px 0px;
 }
 
-.btn2 {
-  width: 20%;
+#itemList > tr:nth-child(2) > td:nth-child(5) > div > input.btn1 {
+  width: 10%;
+  height: 10%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #feee07;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  flex: 1;
+  margin: 0px 5px 0px 0px;
+}
+
+#itemList > tr:nth-child(3) > td:nth-child(5) > div > input.btn1 {
+  width: 10%;
+  height: 10%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #feee07;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  flex: 1;
+  margin: 0px 5px 0px 0px;
+}
+
+#itemList > tr:nth-child(4) > td:nth-child(5) > div > input.btn1 {
+  width: 10%;
+  height: 10%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #feee07;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  flex: 1;
+  margin: 0px 5px 0px 0px;
+}
+
+#itemList > tr:nth-child(5) > td:nth-child(5) > div > input.btn1 {
+  width: 10%;
+  height: 10%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #feee07;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  flex: 1;
+  margin: 0px 5px 0px 0px;
+}
+
+#itemList > tr:nth-child(6) > td:nth-child(5) > div > input.btn1 {
+  width: 10%;
+  height: 10%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #feee07;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  flex: 1;
+  margin: 0px 5px 0px 0px;
+}
+
+#itemList > tr:nth-child(1) > td:nth-child(5) > div > input.btn2 {
+  width: 10%;
+  height: 10%;
   padding: 8px 10px;
   font-size: 15px;
   border: 0px;
   background: #e21414;
   color: #fff;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 15px;
   outline: none;
   flex: 1;
+  margin: 0px 0px 0px 5px;
+}
+
+#itemList > tr:nth-child(2) > td:nth-child(5) > div > input.btn2 {
+  width: 10%;
+  height: 10%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #e21414;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  flex: 1;
+  margin: 0px 0px 0px 5px;
+}
+
+#itemList > tr:nth-child(3) > td:nth-child(5) > div > input.btn2 {
+  width: 10%;
+  height: 10%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #e21414;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  flex: 1;
+  margin: 0px 0px 0px 5px;
+}
+
+#itemList > tr:nth-child(4) > td:nth-child(5) > div > input.btn2 {
+  width: 10%;
+  height: 10%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #e21414;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  flex: 1;
+  margin: 0px 0px 0px 5px;
+}
+
+#itemList > tr:nth-child(5) > td:nth-child(5) > div > input.btn2 {
+  width: 10%;
+  height: 10%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #e21414;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  flex: 1;
+  margin: 0px 0px 0px 5px;
+}
+
+#itemList > tr:nth-child(6) > td:nth-child(5) > div > input.btn2 {
+  width: 10%;
+  height: 10%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #e21414;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  flex: 1;
+  margin: 0px 0px 0px 5px;
 }

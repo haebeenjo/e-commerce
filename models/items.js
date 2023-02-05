@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       price: DataTypes.BIGINT,
       detail: DataTypes.STRING,
       img: DataTypes.STRING,
-      item_status: DataTypes.STRING,
+      item_status: { type: DataTypes.STRING, defaultValue: '판매 중' },
       office: DataTypes.BOOLEAN,
       design: DataTypes.BOOLEAN,
       developer: DataTypes.BOOLEAN,

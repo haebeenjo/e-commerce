@@ -6,19 +6,15 @@ $(document).ready(function () {
 function getItems() {
   axios({
     method: 'get',
-    url: '/api/adminItem',
+    url: 'api/adminItem',
   })
     .then((response) => {
       const { data } = response.data;
       console.log(data);
-      /* const itemList = document.getElementById('itemList');
-        itemList.innerHTML = '';
-        //   document.querySelector('#item_form').innerHTML = ''; */
 
       for (let i in data) {
         let itemId = data[i].itemId;
         let item_name = data[i].item_name;
-        // let category_id = data[i].category_id;
         let item_status = data[i].item_status;
         console.log(item_name);
         let temp = `<tr
@@ -26,17 +22,18 @@ function getItems() {
       >
         <td>${itemId}</td>
         <td>${item_name}</td>
+        <td>${item_name}</td>
         <td>${item_status}</td>
         <td>
           <div class="btn11">
             <input
-              onclick="location.href='/item/detail'"
+              onclick="location.href='/item/detail?itemId=${itemId}'"
               type="button"
               value="수정"
               class="btn1"
             />
             <input
-              onclick="deleteItem()"
+              onclick="deleteItem(${itemId})"
               type="button"
               value="삭제"
               class="btn2"
@@ -48,7 +45,22 @@ function getItems() {
         $('#itemList').append(temp);
       }
     })
-    .catch((error) => {
-      console.log('axios error: ', error);
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+// axios delete
+function deleteItem(itemId) {
+  axios
+    .delete(`/api/item/${itemId}`)
+    .then((res) => {
+      const returnValue = confirm('삭제하시겠습니까?');
+      alert(returnValue);
+      console.log(res);
+      window.location.href = '/adminItem';
+    })
+    .catch((err) => {
+      console.log(err);
     });
 }

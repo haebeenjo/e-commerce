@@ -1,25 +1,26 @@
-<!-- <script src="/js/admin/itemregister.js"></script> -->
+<script src="/js/admin/itemdetail.js"></script>
 
 <!-- 전체 양식: https://codepen.io/RajRajeshDn/pen/QWwypRy -->
 <div class="wrapper">
   <div class="title">Edit Form</div>
+  <form action="/item/register" method="post" , enctype="multipart/form-data">
   <div class="form" id="item_form">
     <!-- 체크박스: https://codepen.io/tutsplus/pen/bgqYJz -->
     <div class="inputfield">
-      <input type="checkbox" id="c1" name="cc" />
-      <label for="c1"><span></span>office</label>
-      <input type="checkbox" id="c2" name="cc" />
-      <label for="c2"><span></span>design</label>
-      <input type="checkbox" id="c3" name="cc" />
-      <label for="c3"><span></span>develop</label>
-      <input type="checkbox" id="c4" name="cc" />
-      <label for="c4"><span></span>music</label>
-      <input type="checkbox" id="c5" name="cc" />
-      <label for="c5"><span></span>sports</label>
+      <input type="checkbox" id="office" name="office" onclick='is_checked()' />
+      <label for="office"><span></span>office</label>
+      <input type="checkbox" id="design" name="design" onclick='is_checked()' />
+      <label for="design"><span></span>design</label>
+      <input type="checkbox" id="developer" name="developer" onclick='is_checked()' />
+      <label for="developer"><span></span>develop</label>
+      <input type="checkbox" id="music" name="music" onclick='is_checked()' />
+      <label for="music"><span></span>music</label>
+      <input type="checkbox" id="sports" name="sports" onclick='is_checked()' />
+      <label for="sports"><span></span>sports</label>
     </div>
     <div class="inputfield">
       <label>상품명</label>
-      <input type="text" class="input" />
+      <input type="text" id="item_name" class="input" />
     </div>
     <div class="inputfield">
       <label>상품 사진</label>
@@ -27,25 +28,25 @@
     </div>
     <div class="inputfield">
       <label>상품 단가</label>
-      <input type="text" class="input" />
+      <input type="number" id="price" class="input" />
     </div>
-
     <div class="inputfield">
       <label>상품 설명</label>
-      <input type="text" class="input" />
+      <input type="text" id="detail" class="input" />
     </div>
     <div class="inputfield">
       <label>상품 상태</label>
-      <input type="radio" id="r1" name="rr" />
-      <label for="r1"> <span></span>판매 중 </label>
+      <input type="radio" id="r1" name="status" value="판매 중" />
+      <label for="r1"> <span></span>판매중</label>
       <p>
-        <input type="radio" id="r2" name="rr" />
-        <label for="r2"> <span></span>일시 품절 </label>
+        <input type="radio" id="r2" name="status" value="일시 품절" />
+        <label for="r2"> <span></span>일시 품절</label>
       </p>
     </div>
     <div class="inputfield">
-      <input onclick="itemRequest()" type="button" value="save" class="btn" />
+      <input onclick="putItem()" type="button" value="save" class="btn" />
     </div>
     <div id="itemList"></div>
   </div>
+</form>
 </div>
