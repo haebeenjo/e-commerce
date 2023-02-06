@@ -41,8 +41,9 @@ function login_user() {
       },
     });
   }
-}
+} 
+
 
 function register() {
-  location.href = "http://localhost:4000/api/signup";
+  location.href = "http://localhost:4000/signup";
 }

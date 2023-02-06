@@ -26,6 +26,10 @@ router.get('/signup', (req, res) => {
   res.render('index.ejs', { pageName: 'signup' });
 });
 
+router.get('/userUpdate', (req, res)   => {
+  res.render('index.ejs', { pageName: 'userUpdate' });
+});
+
 router.get('/logout', (req, res) => {
   res.render('index.ejs',{ pageName: 'logout' });
 });

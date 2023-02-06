@@ -16,7 +16,6 @@
     />
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/adminOrder.css" />
     <link rel="stylesheet" href="/css/userOrderList.css" />
     <link rel="stylesheet" href="/css/admin.css" />
     <link rel="stylesheet" href="/css/sign.css" />
@@ -45,13 +44,15 @@
 
       <!-- login -->
       <% if (pageName==="login" ) { %> <%- include("components/login") %> <% }
-      %> <% if (pageName === "signup") { %> <%- include("components/signup") %>
-      <% } %>
+      %> 
 
       <!-- signup -->
       <% if (pageName==="signup" ) { %> <%- include("components/signup") %> <% }
-      %> <% if (pageName === "signup") { %> <%- include("components/signup") %>
-      <% } %>
+      %>
+
+      <!-- userUpdate -->
+      <% if (pageName==="userUpdate" ) { %> <%- include("mypage/userUpdate") %> <% }
+      %>
 
       <!-- logout -->
       <% if (pageName==="logout" ) { %> <%- include("components/logout") %> <% }

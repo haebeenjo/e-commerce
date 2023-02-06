@@ -1,30 +1,33 @@
+
 function signup_user() {
-  const name = $("#name").val();
-  const address = $("#address").val();
+  const email = $("#email").val();
   const phone_number = $("#phone_number").val();
   const password = $("#password").val();
-  const email = $("#email").val();
+  const name = $("#name").val();
+  const address = $("#address").val();
+  const re_email = /^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,3}$/;
 
-  if (!email || !password) {
-    alert("닉네임 또는 비밀번호가 입력되지 않았습니다.");
+  if (!email || !password || !address || ! phone_number || !name) {
+    alert("빈칸 없이 채워주세요.");
+  } if (email.search(re_email) === -1) {
+    alert('ID의 형식이 일치하지 않습니다');
   } else {
     $.ajax({
-      type: "PUT",
-      url: "http://localhost:4000/api/signup",
+      type: "post",
+      url: "api/signup",
       data: {
-        name,
-        address,
+        email,
         phone_number,
         password,
-        email
+        name,
+        address
       },
       success: function (response) {
         alert(`${email}님 회원가입이 완료되었습니다`);
-        token = response.token;
-        location.href = "http://localhost:4000/api/login";
+        location.href = "/login";
       },
       error: function (error) {
-        alert("회원정보 수정 실패");
+        alert("회원가입 실패");
         console.log("에러이유:", error);
       },
     });
