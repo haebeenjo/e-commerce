@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="/css/itemregister.css" />
     <link rel="stylesheet" type="text/css" href="/css/sign.css" />
     <link rel="stylesheet" type="text/css" href="/css/admin.css" />
+    <link rel="stylesheet" type="text/css" href="/css/chat.css" />
   </head>
 
   <body>
@@ -27,31 +28,34 @@
       <%- include("components/header") %>
 
       <!-- login -->
-      <% if (pageName === "login") { %> <%- include("components/login") %> <% }
+      <% if (pageName==="login" ) { %> <%- include("components/login") %> <% }
       %>
 
       <!-- mypage -->
-      <% if (pageName === "adminOrder") { %><!---->
+      <% if (pageName==="adminOrder" ) { %><!---->
       <!---->
-      <%- include("admin/adminOrder") %> <% } else if (pageName === "adminItem")
+      <%- include("admin/adminOrder") %> <% } else if (pageName==="adminItem" )
       { %>
       <!---->
-      <%- include("admin/adminItem") %> <% } else if (pageName ===
-      "adminMember") { %>
+      <%- include("admin/adminItem") %> <% } else if (pageName==="adminMember" )
+      { %>
       <!---->
-      <%- include("admin/adminMember") %> <% } else if (pageName ===
-      "adminSales") { %>
+      <%- include("admin/adminMember") %> <% } else if (pageName==="adminSales"
+      ) { %>
       <!---->
-      <%- include("admin/adminSales") %> <% } else if (pageName ===
-      "itemregister") { %>
+      <%- include("admin/adminSales") %> <% } else if (pageName==="itemregister"
+      ) { %>
       <!---->
-      <%- include("admin/itemregister") %> <% } else if (pageName ===
-      "itemstatus") { %>
+      <%- include("admin/itemregister") %> <% } else if (pageName==="itemstatus"
+      ) { %>
       <!---->
-      <%- include("admin/itemstatus") %> <% } else if (pageName ===
-      "itemdetail") { %>
+      <%- include("admin/itemstatus") %> <% } else if (pageName==="itemdetail" )
+      { %>
       <!---->
       <%- include("admin/itemdetail") %> <% } %>
+
+      <!-- chat -->
+      <% if (pageName==="chat" ) { %> <%- include("components/chat") %> <% } %>
     </main>
   </body>
 </html>

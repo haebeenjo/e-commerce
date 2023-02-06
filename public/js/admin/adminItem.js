@@ -49,12 +49,14 @@ function getItems() {
               type="button"
               value="수정"
               class="btn1"
+              id="btn-css1"
             />
             <input
               onclick="deleteItem(${itemId})"
               type="button"
               value="삭제"
               class="btn2"
+              id="btn-css2"
             />
           </div>
         </td>

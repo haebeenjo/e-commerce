@@ -1,12 +1,12 @@
 function is_checked() {
-  
+
   // 1. checkbox element를 찾습니다.
   const checkbox_office = document.getElementById('office');
   const checkbox_design = document.getElementById('design');
   const checkbox_developer = document.getElementById('developer');
   const checkbox_music = document.getElementById('music');
   const checkbox_sports = document.getElementById('sports');
-  
+
 
   // 2. checked 속성을 체크합니다.
   const is_checked_office = checkbox_office.checked;
@@ -17,7 +17,7 @@ function is_checked() {
 
   // 3. 결과를 출력합니다.
   return [is_checked_office, is_checked_design, is_checked_developer, is_checked_music, is_checked_sports];
-  
+
 }
 
 // axios post
@@ -31,12 +31,7 @@ function itemRequest() {
   let developer = is_checked()[2];
   let music = is_checked()[3];
   let sports = is_checked()[4];
-  /* let office = $('#office:checked').val();
-  let design = $('input[name=design]:checked').val();
-  let developer = $('input[name=developer]:checked').val();
-  let music = $('input[name=music]:checked').val();
-  let sports = $('input[name=sports]:checked').val(); */
-  
+
   const formData = new FormData();
   formData.append('item_name', item_name);
   formData.append('img', img);
@@ -47,12 +42,13 @@ function itemRequest() {
   formData.append('developer', developer);
   formData.append('music', music);
   formData.append('sports', sports);
-  
-    axios
+
+  axios
     .post('api/item/register',
       formData,
-      { headers: {
-      'Content-Type': 'multipart/form-data'
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data'
         }
       }
     )
