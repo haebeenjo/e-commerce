@@ -5,7 +5,6 @@ const { Users } = require('../models');
 
 module.exports = (req, res, next) => {
   const token = req.cookies.token;
-  // console.log("1", req.cookies.token)
   if (!token) {
     res
       .status(401)
