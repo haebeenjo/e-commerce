@@ -1,14 +1,13 @@
-// controllers/signupController.js
+// controllers/signup.controller.js
 const crypto = require('crypto');
-const SignupService = require('../services/signupService');
+const SignupService = require('../services/signup.service');
 
 class SignupController {
   signupService = new SignupService();
-  
+
   postSignup = async (req, res, next) => {
     try {
-      const { email, phone_number, password, name, address} =
-        req.body;        
+      const { email, phone_number, password, name, address } = req.body;
 
       const re_email = /^[a-z0-9]+@[a-z0-9]+\.[a-z]{2,3}$/;
 
@@ -45,7 +44,10 @@ class SignupController {
         });
         return;
       }
-      const hashPassword = crypto.createHash('sha512').update(req.body.password).digest('hex');
+      const hashPassword = crypto
+        .createHash('sha512')
+        .update(req.body.password)
+        .digest('hex');
 
       const createUserData = await this.signupService.createUser(
         email,
@@ -56,6 +58,7 @@ class SignupController {
       );
       res.status(200).json({ result: 'success', data: createUserData });
     } catch (err) {
+      console.log(err);
       res.status(400).json({
         errorMessage: '요청한 데이터 형식이 올바르지 않습니다.',
       });

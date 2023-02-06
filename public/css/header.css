@@ -64,7 +64,7 @@ h1 {
   border-bottom: 3px solid var(--sub-color-1);
 }
 
-.user_point {
+#user_point {
   position: absolute;
   right: 32px;
   bottom: 15px;

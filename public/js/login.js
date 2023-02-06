@@ -1,3 +1,18 @@
+
+// function setloginuser() {
+//   if (token) {
+//     $.ajax({
+//       type: "get",
+//       url: "api/auth/me",
+//       data: {},
+//       success: function (response) {
+//         let user_data = response.user;
+//         let user_id = response.user.user_id;
+//         location.href = "http://localhost:4000/mypage?id=" + user_id;
+//       },
+//     });
+//   }
+// }
 let token;
 
 function login_user() {
@@ -9,7 +24,7 @@ function login_user() {
   } else {
     $.ajax({
       type: "POST",
-      url: "/api/login",
+      url: "http://localhost:4000/api/login",
       data: {
         email,
         password,
@@ -28,21 +43,6 @@ function login_user() {
   }
 }
 
-// function setloginuser() {
-//   if (token) {
-//     $.ajax({
-//       type: "get",
-//       url: "api/auth/me",
-//       data: {},
-//       success: function (response) {
-//         let user_data = response.user;
-//         let user_id = response.user.user_id;
-//         location.href = "http://localhost:4000/mypage?id=" + user_id;
-//       },
-//     });
-//   }
-// }
-
 function register() {
-  location.href = "http://localhost:4000/register";
+  location.href = "http://localhost:4000/api/signup";
 }

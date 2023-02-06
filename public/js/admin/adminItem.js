@@ -5,8 +5,8 @@ $(document).ready(function () {
 // axios get
 function getItems() {
   axios({
-    method: "get",
-    url: "api/adminItem",
+    method: 'get',
+    url: 'api/adminItem',
   })
     .then((response) => {
       const { data } = response.data;
@@ -18,21 +18,21 @@ function getItems() {
         let item_name = data[i].item_name;
         let item_status = data[i].item_status;
 
-        let category = "";
+        let category = '';
         if (data[i].office) {
-          category += "office ";
+          category += 'office ';
         }
         if (data[i].design) {
-          category += "design ";
+          category += 'design ';
         }
         if (data[i].developer) {
-          category += "developer ";
+          category += 'developer ';
         }
         if (data[i].music) {
-          category += "music ";
+          category += 'music ';
         }
         if (data[i].sports) {
-          category += "sports ";
+          category += 'sports ';
         }
 
         let temp = `<tr
@@ -62,7 +62,7 @@ function getItems() {
         </td>
       </tr>`;
 
-        $("#itemList").append(temp);
+        $('#itemList').append(temp);
       }
     })
     .catch((err) => {
@@ -75,10 +75,9 @@ function deleteItem(itemId) {
   axios
     .delete(`/api/item/${itemId}`)
     .then((res) => {
-      const returnValue = confirm("삭제하시겠습니까?");
-      alert(returnValue);
+      const returnValue = confirm('삭제하시겠습니까?');
       console.log(res);
-      window.location.href = "/adminItem";
+      window.location.href = '/adminItem';
     })
     .catch((err) => {
       console.log(err);

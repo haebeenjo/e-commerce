@@ -1,0 +1,53 @@
+<%- include("../mypage/myPageUser") %>
+<div class="admin_order_container">
+  <h3>위시 리스트</h3>
+  <div class="table_container">
+    <table>
+      <thead>
+        <tr class="tr_title">
+          <th>상품 번호</th>
+          <th>상품 이미지</th>
+          <th>상품 명</th>
+          <th>가격</th>
+          <th>삭제 버튼</th>
+        </tr>
+      </thead>
+      <tbody id="cart_list"></tbody>
+    </table>
+    <table>
+      <thead>
+        <tr>
+          <th>총 가격</th>
+          <th>주문 하기</th>
+        </tr>
+      </thead>
+      <tbody id="price_order"></tbody>
+    </table>
+  </div>
+</div>
+<div id="modal" class="modal-overlay">
+  <div class="modal-window">
+    <div class="order_title"><h2>주문 하기</h2></div>
+    <div onclick="closeModal()" class="close-area">X</div>
+    <div class="order_name">
+      <input id="order_name" type="text" placeholder="이름을 입력해주세요." />
+    </div>
+    <div class="order_phone_number">
+      <input
+        id="order_phone_number"
+        type="text"
+        placeholder="전화번호를 입력해주세요."
+      />
+    </div>
+    <div class="order_address">
+      <input
+        id="order_address"
+        type="text"
+        placeholder="주소를 입력해주세요."
+      />
+    </div>
+    <div><button onclick="cartOrder()">주문 하기</button></div>
+  </div>
+</div>
+<script src="js/user/userWishList.js"></script>
+<script src="js/user/createOrder.js"></script>

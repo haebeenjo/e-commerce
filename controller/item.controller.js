@@ -3,20 +3,10 @@ const ItemService = require('../services/item.service');
 class ItemController {
   itemService = new ItemService();
 
-  // findAllItems = async (req, res, next) => {
-  //   try {
-  //     const items = await this.itemService.findAllItems();
-  //     res.status(200).json({ data: items });
-  //   } catch (err) {
-  //     console.log(err);
-  //     res.status(400).json({ message: '조회 실패' });
-  //   };
-  // };
-
-  findAllItems = async (req, res, next) => {
-    const { page } = req.query;
-    const perPage = 10;
-    const startIndex = ((page || 1) - 1) * perPage;
+	findAllItems = async (req, res, next) => {
+		const { page } = req.query
+    const perPage = 10
+    const startIndex = ((page || 1) -1 ) * perPage
     try {
       const { lastPage, rows } = await this.itemService.findAllItems(
         perPage,

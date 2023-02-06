@@ -1,34 +1,67 @@
-// middlewares/auth-middleware.js
-// .send({
-//   errorMessage: '로그인 후 이용해 주세요.',
-// })
+const jwt = require("jsonwebtoken");
 
-const jwt = require('jsonwebtoken');
+const { Users } = require("../models");
+const { Admin } = require("../models");
 
-const { Users } = require('../models');
+let authMiddleware = {
 
-module.exports = (req, res, next) => {
-  const token = req.cookies.token;
-  console.log("1", req.cookies.token)
-  if (!token) {
-    res
-      .status(401)
-      .redirect('/api/login');
-    return;
+  userMiddleware : (req, res, next) => {
+    const token = req.cookies.token;
+    if (!token) {
+      res
+        .status(401)
+        .send({
+          errorMessage: "로그인 후 이용해 주세요.",
+        })
+        .redirect("/api/login");
+      return;
+    }
+
+    try {
+      const { userId } = jwt.verify(token, process.env.SECRET_KEY);
+
+      const id = userId.userId;
+
+      Users.findByPk(id).then((user) => {
+        res.locals.user = userId;
+        next();
+      });
+    } catch (err) {
+      res.status(401).send({
+        errorMessage: "로그인을 다시 진행해 주세요.",
+      });
+    }
+  },
+
+  adminMiddleware : (req, res, next) => {
+    const token = req.cookies.token;
+    if (!token) {
+      res
+        .status(401)
+        .send({
+          errorMessage: "로그인 후 이용해 주세요.",
+        })
+        .redirect("/api/login");
+      return;
+    }
+
+    try {
+      const { adminId } = jwt.verify(token, process.env.SECRET_KEY);
+
+      const id = adminId.adminId;
+
+      Admin.findByPk(id).then((admin) => {
+        res.locals.admin = adminId;
+        next();
+      });
+    } catch (err) {
+      res.status(401).send({
+        errorMessage: "로그인을 다시 진행해 주세요.",
+      });
+    }
   }
+}
 
-  try {
-    const { userId } = jwt.verify(token, process.env.SECRET_KEY);
-    const id = userId.userId;
-    console.log("3",userId)
 
-    Users.findByPk(id).then((user) => {
-      res.locals.user = user;
-      next();
-    });
-  } catch (err) {
-    res.status(401).send({
-      errorMessage: '로그인을 다시 진행해 주세요.',
-    });
-  }
-};
+
+module.exports = authMiddleware;
