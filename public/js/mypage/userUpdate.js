@@ -9,7 +9,7 @@ function update_user() {
 
   if (!name && !address && !phone_number && !currentPassword && !newPassword && !confirmedPassword) {
     alert("어떤 정보도 입력되지 않았습니다.");
-  } if (currentPassword == newPassword){
+  } if (currentPassword != null || currentPassword == newPassword){
     alert('현재 비밀번호와 바꿀 비밀번호가 같습니다, 다르게 수정해주세요')
   } if (newPassword !== confirmedPassword){
     alert("새로운 비밀번호 확인이 틀렸습니다.");
