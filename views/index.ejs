@@ -17,18 +17,31 @@
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/adminOrder.css" />
-    <link rel="stylesheet" href="/css/mypage.css" />
     <link rel="stylesheet" href="/css/userOrderList.css" />
     <link rel="stylesheet" href="/css/admin.css" />
     <link rel="stylesheet" href="/css/sign.css" />
     <link rel="stylesheet" href="/css/modal.css" />
     <link rel="stylesheet" href="/css/itemregister.css" />
     <link rel="stylesheet" href="/css/chat.css" />
+    <link rel="stylesheet" href="/css/mypage.css" />
+    <link rel="stylesheet" href="/css/item.css" />
+    <link rel="stylesheet" href="/css/iteminfo.css" />
+    <link rel="stylesheet" href="/css/main.css" />
   </head>
 
   <body>
     <main>
-      <%- include("components/header") %>
+      <%- include("components/header") %> <% if (pageName === '') { %> <%-
+      include("main.ejs") %> <% } %>
+
+      <!-- itme -->
+      <% if (pageName === 'itemDetail') { %> <%- include("item/iteminfo.ejs") %>
+      <% } %> <% if (pageName === 'office') { %> <%- include("item/office.ejs")
+      %> <% } %> <% if (pageName === 'design') { %> <%-
+      include("item/design.ejs") %> <% } %> <% if (pageName === 'developer') {
+      %> <%- include("item/developer.ejs") %> <% } %> <% if (pageName ===
+      'music') { %> <%- include("item/music.ejs") %> <% } %> <% if (pageName ===
+      'sports') { %> <%- include("item/sports.ejs") %> <% } %>
 
       <!-- login -->
       <% if (pageName==="login" ) { %> <%- include("components/login") %> <% }

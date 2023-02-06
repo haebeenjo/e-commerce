@@ -58,5 +58,28 @@ router.get('/item/detail', (req, res) => {
 router.get('/chat', (req, res) => {
   res.render('index.ejs', { pageName: 'chat' });
 });
+router.get('/office', (req, res) => {
+  res.render('index.ejs', { pageName: 'office' });
+});
+
+router.get('/design', (req, res) => {
+  res.render('index.ejs', { pageName: 'design' });
+});
+
+router.get('/developer', (req, res) => {
+  res.render('index.ejs', { pageName: 'developer' });
+});
+
+router.get('/music', (req, res) => {
+  res.render('index.ejs', { pageName: 'music' });
+});
+
+router.get('/sports', (req, res) => {
+  res.render('index.ejs', { pageName: 'sports' });
+});
+
+router.get('/itemDetail/:id', (req, res) => {
+  res.render('index.ejs', { pageName: 'itemDetail' });
+});
 
 module.exports = router;

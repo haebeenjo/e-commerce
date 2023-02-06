@@ -21,10 +21,9 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use('/api', router);
 app.use('/', render);
+app.set('views', path.join(__dirname, './views'));
 app.use(express.static('upload'));
 app.use(express.static('public'));
-
-app.set('views', path.join(__dirname, './views'));
 
 /* Get 방식으로 / 경로에 접속하면 실행 됨 */
 // app.get("/", function (request, response) {

@@ -27,5 +27,10 @@ router.use('/logout', logoutRouter);
 router.use('/item', itemRouter);
 
 router.use('/', adminitemRouter);
+router.use('/item', itemRouter);
+router.use("/member", memberRouter);
+router.use("/blackList", memberRouter);
+router.use("/adminOrder", adminOrderRouter);
+router.use("/salesAmount", salesAmountRouter);
 
 module.exports = router;
