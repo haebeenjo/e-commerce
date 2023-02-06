@@ -1,6 +1,6 @@
 // repositories/users.repository.js
 
-const { Users } = require('../models');
+const { Users, Sequelize } = require('../models');
 
 class UserRepository {
   createUser = async (
@@ -40,9 +40,8 @@ class UserRepository {
     return users;
   };
   userPointMinus = async (order_price, userId) => {
-    const user = await Users.findByPk(userId);
     const users = await Users.update(
-      { point: user.point - order_price },
+      { point: Sequelize.literal(`point - ${order_price}`) },
       { where: { userId: userId } }
     );
   };

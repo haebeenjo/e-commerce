@@ -1,18 +1,18 @@
 function cartOrder() {
-  const itemId = document.getElementsByClassName('item_id');
-  for (let i = 0; i < itemId.length; i++) {
-    createOrder(i);
+  const id = document.getElementsByClassName('item_id');
+  const price = document.getElementsByClassName('price');
+  for (let i = 0; i < id.length; i++) {
+    const itemId = parseInt(id[i].innerHTML);
+    const order_price = parseInt(price[i].innerHTML.replace(/\,/g, ''));
+    createOrder(itemId, order_price);
   }
 }
 
-function createOrder(i) {
+function createOrder(itemId, order_price) {
   let name = $('#order_name').val();
   let phone_number = $('#order_phone_number').val();
   let address = $('#order_address').val();
-  const id = document.getElementsByClassName('item_id');
-  const price = document.getElementsByClassName('price');
-  const itemId = parseInt(id[i].textContent);
-  const order_price = parseInt(price[i].textContent.replace(/\,/g, ''));
+
   axios({
     method: 'post',
     url: '/api/order',
