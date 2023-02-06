@@ -5,6 +5,8 @@ class AdminOrderController {
 
   findAdminOrder = async (req, res, next) => {
     try {
+      const { userId } = res.locals.user;
+      console.log("✨✨✨", userId, "✨✨✨");
       const findAdminOrder = await this.adminOrderService.findAdminOrder();
 
       res.status(201).json({ data: findAdminOrder });

@@ -11,8 +11,8 @@ class ItemRepository {
       offset: startIndex,
       limit: perPage,
     });
-    const lastPage = Math.ceil(count / perPage)
-    return {lastPage, rows}
+    const lastPage = Math.ceil(count / perPage);
+    return { lastPage, rows };
   };
 
   findOfficeItem = async () => {
@@ -26,7 +26,7 @@ class ItemRepository {
   };
 
   findDeveloperItem = async () => {
-    const catagory = await this.itemsModel.findAll({ where: { developer:1 } });
+    const catagory = await this.itemsModel.findAll({ where: { developer: 1 } });
     return catagory;
   };
 

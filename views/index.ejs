@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>일아쌰이마쎄</title>
+    <base href="/">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
@@ -17,9 +19,12 @@
     <link rel="stylesheet" href="/css/admin.css" />
     <link rel="stylesheet" href="/css/mypage.css" />
     <link rel="stylesheet" href="/css/item.css" />
-    <link rel="stylesheet" href="/css/itemDetail.css" />
+    <link rel="stylesheet" href="/css/iteminfo.css" />
     <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/itemregister.css" />
+    <link rel="stylesheet" href="/css/sign.css" />
   </head>
+
   <body>
     <main>
       <%- include("components/header") %>
@@ -27,12 +32,15 @@
       <% if (pageName === '') { %> <%- include("main.ejs") %> <% } %>
 
       <!-- itme -->
-      <% if (pageName === 'itemDetail') { %> <%- include("item/itemDetail.ejs") %> <% } %>
+      <% if (pageName === 'itemDetail') { %> <%- include("item/iteminfo.ejs") %> <% } %>
       <% if (pageName === 'office') { %> <%- include("item/office.ejs") %> <% } %>
       <% if (pageName === 'design') { %> <%- include("item/design.ejs") %> <% } %>
       <% if (pageName === 'developer') { %> <%- include("item/developer.ejs") %> <% } %>
       <% if (pageName === 'music') { %> <%- include("item/music.ejs") %> <% } %>
       <% if (pageName === 'sports') { %> <%- include("item/sports.ejs") %> <% } %>
+
+      <!-- login -->
+      <% if (pageName === "login") { %> <%- include("components/login") %> <% } %>
 
       <!-- mypage -->
       <% if (pageName === "adminOrder") { %><!---->
@@ -43,7 +51,13 @@
       "adminMember") { %> <%- include("mypage/myPageLnb") %><!---->
       <%- include("admin/adminMember") %> <% } else if (pageName ===
       "adminSales") { %> <%- include("mypage/myPageLnb") %><!---->
-      <%- include("admin/adminSales") %> <% } %>
+      <%- include("admin/adminSales") %> <% } else if (pageName ===
+      "itemregister") { %> <%- include("mypage/myPageLnb") %><!---->
+      <%- include("admin/itemregister") %> <% } else if (pageName ===
+      "itemstatus") { %> <%- include("mypage/myPageLnb") %><!---->
+      <%- include("admin/itemstatus") %> <% } else if (pageName ===
+      "itemdetail") { %> <%- include("mypage/myPageLnb") %><!---->
+      <%- include("admin/itemdetail") %> <% } %>
     </main>
   </body>
 </html>

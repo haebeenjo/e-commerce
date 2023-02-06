@@ -6,7 +6,7 @@ class ItemService {
 
   findAllItems = async (perPage, startIndex) => {
     const items = await this.itemRepository.findAllItems(perPage, startIndex);
-		return items;
+    return items;
   };
 
   findOfficeItem = async () => {
@@ -38,6 +38,6 @@ class ItemService {
     const item = await this.itemRepository.findOneItem(itemId);
     return item;
   };
-};
+}
 
 module.exports = ItemService;

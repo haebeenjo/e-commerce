@@ -1,37 +1,25 @@
 <div class="admin_order_container">
   <h3>상품관리</h3>
+  <input
+    onclick="location.href='/item/register'"
+    type="button"
+    value="상품등록"
+    class="btn"
+  />
   <div class="table_container">
     <table>
       <thead>
         <tr class="tr_title">
           <th></th>
-          <th>상품 번호</th>
           <th>상품명</th>
           <th>카테고리</th>
           <th>판매 상태</th>
+          <th>관리</th>
         </tr>
       </thead>
-      <tbody>
-        <tr
-          ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
-        >
-          <td>1</td>
-          <td>{{ item_id }}</td>
-          <td>{{ item_name }}</td>
-          <td>{{ category }}</td>
-          <td>{{ item_status }}</td>
-        </tr>
-        <tr
-          ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
-        >
-          <td>2</td>
-          <td>{{ item_id }}</td>
-          <td>{{ item_name }}</td>
-          <td>{{ category }}</td>
-          <td>{{ item_status }}</td>
-        </tr>
-      </tbody>
+      <tbody id="itemList"></tbody>
     </table>
   </div>
 </div>
-<!-- <script src="js/admin.js"></script> -->
+
+<script src="js/admin/adminitem.js"></script>

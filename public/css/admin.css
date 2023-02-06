@@ -1,5 +1,5 @@
-@import url("_variables.css");
-@import url("reset.css");
+@import url('_variables.css');
+@import url('reset.css');
 
 .admin_order_container {
   position: relative;
@@ -13,6 +13,21 @@
   left: 100px;
   font-size: 22px;
   font-weight: 600;
+}
+
+.admin_order_container > .btn {
+  width: 20%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #0787fe;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  outline: none;
+  position: relative;
+  left: 80%;
+  top: 100px;
 }
 
 /* 아래 링크에서 가져옴 */
@@ -47,7 +62,7 @@ table th {
   border-bottom: solid 10px;
 }
 table th:after {
-  content: "";
+  content: '';
   display: none;
   width: 0;
   height: 0;
@@ -84,7 +99,7 @@ table tr:nth-child(odd) td {
 }
 .up:before,
 .down:before {
-  content: "";
+  content: '';
   position: absolute;
   width: 0;
   height: 0;
@@ -127,7 +142,7 @@ table tr:nth-child(odd) td {
 
 .checkbox-wrapper-2 .ikxBAC::before {
   bottom: -6px;
-  content: "";
+  content: '';
   left: -6px;
   position: absolute;
   right: -6px;
@@ -142,7 +157,7 @@ table tr:nth-child(odd) td {
 .checkbox-wrapper-2 .ikxBAC::after {
   background-color: #fff;
   border-radius: 50%;
-  content: "";
+  content: '';
   height: 14px;
   left: 3px;
   position: absolute;
@@ -150,7 +165,7 @@ table tr:nth-child(odd) td {
   width: 14px;
 }
 
-.checkbox-wrapper-2 input[type="checkbox"] {
+.checkbox-wrapper-2 input[type='checkbox'] {
   cursor: default;
 }
 
@@ -174,4 +189,42 @@ table tr:nth-child(odd) td {
 
 .checkbox-wrapper-2 .ikxBAC:checked:hover {
   background-color: var(--sub-color-9);
+}
+
+.btn11 {
+  display: flex;
+  width: 50%;
+  height: 50%;
+  
+}
+
+#btn-css1 {
+  /* width: 15px; */
+  height: 5%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #feee07;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  flex: 1;
+  margin: 0px 5px 0px 0px;
+
+}
+
+#btn-css2 {
+  width: 10%;
+  height: 10%;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0px;
+  background: #e21414;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 15px;
+  outline: none;
+  flex: 1;
+  margin: 0px 0px 0px 5px;
 }

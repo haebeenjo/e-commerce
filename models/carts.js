@@ -9,15 +9,18 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.Carts.belongsTo(models.Users, { foreignKey: "user_id" });
-      models.Carts.belongsTo(models.Items, { foreignKey: "item_id" });
+      models.Carts.belongsTo(models.Users, { foreignKey: 'user_id' });
+      models.Carts.belongsTo(models.Items, { foreignKey: 'item_id' });
     }
   }
-  Carts.init({
-    cartId: {primaryKey:true, type:DataTypes.BIGINT}
-  }, {
-    sequelize,
-    modelName: 'Carts',
-  });
+  Carts.init(
+    {
+      cartId: { primaryKey: true, type: DataTypes.BIGINT },
+    },
+    {
+      sequelize,
+      modelName: 'Carts',
+    }
+  );
   return Carts;
 };
