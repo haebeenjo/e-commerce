@@ -3,14 +3,29 @@
         <h2>회원가입</h2>
         
 
-        <input type="text" name="name" id="name" placeholder="성함" />
-
-        <input type="text" name="address" id="address" placeholder="주소" />
-
-        <input type="text" name="name" id="name" placeholder="성함" />
+        <input
+          type="text"
+          name="name"
+          id="name"
+          placeholder="성함"
+        />
 
         <input
-          type="password"
+          type="text"
+          name="address"
+          id="address"
+          placeholder="주소"
+        />
+
+        <input
+          type="text"
+          name="phone_number"
+          id="phone_number"
+          placeholder="전화번호"
+        />
+
+        <input
+          type="text"
           name="password"
           id="password"
           placeholder="비밀번호"
@@ -19,16 +34,11 @@
         <input
           type="button"
           name="login_button"
-          class="user_login"
-          onclick="login_user()"
-          value="로그인"
+          class="user_signup"
+          onclick="user_signup()"
+          value="회원가입 하기"
         />
-        <input
-          type="button"
-          name="signup_button"
-          onclick="register()"
-          value="회원가입하기"
-        />
+
       </div>
     </div>
 

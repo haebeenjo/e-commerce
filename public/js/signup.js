@@ -16,11 +16,12 @@ function signup_user() {
         address,
         phone_number,
         password,
+        email
       },
       success: function (response) {
-        alert(`${email}님 회원정보 수정이 완료되었습니다`);
+        alert(`${email}님 회원가입이 완료되었습니다`);
         token = response.token;
-        location.href = "http://localhost:4000";
+        location.href = "http://localhost:4000/api/login";
       },
       error: function (error) {
         alert("회원정보 수정 실패");
