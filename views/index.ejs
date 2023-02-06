@@ -1,51 +1,61 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>일아쌰이마쎄</title>
-    <base href="/">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="/css/header.css" />
-    <link rel="stylesheet" type="text/css" href="/css/mypage.css" />
-    <link rel="stylesheet" type="text/css" href="/css/itemregister.css" />
-    <link rel="stylesheet" type="text/css" href="/css/sign.css" />
-    <link rel="stylesheet" type="text/css" href="/css/admin.css" />
-  </head>
 
-  <body>
-    <main>
-      <%- include("components/header") %>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>일아쌰이마쎄</title>
+  <base href="/">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="/css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="/css/header.css" />
+  <link rel="stylesheet" type="text/css" href="/css/mypage.css" />
+  <link rel="stylesheet" type="text/css" href="/css/itemregister.css" />
+  <link rel="stylesheet" type="text/css" href="/css/sign.css" />
+  <link rel="stylesheet" type="text/css" href="/css/admin.css" />
+  <link rel="stylesheet" type="text/css" href="/css/chat.css" />
+</head>
+
+<body>
+  <main>
+    <%- include("components/header") %>
 
       <!-- login -->
-      <% if (pageName === "login") { %> <%- include("components/login") %> <% }
-      %>
+      <% if (pageName==="login" ) { %> <%- include("components/login") %>
+          <% } %>
 
-      <!-- mypage -->
-      <% if (pageName === "adminOrder") { %><!---->
-      <%- include("mypage/myPageLnb") %><!---->
-      <%- include("admin/adminOrder") %> <% } else if (pageName === "adminItem")
-      { %> <%- include("mypage/myPageLnb") %><!---->
-      <%- include("admin/adminItem") %> <% } else if (pageName ===
-      "adminMember") { %> <%- include("mypage/myPageLnb") %><!---->
-      <%- include("admin/adminMember") %> <% } else if (pageName ===
-      "adminSales") { %> <%- include("mypage/myPageLnb") %><!---->
-      <%- include("admin/adminSales") %> <% } else if (pageName ===
-      "itemregister") { %> <%- include("mypage/myPageLnb") %><!---->
-      <%- include("admin/itemregister") %> <% } else if (pageName ===
-      "itemstatus") { %> <%- include("mypage/myPageLnb") %><!---->
-      <%- include("admin/itemstatus") %> <% } else if (pageName ===
-      "itemdetail") { %> <%- include("mypage/myPageLnb") %><!---->
-      <%- include("admin/itemdetail") %> <% } %>
-    </main>
-  </body>
+            <!-- mypage -->
+            <% if (pageName==="adminOrder" ) { %><!---->
+              <%- include("mypage/myPageLnb") %><!---->
+                <%- include("admin/adminOrder") %>
+                  <% } else if (pageName==="adminItem" ) { %> <%- include("mypage/myPageLnb") %><!---->
+                      <%- include("admin/adminItem") %>
+                        <% } else if (pageName==="adminMember" ) { %> <%- include("mypage/myPageLnb") %><!---->
+                            <%- include("admin/adminMember") %>
+                              <% } else if (pageName==="adminSales" ) { %> <%- include("mypage/myPageLnb") %><!---->
+                                  <%- include("admin/adminSales") %>
+                                    <% } else if (pageName==="itemregister" ) { %> <%- include("mypage/myPageLnb")
+                                        %><!---->
+                                        <%- include("admin/itemregister") %>
+                                          <% } else if (pageName==="itemstatus" ) { %> <%- include("mypage/myPageLnb")
+                                              %><!---->
+                                              <%- include("admin/itemstatus") %>
+                                                <% } else if (pageName==="itemdetail" ) { %> <%-
+                                                    include("mypage/myPageLnb") %><!---->
+                                                    <%- include("admin/itemdetail") %>
+                                                      <% } %>
+
+                                                        <!-- chat -->
+                                                        <% if (pageName==="chat" ) { %> <%- include("components/chat")
+                                                            %>
+                                                            <% } %>
+  </main>
+</body>
+
 </html>
