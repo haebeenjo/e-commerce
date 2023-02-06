@@ -6,7 +6,7 @@
     .then((data) => {
         const producsHtml = data.data.map(item => `
       <a class="board" href="/itemDetail/${item.itemId}">
-        ${item.img ? `<div class="content__thumbnail"><img src="${item.img}" /></div>` : ""}
+        ${item.img ? `<div class="content__thumbnail"><img src="./images/${item.img}" /></div>` : ""}
         <!-- 여기서부터 content 제품명, 가격 -->
         <div class="content__text">
           <div class="content__title">상품명 : ${item.item_name}</div>

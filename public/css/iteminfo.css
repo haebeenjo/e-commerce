@@ -5,25 +5,23 @@
 
     width: 500px;
     height: 400px;
-
+    
     margin: 0 auto;
     color: white;
 
     text-align: center;
 
-    background-image: url();
     background-size: cover;
     background-position: center;
     background-color: aquamarine;
 
     border-radius: 10px;
-
-    padding-top: 40px;
-    
 }
 
 .info {
     margin-top: 50px;
+    background-size: cover;
+    background-position: center;
 }
 
 .detail_wrap {

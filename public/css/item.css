@@ -65,9 +65,8 @@
 }
 
 .content__thumbnail {
-  padding-bottom: 70%;
   background-size: center;
-  background-position: center 45%;
+  background-position: center;
 }
 
 .content__text {
@@ -87,4 +86,9 @@
 .content__price {
   padding: 1rem;
   text-align: center;
+}
+
+.pagingg {
+	width: 200px;
+	margin: auto;
 }

@@ -12,7 +12,7 @@
     .then((response) => response.json())
     .then(({data}) => {
       const row = `
-          ${data.img ? `<div class="detail_img"><img src="${data.img}" /></div>` : ""}
+          ${data.img ? `<div class="detail_img"><img src="./images/${data.img}" /></div>` : ""}
 					<div class="item_id" style="height: 50px">제품번호 : ${data.itemId}</div>
         	<div style="height: 50px">상품명 : ${data.item_name}</div>
 					<div class="price" style="height: 50px">가격 : ${data.price}</div>

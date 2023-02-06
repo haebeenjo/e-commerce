@@ -16,7 +16,6 @@
     />
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/adminOrder.css" />
     <link rel="stylesheet" href="/css/userOrderList.css" />
     <link rel="stylesheet" href="/css/admin.css" />
     <link rel="stylesheet" href="/css/sign.css" />
@@ -31,8 +30,8 @@
 
   <body>
     <main>
-      <%- include("components/header") %> <% if (pageName === '') { %> <%-
-      include("main.ejs") %> <% } %>
+      <%- include("components/header") %> 
+      <% if (pageName === '') { %> <%-include("item/main.ejs") %> <% } %>
 
       <!-- itme -->
       <% if (pageName === 'itemDetail') { %> <%- include("item/iteminfo.ejs") %>

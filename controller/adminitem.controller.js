@@ -14,9 +14,9 @@ class adminItemsController {
       // }
 
       const { item_name, price, detail, office, design, developer, music, sports } = req.body;
-
+      console.log(req.file)
       const imgPath = req.file.path;
-      const img = imgPath.split('\\')[1];
+      const img = imgPath.split('\\')[2];
 
 
 
