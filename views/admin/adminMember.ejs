@@ -1,3 +1,4 @@
+<%- include("../mypage/myPageLnb") %>
 <div class="admin_order_container">
   <h3>회원관리</h3>
   <div class="table_container">
@@ -12,38 +13,9 @@
           <th>블랙리스트</th>
         </tr>
       </thead>
-      <tbody>
-        <tr
-          ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
-        >
-          <td>1</td>
-          <td>{{ email }}</td>
-          <td>{{ name }}</td>
-          <td>{{ phone_number }}</td>
-          <td>{{ address }}</td>
-          <td>
-            <div class="checkbox-wrapper-2">
-              <input type="checkbox" class="sc-gJwTLC ikxBAC" id="blacklist" />
-              <label for="blacklist"></label>
-            </div>
-          </td>
-        </tr>
-        <tr
-          ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
-        >
-          <td>2</td>
-          <td>{{ email }}</td>
-          <td>{{ name }}</td>
-          <td>{{ phone_number }}</td>
-          <td>{{ address }}</td>
-          <td>
-            <div class="checkbox-wrapper-2">
-              <input type="checkbox" class="sc-gJwTLC ikxBAC" id="blacklist" />
-              <label for="blacklist"></label>
-            </div>
-          </td>
-        </tr>
-      </tbody>
+      <tbody id="memberList"></tbody>
     </table>
   </div>
 </div>
+
+<script src="js/admin/adminMember.js"></script>

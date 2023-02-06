@@ -1,5 +1,5 @@
-@import url("_variables.css");
-@import url("reset.css");
+@import url('_variables.css');
+@import url('reset.css');
 
 .lnb_wrapper {
   position: relative;
@@ -34,7 +34,7 @@
   cursor: pointer;
 }
 
-.lnb > a > li.select {
+.lnb > a > li.active {
   font-weight: 600;
   color: var(--sub-color-1);
 }

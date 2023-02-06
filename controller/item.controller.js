@@ -1,106 +1,89 @@
-const ItemsService = require('../services/item.service');
+const ItemService = require('../services/item.service');
 
-class ItemsController {
-  itemsService = new ItemsService();
+class ItemController {
+  itemService = new ItemService();
 
-  createItem = async (req, res, next) => {
+	findAllItems = async (req, res, next) => {
+		const { page } = req.query
+    const perPage = 10
+    const startIndex = ((page || 1) -1 ) * perPage
     try {
-      const { item_name, price, detail, category_id } = req.body;
-      const img = req.files.path;
-      const adminId = res.locals.admin_id;
-
-      // if (!adminId) {
-      //   return res
-      //     .status(401)
-      //     .json({ message: '권한이 없습니다.' });
-      // }
-
-      if (!item_name | !price | !detail | !img) {
-        return res.status(412).json({ message: '빈 항목이 있습니다.' });
-      }
-
-      const createItemData = await this.itemsService.createItems(
-        item_name,
-        price,
-        detail,
-        img,
-        category_id
+      const { lastPage, rows } = await this.itemService.findAllItems(
+        perPage,
+        startIndex
       );
-
-      res.status(201).json({ data: createItemData });
+      res
+        .status(200)
+        .json({
+          pageInfo: { perPage, lastPage, currentPage: page || 1 },
+          data: rows,
+        });
     } catch (err) {
-      console.log('err:', err);
-      res.status(400).json({ message: '상품 등록에 실패하였습니다.' });
+      console.log(err);
+      res.status(400).json({ message: '조회 실패' });
     }
   };
 
-  putItem = async (req, res, next) => {
+  findOfficeItem = async (req, res, next) => {
     try {
-      const { itemId } = req.params;
-      const { item_name, price, detail, img, item_status, category_id } =
-        req.body;
-      const adminId = res.locals.admin_id;
-
-      // if (!adminId) {
-      //   return res
-      //     .status(401)
-      //     .json({ message: '로그인 후 이용이 가능합니다.' });
-      // }
-
-      if (!item_name | !price | !detail | !img | !item_status) {
-        return res.status(412).json({ message: '빈 항목이 있습니다.' });
-      }
-
-      const putItemData = await this.itemsService.putItems(
-        itemId,
-        item_name,
-        price,
-        detail,
-        img,
-        item_status,
-        category_id
-      );
-
-      if (putItemData.message) {
-        return res.status(400).json({ message: putItemData.message });
-      }
-
-      res.status(201).json({ message: '상품 수정에 성공하였습니다.' });
+      const categoryItem = await this.itemService.findOfficeItem();
+      res.status(200).json({ data: categoryItem });
     } catch (err) {
-      console.log('err:', err);
-      res.status(400).json({ message: '상품 수정에 실패하였습니다.' });
-    }
-  };
-  deleteItem = async (req, res, next) => {
-    try {
-      const { itemId } = req.params;
-      const adminId = res.locals.admin_id;
-
-      // if (!adminId) {
-      //   return res
-      //     .status(401)
-      //     .json({ message: '로그인 후 이용이 가능합니다.' });
-      // }
-
-      const deleteItemData = await this.itemsService.deleteItems(itemId);
-
-      res.status(200).json({ message: '상품 삭제에 성공하였습니다.' });
-    } catch (err) {
-      console.log('cntr: ', err);
-      res.status(400).json({ message: '상품 삭제에 실패하였습니다.' });
+      console.log(err);
+      res.status(400).json({ message: '카테고리 조회 실패' });
     }
   };
 
-  getItemlist = async (req, res, next) => {
+  findDesignItem = async (req, res, next) => {
     try {
-      const itemlist = await this.itemsService.getItems();
-      res.status(200).json({ data: itemlist });
+      const categoryItem = await this.itemService.findDesignItem();
+      res.status(200).json({ data: categoryItem });
     } catch (err) {
-      res.status(500).json({
-        errorMessage: err.message,
-      });
+      console.log(err);
+      res.status(400).json({ message: '카테고리 조회 실패' });
+    }
+  };
+
+  findDeveloperItem = async (req, res, next) => {
+    try {
+      const categoryItem = await this.itemService.findDeveloperItem();
+      res.status(200).json({ data: categoryItem });
+    } catch (err) {
+      console.log(err);
+      res.status(400).json({ message: '카테고리 조회 실패' });
+    }
+  };
+
+  findMusicItem = async (req, res, next) => {
+    try {
+      const categoryItem = await this.itemService.findMusicItem();
+      res.status(200).json({ data: categoryItem });
+    } catch (err) {
+      console.log(err);
+      res.status(400).json({ message: '카테고리 조회 실패' });
+    }
+  };
+
+  findSportsItem = async (req, res, next) => {
+    try {
+      const categoryItem = await this.itemService.findSportsItem();
+      res.status(200).json({ data: categoryItem });
+    } catch (err) {
+      console.log(err);
+      res.status(400).json({ message: '카테고리 조회 실패' });
+    }
+  };
+
+  findOneItem = async (req, res, next) => {
+    const { id } = req.params;
+    try {
+      const item = await this.itemService.findOneItem(id);
+      res.status(200).json({ data: item });
+    } catch (err) {
+      console.log(err);
+      res.status(400).json({ message: '상세 조회 실패' });
     }
   };
 }
 
-module.exports = ItemsController;
+module.exports = ItemController;
