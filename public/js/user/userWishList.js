@@ -1,7 +1,16 @@
 $(document).ready(function () {
   cartList();
-  priceOrder();
 });
+
+const modal = document.getElementById('modal');
+
+function openModal() {
+  modal.style.display = 'flex';
+}
+
+function closeModal() {
+  modal.style.display = 'none';
+}
 
 function cartList() {
   axios({
@@ -17,11 +26,9 @@ function cartList() {
       let price = data[i].price;
       let cartId = data[i].cartId;
 
-      let empty_html = `<tr
-      ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
-    >
-      <td><input name="checkbox" type="checkbox" checked="checked" value="${price}"></td>
-      <td>${itemId}</td>
+      let empty_html = `<tr>
+      <td><input class="checkbox" name="checkbox" type="checkbox" checked="checked" value="${price}"></td>
+      <td class="order_itemId" value="${itemId}">${itemId}</td>
       <td>
         <img class="order_item_image" src="${img}" />
       </td>
@@ -32,7 +39,31 @@ function cartList() {
 
       $('#cart_list').append(empty_html);
     }
+    totalPrice();
   });
+}
+
+function totalPrice() {
+  const price = [];
+  const total = document.getElementsByClassName('checkbox');
+  for (let i = 0; i < total.length; i++) {
+    if (total[i].checked === true) {
+      price.push(parseInt(total[i].value));
+    }
+  }
+
+  let totalPrice = price.reduce((arr, cur) => {
+    return (arr += cur);
+  }, 0);
+
+  let price_html = `<tr
+  ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
+>
+  <td class="totalPrice">${totalPrice}</td>
+  <td><button type="button" onclick="openModal()" class="btn-modal">주문 하기</button></td>
+</tr>`;
+
+  $('#price_order').append(price_html);
 }
 
 function deleteCart(cartId) {
@@ -45,4 +76,18 @@ function deleteCart(cartId) {
   }).then(() => {
     window.location.reload();
   });
+}
+
+function itemAllChk() {
+  if (document.getElementById('itemAll').checked) {
+    let obj = document.getElementsByName('checkbox');
+    for (i = 0; i < obj.length; i++) {
+      obj[i].checked = true;
+    }
+  } else {
+    let obj = document.getElementsByName('checkbox');
+    for (i = 0; i < obj.length; i++) {
+      obj[i].checked = false;
+    }
+  }
 }
