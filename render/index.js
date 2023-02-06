@@ -17,9 +17,13 @@ router.get('/usercartlist', (req, res) => {
 router.get('/mypageuser', (req, res) => {
   res.render('index.ejs', { pageName: 'mypageuser' });
 });
-// 로그인, 회원가입 관련 페이지
-router.get('/login', (req, res) => {
+// 로그인, 회원가입 관련 페이지 router.get("login", (req, res) => {
+router.get('/api/login', (req, res) => {
   res.render('index.ejs', { pageName: 'login' });
+});
+
+router.get('/api/signup', (req, res) => {
+  res.render('index.ejs', { pageName: 'signup' });
 });
 
 // Admin 페이지
