@@ -23,6 +23,7 @@ module.exports = (req, res, next) => {
 
     Users.findByPk(id).then((user) => {
       res.locals.user = user;
+      console.log("777", req.body)
       next();
     });
   } catch (err) {

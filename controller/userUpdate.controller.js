@@ -9,7 +9,18 @@ class userUpdateController {
   userUpdateService = new userUpdateService();
 
   putUserUpdate = async (req, res, next) => {
-    const userId = req.params.userId;
+    const token = req.cookies.token;
+    if (!token) {
+      res
+        .status(401)
+        .send({
+          errorMessage: '로그인 후 이용해 주세요.',
+        })
+        .redirect('/api/login');
+      return;
+    }
+
+    const userId = res.locals.user.userId;
     let body = req.body;
 
     // params에 있는 userId를 db에서 있는지 검색
