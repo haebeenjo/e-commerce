@@ -10,10 +10,14 @@ const salesAmountRouter = require("./salesAmount.router");
 const signupRouter = require("./signup.router");
 const userUpdateRouter = require("./userUpdate.router");
 const loginRouter = require("./login.router");
+const logoutRouter = require("./logout.router");
+
 
 router.use("/login", loginRouter);
 router.use("/signup", signupRouter);
 router.use("/user", userUpdateRouter);
+router.use("/logout", logoutRouter);
+
 
 router.use("/member", memberRouter);
 router.use("/blackList", memberRouter);
