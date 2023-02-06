@@ -1,61 +1,7 @@
-<!-- body -->
-<body>
-  <form id="join">
-    <div class="row justify-content-center mt-5">
-      <div class="col-4"></div>
-      <div class="col-4 justify-content-center" id="title">
-        <h6 class="fw-bold fs-2 mb-5 text-center">회원정보 수정</h6>
-      </div>
-      <div class="col-4"></div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-4"></div>
-      <div class="col-4 justify-content-center" id="contents">
-        <h6 class="fw-bold">Name</h6>
-        <input
-          class="input-box mb-2"
-          type="text"
-          name="name"
-          value="<%=data.name%>"
-          required
-        /><br />
-        <h6 class="fw-bold">address</h6>
-        <input
-          class="input-box mb-2"
-          type="text"
-          name="address"
-          value="<%=data.address%>"
-        /><br />
-        <h6 class="fw-bold">Phone Number</h6>
-        <input
-          class="input-box mb-2"
-          type="text"
-          name="phoneNumber"
-          value="<%=data.phone_number%>"
-        /><br />
-        <h6 class="fw-bold">Password</h6>
-        <input
-          class="input-box mb-2"
-          type="text"
-          name="password"
-          value="<%=data.password%>"
-        /><br />
-      </div>
-      <div class="col-4"></div>
-    </div>
-    <div class="row justify-content-center mt-3">
-      <div class="col-4"></div>
-      <div class="col-4" id="button-group">
-        <button class="join-button" type="button" onclick="signup_user();">
-          회원정보수정
-        </button>
-      </div>
-      <div class="col-4"></div>
-    </div>
-
     <div class="signup_wrap">
       <div class="signupForm_wrap">
-        <h2>회원정보 수정</h2>
+        <h2>회원가입</h2>
+        
 
         <input type="text" name="name" id="name" placeholder="성함" />
 
