@@ -34,7 +34,7 @@
   cursor: pointer;
 }
 
-.lnb > a > li.select {
+.lnb > a > li.active {
   font-weight: 600;
   color: var(--sub-color-1);
 }

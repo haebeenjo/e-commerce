@@ -23,21 +23,27 @@ module.exports = {
       },
       item_status: {
         type: Sequelize.STRING,
+        defaultValue: '판매 중',
       },
       office: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       design: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       developer: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       music: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       sports: {
         type: Sequelize.BOOLEAN,
+        defaultValue: false,
       },
       createdAt: {
         allowNull: false,

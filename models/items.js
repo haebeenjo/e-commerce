@@ -15,12 +15,17 @@ module.exports = (sequelize, DataTypes) => {
   }
   Items.init(
     {
-      itemId: { primaryKey: true, type: DataTypes.BIGINT, autoIncrement: true },
+      itemId: { primaryKey: true, type: DataTypes.BIGINT },
       item_name: DataTypes.STRING,
       price: DataTypes.BIGINT,
       detail: DataTypes.STRING,
       img: DataTypes.STRING,
       item_status: { type: DataTypes.STRING, defaultValue: '판매 중' },
+      office: { type: DataTypes.BOOLEAN, defaultValue: false },
+      design: { type: DataTypes.BOOLEAN, defaultValue: false },
+      developer: { type: DataTypes.BOOLEAN, defaultValue: false },
+      music: { type: DataTypes.BOOLEAN, defaultValue: false },
+      sports: { type: DataTypes.BOOLEAN, defaultValue: false },
     },
     {
       sequelize,

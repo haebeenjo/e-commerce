@@ -1,5 +1,5 @@
 const UserOrderRepository = require('../repositories/userOrder.repository');
-const UserRepository = require('../repositories/userRepository');
+const UserRepository = require('../repositories/user.repository');
 const { Users, Items, Orders } = require('../models');
 
 class UserOrderService {

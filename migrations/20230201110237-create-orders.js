@@ -11,6 +11,7 @@ module.exports = {
       },
       status: {
         type: Sequelize.STRING,
+        defaultValue: "결제 완료",
       },
       name: {
         type: Sequelize.STRING,

@@ -51,4 +51,12 @@ router.get('/item/status', (req, res) => {
   res.render('index.ejs', { pageName: 'itemstatus' });
 });
 
+router.get('/item/detail', (req, res) => {
+  res.render('index.ejs', { pageName: 'itemdetail' });
+});
+
+router.get('/chat', (req, res) => {
+  res.render('index.ejs', { pageName: 'chat' });
+});
+
 module.exports = router;
