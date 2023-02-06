@@ -12,28 +12,11 @@ const signupRouter = require('./signup.router');
 const userUpdateRouter = require('./userUpdate.router');
 const loginRouter = require('./login.router');
 const logoutRouter = require('./logout.router');
+const adminLoginRouter = require('./adminLogin.router');
 
-<<<<<<< HEAD
-const memberRouter = require("./member.router");
-const adminOrderRouter = require("./adminOrder.router");
-const salesAmountRouter = require("./salesAmount.router");
-const signupRouter = require("./signup.router");
-const userUpdateRouter = require("./userUpdate.router");
-const loginRouter = require("./login.router");
-const logoutRouter = require("./logout.router");
-const adminLoginRouter = require("./adminLogin.router");
-
-
-router.use("/login", loginRouter);
-router.use("/signup", signupRouter);
-router.use("/user", userUpdateRouter);
-router.use("/logout", logoutRouter);
-router.use("/adminLogin",adminLoginRouter);
-=======
 router.use('/login', loginRouter);
 router.use('/signup', signupRouter);
 router.use('/user', userUpdateRouter);
->>>>>>> 0f52739ee9212465bccb73705808ed5fc9d7426e
 
 router.use('/member', memberRouter);
 router.use('/blackList', memberRouter);
@@ -43,6 +26,7 @@ router.use('/order', userOrderRouter);
 router.use('/cart', userCartRouter);
 router.use('/logout', logoutRouter);
 router.use('/item', itemRouter);
+router.use('/adminLogin', adminLoginRouter);
 
 router.use('/', adminitemRouter);
 router.use('/item', itemRouter);
