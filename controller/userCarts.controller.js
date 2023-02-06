@@ -5,6 +5,7 @@ class UserCartController {
 
   createCart = async (req, res) => {
     const userId = res.locals.user.userId;
+    console.log('userId:', userId);
     const { itemId } = req.body;
     const createCartData = await this.userCartService.createCart(
       userId,

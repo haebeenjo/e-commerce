@@ -25,7 +25,7 @@ function orderList() {
         <img class="order_item_image" src="/images/${img}" />
       </td>
       <td>${item_name}</td>
-      <td>${price}</td>
+      <td>${parseInt(price).toLocaleString()}</td>
       <td>${status}</td>
       <td>${createdAt}</td>
     </tr>`;

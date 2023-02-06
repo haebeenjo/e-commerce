@@ -18,11 +18,11 @@ router.get('/mypageuser', (req, res) => {
   res.render('index.ejs', { pageName: 'mypageuser' });
 });
 // 로그인, 회원가입 관련 페이지 router.get("login", (req, res) => {
-router.get('/api/login', (req, res) => {
+router.get('/login', (req, res) => {
   res.render('index.ejs', { pageName: 'login' });
 });
 
-router.get('/api/signup', (req, res) => {
+router.get('/signup', (req, res) => {
   res.render('index.ejs', { pageName: 'signup' });
 });
 

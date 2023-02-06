@@ -19,7 +19,7 @@ function findToken() {
     empty_html = `<a href="login">
     <li class="header_login">로그인</li>
   </a>
-  <a href="register">
+  <a href="signup">
     <li class="header_register">회원가입</li>
   </a>
   `;
