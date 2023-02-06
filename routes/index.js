@@ -11,12 +11,14 @@ const signupRouter = require("./signup.router");
 const userUpdateRouter = require("./userUpdate.router");
 const loginRouter = require("./login.router");
 const logoutRouter = require("./logout.router");
+const adminLoginRouter = require("./adminLogin.router");
 
 
 router.use("/login", loginRouter);
 router.use("/signup", signupRouter);
 router.use("/user", userUpdateRouter);
 router.use("/logout", logoutRouter);
+router.use("/adminLogin",adminLoginRouter);
 
 
 router.use("/member", memberRouter);
