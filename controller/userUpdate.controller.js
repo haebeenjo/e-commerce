@@ -115,3 +115,13 @@ class userUpdateController {
 }
 
 module.exports = userUpdateController;
+
+// 업데이트 양식
+// {
+//   "name": "홍길동2", // 이름
+//   "address": "경기도 수원시", // 주소
+//   "phone_number": "010-9999-9998", // 번호
+//   "currentPassword": "1234", // 현재 비번, 비번 변경x시 여기부터 안씀
+//   "newPassword": "12345", // 새 비번
+//   "confirmedPassword": "12345" // 새 비번 확인
+// }
