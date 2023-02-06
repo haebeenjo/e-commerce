@@ -1,6 +1,6 @@
 // repositories/users.repository.js
 
-const { Users } = require("../models");
+const { Users } = require('../models');
 
 class UserRepository {
   createUser = async (
@@ -39,7 +39,13 @@ class UserRepository {
     });
     return users;
   };
-  // findOneAndUpdate = async 
+  userPointMinus = async (order_price, userId) => {
+    const user = await Users.findByPk(userId);
+    const users = await Users.update(
+      { point: user.point - order_price },
+      { where: { userId: userId } }
+    );
+  };
 }
 
 module.exports = UserRepository;

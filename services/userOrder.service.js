@@ -1,8 +1,10 @@
 const UserOrderRepository = require('../repositories/userOrder.repository');
+const UserRepository = require('../repositories/userRepository');
 const { Users, Items, Orders } = require('../models');
 
 class UserOrderService {
   userOrderRepository = new UserOrderRepository(Orders, Items, Users);
+  userPointRepository = new UserRepository();
 
   createOrder = async (
     name,
@@ -19,6 +21,10 @@ class UserOrderService {
       itemId,
       userId,
       order_price
+    );
+    const userPointMinus = await this.userPointRepository.userPointMinus(
+      order_price,
+      userId
     );
     return createOrderData;
   };

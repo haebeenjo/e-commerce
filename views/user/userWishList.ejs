@@ -1,18 +1,9 @@
 <div class="admin_order_container">
   <h3>위시 리스트</h3>
   <div class="table_container">
-    <input
-      type="checkbox"
-      id="itemAll"
-      name="itemAll"
-      value="y"
-      onclick="itemAllChk()"
-    />
-    <label for="itemAll">전체선택/전체해제</label>
     <table>
       <thead>
         <tr class="tr_title">
-          <th></th>
           <th>상품 번호</th>
           <th>상품 이미지</th>
           <th>상품 명</th>
@@ -54,7 +45,7 @@
         placeholder="주소를 입력해주세요."
       />
     </div>
-    <div><button onclick="createOrder()">주문 하기</button></div>
+    <div><button onclick="cartOrder()">주문 하기</button></div>
   </div>
 </div>
 <script src="js/user/userWishList.js"></script>

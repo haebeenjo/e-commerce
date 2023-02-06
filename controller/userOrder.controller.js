@@ -3,7 +3,6 @@ const UserOrderService = require('../services/userOrder.service');
 class UserOrderController {
   userOrderService = new UserOrderService();
 
-  // 형섭님한테 itemId로 item 데이터 받아오는 거 부탁하기
   createOrder = async (req, res) => {
     const userId = res.locals.user.userId;
     const { name, address, phone_number, itemId, order_price } = req.body;
