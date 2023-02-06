@@ -39,6 +39,7 @@ class UserRepository {
     });
     return users;
   };
+
   userPointMinus = async (order_price, userId) => {
     const users = await Users.update(
       { point: Sequelize.literal(`point - ${order_price}`) },
