@@ -1,82 +1,18 @@
-<div class="board__parent" id="feed">
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-</div>
+<div class="board__parent" id="feed"></div>
+
+<script>
+  fetch(`http://localhost:4000/api/item/category/office`)
+    .then((response) => response.json())
+    .then((data) => {
+        const producsHtml = data.data.map(item => `
+      <a class="board" href="/itemDetail/${item.itemId}">
+        ${item.img ? `<div class="content__thumbnail"><img src="${item.img}" /></div>` : ""}
+        <!-- 여기서부터 content 제품명, 가격 -->
+        <div class="content__text">
+          <div class="content__title">상품명 : ${item.item_name}</div>
+          <div class="content__price">가격 : ${item.price}</div>
+        </div>
+      </a>`)
+    document.getElementById('feed').innerHTML = producsHtml.join("")
+  });
+</script>

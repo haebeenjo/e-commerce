@@ -37,7 +37,10 @@
 	color: black;
 	font-size: 36px;
 	text-align: center;
-	background-color: greenyellow;
+	background-image: url(../images/맥북\ 에어.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 190px;
 }
 
 .main-item2{
@@ -47,7 +50,10 @@
 	color: black;
 	font-size: 36px;
 	text-align: center;
-	background-color: greenyellow;
+	background-image: url(../images/모니터\ 받침대.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 190px;
 }
 
 .main-item3{
@@ -57,7 +63,10 @@
 	color: black;
 	font-size: 36px;
 	text-align: center;
-	background-color: greenyellow;
+	background-image: url(../images/바디\ 체중계.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 190px;
 }
 
 .main-item4{
@@ -67,7 +76,10 @@
 	color: black;
 	font-size: 36px;
 	text-align: center;
-	background-color: greenyellow;
+	background-image: url(../images/바이올린\ 교본.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 190px;
 }
 
 .main-item5{
@@ -77,5 +89,8 @@
 	color: black;
 	font-size: 36px;
 	text-align: center;
-	background-color: greenyellow;
+	background-image: url(../images/후드티.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 190px;
 }
