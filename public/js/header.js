@@ -7,13 +7,13 @@ function findToken() {
   let empty_html = ``;
   if (token) {
     empty_html = `<a href="">
-    <li class="header_register">로그아웃</li>
+    <li class="header_logout">로그아웃</li>
   </a>
-  <a href="">
-    <li class="header_login">장바구니</li>
+  <a href="usercartlist">
+    <li class="header_cart">장바구니</li>
   </a>
-  <a href="">
-    <li class="header_register">마이페이지</li>
+  <a href="userorderlist">
+    <li class="header_mypage">마이페이지</li>
   </a>`;
   } else if (!token) {
     empty_html = `<a href="login">
