@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>일아쌰이마쎄</title>
-    <base href="/" />
+    <base href="/">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -32,25 +32,19 @@
 
       <!-- mypage -->
       <% if (pageName === "adminOrder") { %><!---->
-      <!---->
+      <%- include("mypage/myPageLnb") %><!---->
       <%- include("admin/adminOrder") %> <% } else if (pageName === "adminItem")
-      { %>
-      <!---->
+      { %> <%- include("mypage/myPageLnb") %><!---->
       <%- include("admin/adminItem") %> <% } else if (pageName ===
-      "adminMember") { %>
-      <!---->
+      "adminMember") { %> <%- include("mypage/myPageLnb") %><!---->
       <%- include("admin/adminMember") %> <% } else if (pageName ===
-      "adminSales") { %>
-      <!---->
+      "adminSales") { %> <%- include("mypage/myPageLnb") %><!---->
       <%- include("admin/adminSales") %> <% } else if (pageName ===
-      "itemregister") { %>
-      <!---->
+      "itemregister") { %> <%- include("mypage/myPageLnb") %><!---->
       <%- include("admin/itemregister") %> <% } else if (pageName ===
-      "itemstatus") { %>
-      <!---->
+      "itemstatus") { %> <%- include("mypage/myPageLnb") %><!---->
       <%- include("admin/itemstatus") %> <% } else if (pageName ===
-      "itemdetail") { %>
-      <!---->
+      "itemdetail") { %> <%- include("mypage/myPageLnb") %><!---->
       <%- include("admin/itemdetail") %> <% } %>
     </main>
   </body>

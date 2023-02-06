@@ -5,39 +5,40 @@ $(document).ready(function () {
 // axios get
 function getItems() {
   axios({
-    method: 'get',
-    url: 'api/adminItem',
+    method: "get",
+    url: "api/adminItem",
   })
     .then((response) => {
       const { data } = response.data;
-      console.log(data);
+      let count = 0;
 
       for (let i in data) {
+        count++;
         let itemId = data[i].itemId;
         let item_name = data[i].item_name;
         let item_status = data[i].item_status;
 
-        let category = '';
+        let category = "";
         if (data[i].office) {
-          category += "office "
+          category += "office ";
         }
         if (data[i].design) {
-          category += "design "
+          category += "design ";
         }
         if (data[i].developer) {
-          category += "developer "
+          category += "developer ";
         }
         if (data[i].music) {
-          category += "music "
+          category += "music ";
         }
         if (data[i].sports) {
-          category += "sports "
+          category += "sports ";
         }
 
         let temp = `<tr
         ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
       >
-        <td>${itemId}</td>
+        <td class="table_count">${count}</td>
         <td>${item_name}</td>
         <td>${category}</td>
         <td>${item_status}</td>
@@ -59,7 +60,7 @@ function getItems() {
         </td>
       </tr>`;
 
-        $('#itemList').append(temp);
+        $("#itemList").append(temp);
       }
     })
     .catch((err) => {
@@ -72,10 +73,10 @@ function deleteItem(itemId) {
   axios
     .delete(`/api/item/${itemId}`)
     .then((res) => {
-      const returnValue = confirm('삭제하시겠습니까?');
+      const returnValue = confirm("삭제하시겠습니까?");
       alert(returnValue);
       console.log(res);
-      window.location.href = '/adminItem';
+      window.location.href = "/adminItem";
     })
     .catch((err) => {
       console.log(err);
