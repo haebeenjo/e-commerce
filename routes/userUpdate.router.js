@@ -2,12 +2,11 @@
 const express = require("express");
 const router = express.Router();
 
-
-
-const authMiddleware = require('../middlewares/auth-middleware');
+const {userMiddleware} = require('../middlewares/auth-middleware');
 const UserUpdateController = require('../controller/userUpdate.controller');
+
 const userUpdateController = new UserUpdateController();
 
-router.put('/', authMiddleware, userUpdateController.putUserUpdate);
+router.put('/', userMiddleware, userUpdateController.putUserUpdate);
 
 module.exports = router;
