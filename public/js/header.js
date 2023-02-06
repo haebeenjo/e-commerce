@@ -6,7 +6,7 @@ function findToken() {
   const token = document.cookie;
   let empty_html = ``;
   if (token) {
-    empty_html = `<a href="">
+    empty_html = `<a href="logout">
     <li class="header_logout">로그아웃</li>
   </a>
   <a href="usercartlist">

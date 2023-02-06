@@ -22,7 +22,7 @@ function orderList() {
     >
       <td>${orderId}</td>
       <td>
-        <img class="order_item_image" src="${img}" />
+        <img class="order_item_image" src="/images/${img}" />
       </td>
       <td>${item_name}</td>
       <td>${price}</td>

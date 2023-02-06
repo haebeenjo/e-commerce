@@ -29,7 +29,7 @@ function cartList() {
       let empty_html = `<tr>
       <td class="item_id" value="${itemId}">${itemId}</td>
       <td>
-        <img class="order_item_image" src="${img}" />
+        <img class="order_item_image" src="/images/${img}" />
       </td>
       <td>${item_name}</td>
       <td class="price">${parseInt(price).toLocaleString()}</td>
