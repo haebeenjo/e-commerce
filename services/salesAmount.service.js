@@ -1,8 +1,8 @@
 const SalesAmountRepository = require("../repositories/salesAmount.repository");
-const { Orders, Items } = require("../models");
+const { Orders, Items, Users } = require("../models");
 
 class SalesAmountService {
-  salesAmountRepository = new SalesAmountRepository(Orders, Items);
+  salesAmountRepository = new SalesAmountRepository(Orders, Items, Users);
 
   salesAmount = async () => {
     try {
@@ -10,11 +10,11 @@ class SalesAmountService {
       const totalSales = salesAmount.map((data) => {
         return {
           orderId: data.orderId,
+          email: data.User.email,
           order_price: data.order_price,
-          user_id: data.user_id,
+          item_name: data.Item.item_name,
           createdAt: data.createdAt,
           updatedAt: data.updatedAt,
-          item_name: data.Item.item_name,
         };
       });
       return totalSales;

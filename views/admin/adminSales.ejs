@@ -1,3 +1,4 @@
+<%- include("../mypage/myPageLnb") %>
 <div class="admin_order_container">
   <h3>매출관리</h3>
   <div class="table_container">
@@ -13,31 +14,9 @@
           <th>구매확정일</th>
         </tr>
       </thead>
-      <tbody>
-        <tr
-          ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
-        >
-          <td>1</td>
-          <td>{{ orderId }}</td>
-          <td>{{ order_price }}</td>
-          <td>{{ user_id }}</td>
-          <td>{{ item_name }}</td>
-          <td>{{ createdAt }}</td>
-          <td>{{ updatedAt }}</td>
-        </tr>
-        <tr
-          ng-repeat="person in main.persons | filter: searchPerson | orderBy: main.orderType : main.orderReverse"
-        >
-          <td>2</td>
-          <td>{{ orderId }}</td>
-          <td>{{ order_price }}</td>
-          <td>{{ user_id }}</td>
-          <td>{{ item_name }}</td>
-          <td>{{ createdAt }}</td>
-          <td>{{ updatedAt }}</td>
-        </tr>
-      </tbody>
+      <tbody id="salesList"></tbody>
     </table>
   </div>
 </div>
-<!-- <script src="js/admin.js"></script> -->
+
+<script src="js/admin/salesAmount.js"></script>

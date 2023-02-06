@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap");
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
 body {
-  /* background: #fec107; */
   padding: 0 10px;
-}
+} */
 .wrapper {
   max-width: 500px;
   width: 100%;
@@ -69,7 +68,7 @@ body {
 }
 
 .wrapper .form .inputfield .custom_select:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 12px;
   right: 10px;
@@ -109,7 +108,7 @@ body {
   display: block;
   cursor: pointer;
 }
-.wrapper .form .inputfield .check input[type='checkbox'] {
+.wrapper .form .inputfield .check .inputfield > input[type="checkbox"] {
   position: absolute;
   top: 0;
   left: 0;
@@ -123,7 +122,7 @@ body {
   position: relative;
 }
 .wrapper .form .inputfield .check .checkmark:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 1px;
   left: 2px;
@@ -134,7 +133,13 @@ body {
   transform: rotate(-45deg);
   display: none;
 }
-.wrapper .form .inputfield .check input[type='checkbox']:checked ~ .checkmark {
+.wrapper
+  .form
+  .inputfield
+  .check
+  .inputfield
+  > input[type="checkbox"]:checked
+  ~ .checkmark {
   background: #fec107;
 }
 
@@ -142,7 +147,8 @@ body {
   .form
   .inputfield
   .check
-  input[type='checkbox']:checked
+  .inputfield
+  > input[type="checkbox"]:checked
   ~ .checkmark:before {
   display: block;
 }
@@ -181,15 +187,15 @@ body {
   }
 }
 
-input[type='checkbox'] {
+.inputfield > input[type="checkbox"] {
   display: none;
 }
 
-input[type='checkbox'] + label {
+.inputfield > input[type="checkbox"] + label {
   color: #f2f2f2;
 }
 
-input[type='checkbox'] + label span {
+.inputfield > input[type="checkbox"] + label span {
   display: inline-block;
   width: 19px;
   height: 19px;
@@ -200,21 +206,21 @@ input[type='checkbox'] + label span {
   cursor: pointer;
 }
 
-input[type='checkbox']:checked + label span {
+.inputfield > input[type="checkbox"]:checked + label span {
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -19px
     top no-repeat;
 }
 
-input[type='radio'] {
+input[type="radio"] {
   display: none;
 }
 
-input[type='radio'] + label {
+input[type="radio"] + label {
   color: #f2f2f2;
   font-family: Arial, sans-serif;
 }
 
-input[type='radio'] + label span {
+input[type="radio"] + label span {
   display: inline-block;
   width: 19px;
   height: 19px;
@@ -225,12 +231,12 @@ input[type='radio'] + label span {
   cursor: pointer;
 }
 
-input[type='radio']:checked + label span {
+input[type="radio"]:checked + label span {
   background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/check_radio_sheet.png) -57px
     top no-repeat;
 }
 
-#item_form > div:nth-child(6) > label:nth-child(3){
+#item_form > div:nth-child(6) > label:nth-child(3) {
   width: 100px;
 }
 

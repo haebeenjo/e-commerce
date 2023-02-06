@@ -6,12 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>일아쌰이마쎄</title>
-  <base href="/">
+  <base href="/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="/socket.io/socket.io.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="/css/reset.css" />
@@ -33,25 +32,31 @@
 
             <!-- mypage -->
             <% if (pageName==="adminOrder" ) { %><!---->
-              <%- include("mypage/myPageLnb") %><!---->
-                <%- include("admin/adminOrder") %>
-                  <% } else if (pageName==="adminItem" ) { %> <%- include("mypage/myPageLnb") %><!---->
-                      <%- include("admin/adminItem") %>
-                        <% } else if (pageName==="adminMember" ) { %> <%- include("mypage/myPageLnb") %><!---->
-                            <%- include("admin/adminMember") %>
-                              <% } else if (pageName==="adminSales" ) { %> <%- include("mypage/myPageLnb") %><!---->
-                                  <%- include("admin/adminSales") %>
-                                    <% } else if (pageName==="itemregister" ) { %> <%- include("mypage/myPageLnb")
-                                        %><!---->
-                                        <%- include("admin/itemregister") %>
-                                          <% } else if (pageName==="itemdetail" ) { %> <%- include("mypage/myPageLnb")
-                                              %><!---->
-                                              <%- include("admin/itemdetail") %>
-                                                <% } %>
+              <!---->
+              <%- include("admin/adminOrder") %>
+                <% } else if (pageName==="adminItem" ) { %>
+                  <!---->
+                  <%- include("admin/adminItem") %>
+                    <% } else if (pageName==="adminMember" ) { %>
+                      <!---->
+                      <%- include("admin/adminMember") %>
+                        <% } else if (pageName==="adminSales" ) { %>
+                          <!---->
+                          <%- include("admin/adminSales") %>
+                            <% } else if (pageName==="itemregister" ) { %>
+                              <!---->
+                              <%- include("admin/itemregister") %>
+                                <% } else if (pageName==="itemstatus" ) { %>
+                                  <!---->
+                                  <%- include("admin/itemstatus") %>
+                                    <% } else if (pageName==="itemdetail" ) { %>
+                                      <!---->
+                                      <%- include("admin/itemdetail") %>
+                                        <% } %>
 
-                                                  <!-- chat -->
-                                                  <% if (pageName==="chat" ) { %> <%- include("components/chat") %>
-                                                      <% } %>
+                                          <!-- chat -->
+                                          <% if (pageName==="chat" ) { %> <%- include("components/chat") %>
+                                              <% } %>
   </main>
 </body>
 
