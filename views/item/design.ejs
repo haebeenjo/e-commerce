@@ -1,82 +1,35 @@
 <div class="board__parent" id="feed">
   <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
+    <div class="content__thumbnail" id="content-img"></div>
     <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
-      <div class="content__title">제품명</div>
-      <div class="content__price">가격</div>
-    </div>
-  </a>
-  <a class="board" href="/itemDetail/">
-    <div class="content__thumbnail"></div>
-    <!-- 여기서부터 content 제품명, 가격 -->
-    <div class="content__text">
+    <div class="content__text" id="content-item">
       <div class="content__title">제품명</div>
       <div class="content__price">가격</div>
     </div>
   </a>
 </div>
+
+<script>
+	const id = window.location.pathname.split('/')[2]
+
+  fetch(`http://localhost:4000/api/item/category/design`)
+    .then((response) => response.json())
+    .then((data) => {
+      for (let i = 0; i < data.data.length; i++) {
+        const rowImg = `
+            <div style="height: 50px">${data.data[i].img}</div>
+          `
+        const tr = document.createElement('div');
+        tr.innerHTML = rowImg;
+        document.getElementById('content-img').appendChild(tr);
+
+        const row = `
+            <div style="height: 50px">상품명 : ${data.data[i].item_name}</div>
+            <div style="height: 50px">가격 : ${data.data[i].price}</div>
+          `
+        const tr1 = document.createElement('div');
+        tr1.innerHTML = row;
+        document.getElementById('content-item').appendChild(tr1);
+      }
+		});
+</script>

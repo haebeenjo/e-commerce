@@ -1,12 +1,32 @@
 <div class="detail_wrap">
-	<div class="detail_img"></div>
-	<div class="info">
-		<div style="HEIGHT: 50px">상품명 : </div>
-		<div style="HEIGHT: 50px">가격 : </div>
-		<div style="HEIGHT: 50px">상품 상세 설명 : </div>
-	</div>
+	<div class="detail_img" id="imginfo"></div>
+	<div class="info" id="info"></div>
 </div>
 </div>
 <div class="bt_wrap">
 	<button><a href="/">장바구니</a></button>
-</div>
+
+<script>
+	const id = window.location.pathname.split('/')[2]
+
+  fetch(`http://localhost:4000/api/item/${id}`)
+    .then((response) => response.json())
+    .then(({data}) => {
+			const rowImg = `
+					<div style="height: 50px">${data.img}</div>
+        `
+      const tr = document.createElement('div');
+      tr.innerHTML = rowImg;
+      document.getElementById('imginfo').appendChild(tr);
+
+      const row = `
+					<div class="item_id" style="height: 50px">제품번호 : ${data.itemId}</div>
+        	<div style="height: 50px">상품명 : ${data.item_name}</div>
+					<div class="price" style="height: 50px">가격 : ${data.price}</div>
+					<div style="height: 50px">상품 설명 : ${data.detail}</div>
+        `
+      const tr1 = document.createElement('div');
+      tr1.innerHTML = row;
+      document.getElementById('info').appendChild(tr1);
+		});
+</script>

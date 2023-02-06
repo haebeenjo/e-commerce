@@ -41,7 +41,7 @@ router.get("/sports", (req, res) => {
   res.render("index.ejs", { pageName: "sports" });
 });
 
-router.get("/itemDetail", (req, res) => {
+router.get("/itemDetail/:id", (req, res) => {
   res.render("index.ejs", { pageName: "itemDetail" });
 });
 
