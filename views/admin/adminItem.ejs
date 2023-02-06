@@ -1,0 +1,38 @@
+<%- include("../mypage/myPageLnb") %>
+<div class="admin_order_container">
+  <h3>상품관리</h3>
+  <input
+    onclick="location.href='/item/register'"
+    type="button"
+    value="상품등록"
+    class="btn"
+  />
+  <div class="table_container">
+    <table>
+      <thead>
+        <tr class="tr_title">
+          <th></th>
+          <th>상품명</th>
+          <th>카테고리</th>
+          <th>판매 상태</th>
+          <th>관리</th>
+        </tr>
+      </thead>
+      <tbody id="itemList"></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="js/admin/adminitem.js"></script>
+<script>
+  // function selectClass() {
+  //   // $(".lnb a li").click(function () {
+  //   //   $(".active").removeClass("active");
+  //   //   $(this).addClass("active");
+  //   // });
+
+  //   $(".lnb a li").removeClass("active");
+  //   $(".lnb a:nth-child(2) li").addClass("active");
+  // }
+  // selectClass();
+</script>
