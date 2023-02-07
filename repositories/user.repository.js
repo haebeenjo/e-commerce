@@ -16,7 +16,7 @@ class UserRepository {
     point,
     blacklist
   ) => {
-    const createUserData = await this.UserModel.create({
+    const createUserData = await Users.create({
       email,
       phone_number,
       password: hashPassword,
@@ -30,7 +30,7 @@ class UserRepository {
   };
 
   findOne = async (email, hashPassword) => {
-    const findUser = await this.UserModel.findOne({
+    const findUser = await Users.findOne({
       where: { email, password: hashPassword },
     });
 
@@ -38,7 +38,7 @@ class UserRepository {
   };
 
   findAllUser = async (email) => {
-    const users = await this.UserModel.findAll({
+    const users = await Users.findAll({
       where: { email },
     });
     return users;
