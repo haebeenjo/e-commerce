@@ -1,9 +1,6 @@
 <div class="detail_wrap">
   <div class="info" id="info"></div>
 </div>
-<div class="bt_wrap">
-  <button onclick="createCart()"><a href="/usercartlist">장바구니</a></button>
-</div>
 
 <script>
   const id = window.location.pathname.split('/')[2];
@@ -18,10 +15,14 @@
               ? `<div class="detail_img"><img src="./images/${data.img}" /></div>`
               : ''
           }
-					<div class="item_id"">제품번호 : ${data.itemId}</div>
-        	<div">상품명 : ${data.item_name}</div>
-					<div class="price"">가격 : ${data.price.toLocaleString()}</div>
-					<div">상품 설명 : ${data.detail}</div>
+          <div class='item_detail_wrap'>
+					<div class="item_id"><span>제품번호 :</span> ${data.itemId}</div>
+        	<div><span>상품명 : </span>${data.item_name}</div>
+					<div class="price"><span>가격 : </span>${data.price.toLocaleString()}</div>
+					<div><span>상품 설명 : </span>${data.detail}</div>
+          <div class="bt_wrap">
+          <button class="addCart-btn" onclick="createCart()"><a href="/usercartlist">장바구니 담기</a></button>
+          </div></div>
         `;
       const $info = document.getElementById('info');
       $info.innerHTML = row;
