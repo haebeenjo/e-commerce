@@ -1,5 +1,5 @@
-const AdminOrderRepository = require("../repositories/adminOrder.repository");
-const { Orders, Items } = require("../models");
+const AdminOrderRepository = require('../repositories/adminOrder.repository');
+const { Orders, Items } = require('../models');
 
 class AdminOrderService {
   adminOrderRepository = new AdminOrderRepository(Orders, Items);
@@ -8,7 +8,7 @@ class AdminOrderService {
     try {
       const findAdminOrder = await this.adminOrderRepository.findAdminOrder();
       const adminOrder = findAdminOrder.map((data) => {
-        if (data.status != "판매 완료")
+        if (data.status != '배송 완료')
           return {
             orderId: data.orderId,
             item_name: data.Item.item_name,

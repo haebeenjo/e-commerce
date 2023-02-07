@@ -30,8 +30,8 @@ let authMiddleware = {
   },
 
   adminMiddleware: (req, res, next) => {
-    const token = req.cookies.token;
-    if (!token) {
+    const admin = req.cookies.admin;
+    if (!admin) {
       res.status(401).send({
         errorMessage: '로그인 후 이용해 주세요.',
       });
@@ -39,7 +39,7 @@ let authMiddleware = {
     }
 
     try {
-      const { adminId } = jwt.verify(token, process.env.SECRET_KEY);
+      const { adminId } = jwt.verify(admin, process.env.SECRET_KEY);
 
       const id = adminId.adminId;
 

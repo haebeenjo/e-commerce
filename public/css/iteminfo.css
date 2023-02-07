@@ -1,72 +1,88 @@
-@import url("_variables.css");
-@import url("reset.css");
-
-.detail_img {
-
-    width: 500px;
-    height: 400px;
-    
-    margin: 0 auto;
-    color: white;
-
-    text-align: center;
-
-    background-size: cover;
-    background-position: center;
-    background-color: aquamarine;
-
-    border-radius: 10px;
-}
-
-.info {
-    margin-top: 50px;
-    background-size: cover;
-    background-position: center;
-}
+@import url('_variables.css');
+@import url('reset.css');
 
 .detail_wrap {
-    width: 1000px;
-    margin: auto;
-
-    margin-top: 50px;
-    text-align: center;
-    font-size: 15px;
+  position: relative;
+  width: 1600px;
+  margin: auto;
 }
 
-.bt_wrap {
-    width: 1000px;
-    margin: auto;
-
-    text-align: center;
-    font-size: 15px;
-    text-decoration: none;
+.detail_img {
+  width: 700px;
+  height: 700px;
+  padding: 100px;
+  margin: 0 0 0 100px;
+  float: left;
 }
 
-.myButton {
-	box-shadow:inset 0px 1px 0px 0px #dcecfb;
-	background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
-	background-color:#bddbfa;
-	border-radius:6px;
-	border:1px solid #84bbf3;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #528ecc;
+.detail_img > img {
+  width: 100%;
+  object-fit: cover;
 }
-.myButton:hover {
-	background:linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
-	background-color:#80b5ea;
+
+.item_detail_wrap {
+  width: 700px;
+  height: 700px;
+  padding: 100px;
+  float: left;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--point-color);
 }
-.myButton:active {
-	position:relative;
-	top:1px;
+
+.item_detail_wrap > div {
+  margin-bottom: 30px;
+}
+
+.item_detail_wrap > div > span {
+  color: var(--sub-color-4);
 }
 
 .item_id {
-    margin-top: 130px;
+  margin-top: 80px;
+}
+
+.info {
+  margin-top: 50px;
+  background-size: cover;
+  background-position: center;
+}
+
+.addCart-btn {
+  width: 350px;
+  height: 50px;
+  border: 3px solid var(--point-color);
+  color: var(--point-color);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.addCart-btn:hover {
+  background: var(--point-color);
+  color: var(--main-color);
+}
+
+.myButton {
+  box-shadow: inset 0px 1px 0px 0px #dcecfb;
+  background: linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+  background-color: #bddbfa;
+  border-radius: 6px;
+  border: 1px solid #84bbf3;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528ecc;
+}
+.myButton:hover {
+  background: linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
+  background-color: #80b5ea;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
 }

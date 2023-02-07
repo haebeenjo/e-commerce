@@ -46,6 +46,7 @@ function login_admin() {
         password,
       },
       success: function (response) {
+        console.log('✨✨✨', response, '✨✨✨');
         alert(`로그인 성공, 환영합니다 ${email}님`);
         token = response.token;
         location.href = 'http://localhost:4000/adminOrder';

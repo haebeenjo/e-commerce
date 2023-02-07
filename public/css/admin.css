@@ -138,8 +138,9 @@ table tr:nth-child(odd) td {
 
 /* checkbox CSS */
 
-#blacklist {
-  margin-left: 20px;
+input[type='checkbox']#blacklist {
+  margin: auto;
+  display: block;
 }
 
 .checkbox-wrapper-2 .ikxBAC {

@@ -18,15 +18,26 @@ function findUserPoint() {
 
 function findToken() {
   const token = document.cookie;
+  let userType = ['userorderlist', 'adminOrder'];
+  let userMypage = '';
+  if (token.substring(0, 5) === 'token') {
+    userMypage = userType[0];
+  } else if (token.substring(0, 5) === 'admin') {
+    userMypage = userType[1];
+  }
   let empty_html = ``;
   if (token) {
     empty_html = `<a href="api/logout">
     <li class="header_logout">로그아웃</li>
   </a>
-  <a href="usercartlist">
+  ${
+    token.substring(0, 5) === 'token'
+      ? `<a href="usercartlist">
     <li class="header_cart">장바구니</li>
-  </a>
-  <a href="userorderlist">
+  </a> `
+      : ''
+  }
+  <a href="${userMypage}">
     <li class="header_mypage">마이페이지</li>
   </a>`;
   } else if (!token) {
