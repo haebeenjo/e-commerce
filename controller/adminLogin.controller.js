@@ -1,5 +1,4 @@
-// controllers/adminLogin.controller.js
-const AdminLoginService = require("../services/adminLogin.service");
+const AdminLoginService = require('../services/adminLogin.service');
 
 class AdminLoginController {
   adminLoginService = new AdminLoginService();
@@ -11,9 +10,9 @@ class AdminLoginController {
       const adminId = await this.adminLoginService.findOne(email, password);
 
       const token = await this.adminLoginService.issueToken(adminId);
-      res.cookie("token", token["token"]);
+      res.cookie('token', token['token']);
       res.status(200).json({
-        result: "success",
+        result: 'success',
         token: token,
         adminId: adminId,
       });

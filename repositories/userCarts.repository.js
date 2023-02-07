@@ -38,6 +38,10 @@ ORDER BY Carts.createdAt DESC;
   deleteCart = async (cartId) => {
     const result = await this.cartModel.destroy({ where: { cartId } });
   };
+
+  deleteUserCart = async (userId) => {
+    const result = await this.cartModel.destroy({ where: { user_id: userId } });
+  };
 }
 
 module.exports = UserCartRepository;

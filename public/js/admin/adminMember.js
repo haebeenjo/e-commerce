@@ -2,11 +2,10 @@ $(document).ready(function () {
   getAdminMembers();
 });
 
-// axios get
 function getAdminMembers() {
   axios({
-    method: "get",
-    url: "api/member",
+    method: 'get',
+    url: 'api/member',
   })
     .then((response) => {
       const { data } = response.data;
@@ -39,7 +38,7 @@ function getAdminMembers() {
           </td>
         </tr>`;
 
-        $("#memberList").append(temp);
+        $('#memberList').append(temp);
       }
     })
     .catch((err) => {
@@ -47,9 +46,9 @@ function getAdminMembers() {
     });
 }
 
-const body = document.querySelector("body");
-body.addEventListener("click", function (e) {
-  if (e.target.id !== "blacklist") return;
+const body = document.querySelector('body');
+body.addEventListener('click', function (e) {
+  if (e.target.id !== 'blacklist') return;
   const blacklist_email =
     e.target.parentElement.parentElement.parentElement.children[1].textContent;
   const blacklist_checked = e.target.checked;
@@ -57,13 +56,11 @@ body.addEventListener("click", function (e) {
 });
 function blacklistAdd(blacklist_email, blacklist_checked) {
   axios
-    .put("api/blackList", {
+    .put('api/blackList', {
       email: blacklist_email,
       blacklist: blacklist_checked,
     })
-    .then((response) => {
-      // alert(response.data.message);
-    })
+    .then((response) => {})
     .catch((err) => {
       console.log(err);
     });

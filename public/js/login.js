@@ -18,7 +18,6 @@ function login_user() {
         alert(`로그인 성공, 환영합니다 ${email}님`);
         token = response.token;
         location.href = 'http://localhost:4000';
-        // setloginuser();
       },
       error: function (error) {
         alert('로그인 실패..............');

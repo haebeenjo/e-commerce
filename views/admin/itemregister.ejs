@@ -1,21 +1,41 @@
 <script src="/js/admin/itemregister.js"></script>
 
 <!-- 전체 양식: https://codepen.io/RajRajeshDn/pen/QWwypRy -->
-<div class="wrapper">
-  <div class="title">Registration Form</div>
+<div class="wrapper item_register_wrap">
+  <div class="title">상품 등록하기</div>
   <form action="/item/register" method="post" , enctype="multipart/form-data">
     <div class="form" id="item_form">
       <!-- 체크박스: https://codepen.io/tutsplus/pen/bgqYJz -->
       <div class="inputfield">
-        <input type="checkbox" id="office" name="office" onclick='is_checked()'/>
+        <input
+          type="checkbox"
+          id="office"
+          name="office"
+          onclick="is_checked()"
+        />
         <label for="office"><span></span>office</label>
-        <input type="checkbox" id="design" name="design" onclick='is_checked()'/>
+        <input
+          type="checkbox"
+          id="design"
+          name="design"
+          onclick="is_checked()"
+        />
         <label for="design"><span></span>design</label>
-        <input type="checkbox" id="developer" name="developer" onclick='is_checked()'/>
+        <input
+          type="checkbox"
+          id="developer"
+          name="developer"
+          onclick="is_checked()"
+        />
         <label for="developer"><span></span>develop</label>
-        <input type="checkbox" id="music" name="music" onclick='is_checked()'/>
+        <input type="checkbox" id="music" name="music" onclick="is_checked()" />
         <label for="music"><span></span>music</label>
-        <input type="checkbox" id="sports" name="sports" onclick='is_checked()'/>
+        <input
+          type="checkbox"
+          id="sports"
+          name="sports"
+          onclick="is_checked()"
+        />
         <label for="sports"><span></span>sports</label>
       </div>
       <div class="inputfield">
@@ -35,7 +55,12 @@
         <input type="text" id="detail" class="input" />
       </div>
       <div class="inputfield">
-        <input onclick="itemRequest()" type="button" value="save" class="btn" />
+        <input
+          onclick="itemRequest()"
+          type="button"
+          value="등록하기"
+          class="btn"
+        />
       </div>
       <div id="itemList"></div>
     </div>
