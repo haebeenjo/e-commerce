@@ -1,72 +1,65 @@
-@import url("_variables.css");
-@import url("reset.css");
+@import url('_variables.css');
+@import url('reset.css');
 
 .detail_img {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+}
 
-    width: 500px;
-    height: 400px;
-    
-    margin: 0 auto;
-    color: white;
-
-    text-align: center;
-
-    background-size: cover;
-    background-position: center;
-    background-color: aquamarine;
-
-    border-radius: 10px;
+.detail_img > img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .info {
-    margin-top: 50px;
-    background-size: cover;
-    background-position: center;
+  margin-top: 50px;
+  background-size: cover;
+  background-position: center;
 }
 
 .detail_wrap {
-    width: 1000px;
-    margin: auto;
-
-    margin-top: 50px;
-    text-align: center;
-    font-size: 15px;
+  width: 1000px;
+  margin: auto;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 15px;
 }
 
 .bt_wrap {
-    width: 1000px;
-    margin: auto;
+  width: 1000px;
+  margin: auto;
 
-    text-align: center;
-    font-size: 15px;
-    text-decoration: none;
+  text-align: center;
+  font-size: 15px;
+  text-decoration: none;
 }
 
 .myButton {
-	box-shadow:inset 0px 1px 0px 0px #dcecfb;
-	background:linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
-	background-color:#bddbfa;
-	border-radius:6px;
-	border:1px solid #84bbf3;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #528ecc;
+  box-shadow: inset 0px 1px 0px 0px #dcecfb;
+  background: linear-gradient(to bottom, #bddbfa 5%, #80b5ea 100%);
+  background-color: #bddbfa;
+  border-radius: 6px;
+  border: 1px solid #84bbf3;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #528ecc;
 }
 .myButton:hover {
-	background:linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
-	background-color:#80b5ea;
+  background: linear-gradient(to bottom, #80b5ea 5%, #bddbfa 100%);
+  background-color: #80b5ea;
 }
 .myButton:active {
-	position:relative;
-	top:1px;
+  position: relative;
+  top: 1px;
 }
 
 .item_id {
-    margin-top: 130px;
+  margin-top: 130px;
 }

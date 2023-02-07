@@ -10,7 +10,7 @@ class AdminLoginController {
       const adminId = await this.adminLoginService.findOne(email, password);
 
       const token = await this.adminLoginService.issueToken(adminId);
-      res.cookie('token', token['token']);
+      res.cookie('admin', token['token']);
       res.status(200).json({
         result: 'success',
         token: token,
