@@ -2,9 +2,6 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const render = require('./render');
-const socket = require('socket.io');
-const fs = require('fs');
-const http = require('http');
 
 const router = require('./routes');
 const app = express();
@@ -23,11 +20,7 @@ app.set('view engine', 'ejs');
 app.use('/api', router);
 app.use('/', render);
 app.set('views', path.join(__dirname, './views'));
-app.use(express.static('upload'));
 app.use(express.static('public'));
-
-app.set('views', path.join(__dirname, './views'));
-app.use(express.static(path.join(__dirname, './views')));
 
 // ------------------------------------------------------------------
 
@@ -71,7 +64,7 @@ io.on('connection', (socket) => {
   });
 });
 
-app.listen(process.env.PORT, () => {
+server.listen(process.env.PORT, () => {
   console.log(process.env.PORT, '포트로 서버가 열렸어요!');
 });
 

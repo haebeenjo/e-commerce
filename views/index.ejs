@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
@@ -32,7 +33,7 @@
   <body>
     <main>
       <%- include("components/header") %> <% if (pageName==='' ) { %> <%-
-      include("main.ejs") %> <% } %>
+      include("item/main.ejs") %> <% } %>
 
       <!-- userUpdate -->
       <% if (pageName==="userUpdate" ) { %> <%- include("mypage/userUpdate") %>
