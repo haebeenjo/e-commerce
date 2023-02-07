@@ -1,10 +1,12 @@
 const UserOrderRepository = require('../repositories/userOrder.repository');
 const UserRepository = require('../repositories/user.repository');
-const { Users, Items, Orders } = require('../models');
+const UserCartRepository = require('../repositories/userCarts.repository');
+const { Users, Items, Orders, Carts } = require('../models');
 
 class UserOrderService {
   userOrderRepository = new UserOrderRepository(Orders, Items, Users);
   userPointRepository = new UserRepository();
+  userCartRepository = new UserCartRepository(Carts);
 
   createOrder = async (
     name,
@@ -26,6 +28,7 @@ class UserOrderService {
       order_price,
       userId
     );
+    const deleteUserCart = await this.userCartRepository.deleteUserCart(userId);
     return createOrderData;
   };
 

@@ -24,6 +24,6 @@ function createOrder(itemId, order_price) {
       order_price: order_price,
     },
   }).then((response) => {
-    window.location.reload();
+    window.location.href = 'http://localhost:4000/userorderlist';
   });
 }

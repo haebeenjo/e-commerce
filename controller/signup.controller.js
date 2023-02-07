@@ -1,4 +1,3 @@
-// controllers/signup.controller.js
 const crypto = require('crypto');
 const SignupService = require('../services/signup.service');
 

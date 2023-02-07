@@ -1,9 +1,7 @@
-// services/login.service.js
+const jwt = require('jsonwebtoken');
 
-const jwt = require("jsonwebtoken");
-
-const UserRepository = require("../repositories/user.repository");
-const { Users, Admins } = require("../models");
+const UserRepository = require('../repositories/user.repository');
+const { Users, Admins } = require('../models');
 
 class LoginService {
   userRepository = new UserRepository(Users);
@@ -17,29 +15,13 @@ class LoginService {
   };
   issueToken = async (userId) => {
     const token = jwt.sign({ userId: userId }, process.env.SECRET_KEY, {
-      expiresIn: "1d",
+      expiresIn: '1d',
     });
 
     return {
       token: token,
     };
   };
-  // adminLogin = async (email, password) => {
-  //   const adminLogin = await this.userRepository.adminLogin(email, password);
-
-  //   return {
-  //     email: adminLogin.email,
-  //   };
-  // };
-  // adminIssueToken = async (adminId) => {
-  //   const token = jwt.sign({ adminId: adminId }, process.env.SECRET_KEY, {
-  //     expiresIn: "1d",
-  //   });
-
-  //   return {
-  //     token: token,
-  //   };
-  // };
 }
 
 module.exports = LoginService;

@@ -1,6 +1,5 @@
-// controllers/login.controller.js
-const crypto = require("crypto");
-const LoginService = require("../services/login.service");
+const crypto = require('crypto');
+const LoginService = require('../services/login.service');
 
 class LoginController {
   loginService = new LoginService();
@@ -9,15 +8,15 @@ class LoginController {
     try {
       const { email, password } = req.body;
       const hashPassword = crypto
-        .createHash("sha512")
+        .createHash('sha512')
         .update(req.body.password)
-        .digest("hex");
+        .digest('hex');
       const userId = await this.loginService.findOne(email, hashPassword);
 
       const token = await this.loginService.issueToken(userId);
-      res.cookie("token", token["token"]);
+      res.cookie('token', token['token']);
       res.status(200).json({
-        result: "success",
+        result: 'success',
         token: token,
         userId: userId,
       });
@@ -25,23 +24,6 @@ class LoginController {
       console.log(error);
     }
   };
-
-  // adminLogin = async (req, res, next) => {
-  //   try {
-  //     const { email, password } = req.body;
-  //     const adminId = await this.loginService.adminLogin(email, password);
-
-  //     const token = await this.loginService.adminIssueToken(adminId);
-  //     res.cookie("token", token["token"]);
-  //     res.status(200).json({
-  //       result: "success",
-  //       token: token,
-  //       adminId: adminId,
-  //     });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 }
 
 module.exports = LoginController;
