@@ -10,13 +10,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/adminOrder.css" />
     <link rel="stylesheet" href="/css/userOrderList.css" />
     <link rel="stylesheet" href="/css/admin.css" />
     <link rel="stylesheet" href="/css/sign.css" />
@@ -27,33 +27,46 @@
     <link rel="stylesheet" href="/css/item.css" />
     <link rel="stylesheet" href="/css/iteminfo.css" />
     <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/imageSlider.css" />
   </head>
 
   <body>
     <main>
-      <%- include("components/header") %> <% if (pageName === '') { %> <%-
-      include("main.ejs") %> <% } %>
+      <%- include("components/header") %> <% if (pageName==='' ) { %> <%-
+      include("item/main.ejs") %> <% } %>
 
-      <!-- itme -->
+      <!-- userUpdate -->
+      <% if (pageName==="userUpdate" ) { %> <%- include("mypage/userUpdate") %>
+      <% } %>
+
+      <!-- item -->
       <% if (pageName === 'itemDetail') { %> <%- include("item/iteminfo.ejs") %>
-      <% } %> <% if (pageName === 'office') { %> <%- include("item/office.ejs")
-      %> <% } %> <% if (pageName === 'design') { %> <%-
-      include("item/design.ejs") %> <% } %> <% if (pageName === 'developer') {
-      %> <%- include("item/developer.ejs") %> <% } %> <% if (pageName ===
-      'music') { %> <%- include("item/music.ejs") %> <% } %> <% if (pageName ===
-      'sports') { %> <%- include("item/sports.ejs") %> <% } %>
+      <% } %>
+      <!---->
+      <% if (pageName === 'office') { %> <%- include("item/office.ejs") %> <% }
+      %>
+      <!---->
+      <% if (pageName === 'design') { %> <%- include("item/design.ejs") %> <% }
+      %>
+      <!---->
+      <% if (pageName === 'developer') { %> <%- include("item/developer.ejs") %>
+      <% } %>
+      <!---->
+      <% if (pageName === 'music') { %> <%- include("item/music.ejs") %> <% } %>
+      <!---->
+      <% if (pageName === 'sports') { %> <%- include("item/sports.ejs") %> <% }
+      %><!---->
 
       <!-- login -->
       <% if (pageName==="login" ) { %> <%- include("components/login") %> <% }
       %> <% if (pageName === "signup") { %> <%- include("components/signup") %>
-      <% } %>
+      <% } %> <% if (pageName==="adminLogin" ) { %> <%-
+      include("components/adminLogin") %> <% } %>
 
       <!-- admin -->
 
-      <% if (pageName==="adminOrder" ) { %><!---->
-      <!---->
-      <%- include("admin/adminOrder") %> <% } else if (pageName==="adminItem" )
-      { %>
+      <% if (pageName==="adminOrder" ) { %> <%- include("admin/adminOrder") %>
+      <% } else if (pageName==="adminItem" ) { %>
       <!---->
       <%- include("admin/adminItem") %> <% } else if (pageName==="adminMember" )
       { %>
@@ -64,17 +77,15 @@
       <%- include("admin/adminSales") %> <% } else if (pageName==="itemregister"
       ) { %>
       <!---->
-      <%- include("admin/itemregister") %> <% } else if (pageName==="itemstatus"
+      <%- include("admin/itemregister") %> <% } else if (pageName==="itemdetail"
       ) { %>
-      <!---->
-      <%- include("admin/itemstatus") %> <% } else if (pageName==="itemdetail" )
-      { %>
       <!---->
       <%- include("admin/itemdetail") %>
       <!--user-->
-      <% } else if (pageName === "userorderlist") {%><!---->
+      <% } else if (pageName==="userorderlist" ) {%>
+      <!---->
       <%- include("user/userOrderList") %><!---->
-      <% } else if (pageName === "usercartlist") {%><!---->
+      <% } else if (pageName==="usercartlist" ) {%><!---->
       <%- include("user/userWishList") %><!---->
       <% } %><!---->
 

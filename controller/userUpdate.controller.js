@@ -31,9 +31,14 @@ class userUpdateController {
         status: "fail",
       });
     }
-    // 비번 바꾸면 쓰는 기능들
-    if (body.updatePassword) {
-      // 바꾸기 전 비번을 db에서 조회/비교
+    if (!body.name || !body.address || !body.phone_number || !body.currentPassword || !body.newPassword || !body.confirmedPassword) {
+      return res.status(400).send({
+        message: "null?",
+        status: "fail",
+      });
+    }
+    console.log("newpass1", body.newPassword)
+
       const currentPasswordHash = crypto
         .createHash("sha512")
         .update(body.currentPassword)
@@ -44,9 +49,11 @@ class userUpdateController {
           status: "fail",
         });
       }
+      console.log("newpass2", body.newPassword)
+
 
       //입력한 기존 비번과 입력한 새 비번과 비교
-      if (body.newPassword == body.currentPassword) {
+      if (body.newPassword == body.currentPassword && body.newPassword) {
         return res.status(400).send({
           message: "New password has no change",
           status: "fail",
@@ -54,7 +61,7 @@ class userUpdateController {
       }
 
       // 바꾼 비밀번호와 한번 더 입력한 비번과 비교
-      if (body.newPassword !== body.confirmedPassword) {
+      if (body.newPassword !== body.confirmedPassword && body.newPassword) {
         return res.status(400).send({
           message: "New password and confirmed password do not match",
           status: "fail",
@@ -67,6 +74,7 @@ class userUpdateController {
         .update(body.newPassword)
         .digest("hex");
 
+      console.log("newpass", body.newPassword)
       // 유저 정보 업데이트
       Users.update(
         {
@@ -75,22 +83,13 @@ class userUpdateController {
           phone_number: body.phone_number,
           password: hashedPassword,
         },
-        {
-          where: { userId: userId },
-        }
-      );
-    } else {
-      Users.update(
-        {
-          name: body.name,
-          address: body.address,
-          phone_number: body.phone_number,
-        },
+      
         {
           where: { userId: userId },
         }
       )
-        .then((num) => {
+
+      .then((num) => {
           if (num == 1) {
             res.send({
               message: "UserInfo was updated successfully.",
@@ -112,7 +111,7 @@ class userUpdateController {
         });
     }
   };
-}
+
 
 module.exports = userUpdateController;
 

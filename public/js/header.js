@@ -2,11 +2,25 @@ $(document).ready(function () {
   findToken();
 });
 
+function findUserPoint() {
+  axios({
+    method: 'get',
+    url: '/api/userPoint',
+    data: {},
+  }).then(async (response) => {
+    const data = response.data.userPoint.point;
+    if (data) {
+      const point = document.getElementById('user_point');
+      point.innerHTML = `잔여 포인트 : ${parseInt(data).toLocaleString()}`;
+    }
+  });
+}
+
 function findToken() {
   const token = document.cookie;
   let empty_html = ``;
   if (token) {
-    empty_html = `<a href="logout">
+    empty_html = `<a href="api/logout">
     <li class="header_logout">로그아웃</li>
   </a>
   <a href="usercartlist">
@@ -25,10 +39,6 @@ function findToken() {
   `;
   }
 
-  if (token) {
-    const point = document.getElementById('user_point');
-    point.innerHTML = '잔여 포인트 : 1,000,000';
-  }
-
   $('.member_wrap').append(empty_html);
+  findUserPoint();
 }

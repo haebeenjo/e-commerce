@@ -1,13 +1,6 @@
 <div class="sign_wrap">
   <div class="register_wrap">
-    <h2>회원가입</h2>
-    
-    <input
-      type="text"
-      name="email"
-      id="email"
-      placeholder="이메일"
-    />
+    <h2>회원정보 수정</h2>
 
     <input
       type="text"
@@ -32,22 +25,36 @@
 
     <input
       type="text"
-      name="password"
-      id="password"
-      placeholder="비밀번호"
+      name="currentPassword"
+      id="currentPassword"
+      placeholder="현재 비밀번호"
+    />
+
+    <input
+      type="text"
+      name="newPassword"
+      id="newPassword"
+      placeholder="새로운 비밀번호"
+    />
+
+    <input
+      type="text"
+      name="confirmedPassword"
+      id="confirmedPassword"
+      placeholder="새로운 비밀번호 확인"
     />
 
     <input
       type="button"
       name="login_button"
       class="user_signup"
-      onclick="signup_user()"
-      value="회원가입 하기"
+      onclick="update_user()"
+      value="회원정보 수정 하기"
     />
 
   </div>
 </div>
 
-    <script src="/js/signup.js"></script>
+    <script src="/js/mypage/userUpdate.js"></script>
   </form>
 </body>

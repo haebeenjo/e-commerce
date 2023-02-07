@@ -12,6 +12,16 @@ function closeModal() {
   modal.style.display = 'none';
 }
 
+function createCart() {
+  const item_id = document.getElementsByClassName('item_id');
+  const itemId = item_id[0].innerText.split(':')[1];
+  axios({
+    method: 'post',
+    url: '/api/cart',
+    data: { itemId: itemId },
+  });
+}
+
 function cartList() {
   axios({
     method: 'get',
