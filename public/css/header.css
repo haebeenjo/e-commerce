@@ -83,6 +83,11 @@ h1 {
   width: 240px;
 }
 
+.member_wrap > a > li {
+  font-weight: 600;
+  color: var(--sub-color-4);
+}
+
 .chat_fixed {
   position: fixed;
   width: 60px;
