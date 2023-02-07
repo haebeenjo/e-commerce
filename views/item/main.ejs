@@ -68,12 +68,43 @@
             <a class="link_page" href="/?page=1">1</a>
             <a class="link_page" href="/?page=2">2</a>
             <a class="link_page" href="/?page=${page}">${page}</a>
+            <a class="link_page" href="/?page=4">4</a>
             <a class="link_page" href="/?page=4">...</a>
             <a class="link_page" href="/?page=${data.pageInfo.lastPage}">${data.pageInfo.lastPage}</a>
             `;
           const a = document.createElement('a');
           a.innerHTML = pages;
           document.getElementById('pagination').appendChild(a);
+        } else if (page === data.lastPage) {
+          const pages = `
+            <a class="link_page" href="/?page=1">1</a>
+            <a class="link_page" href="/?page=${page - 2}">...</a>
+            <a class="link_page" href="/?page=${page - 1}">${page - 1}</a>
+            <a class="link_page" href="/?page=${page}">${page}</a>
+            `;
+          const a = document.createElement('a');
+          a.innerHTML = pages;
+          return document.getElementById('pagination').appendChild(a);
+        } else if (page === data.lastPage - 1) {
+          const pages = `
+            <a class="link_page" href="/?page=1">1</a>
+            <a class="link_page" href="/?page=${page - 2}">...</a>
+            <a class="link_page" href="/?page=${page - 1}">${page - 1}</a>
+            <a class="link_page" href="/?page=${page}">${page}</a>
+            `;
+          const a = document.createElement('a');
+          a.innerHTML = pages;
+          return document.getElementById('pagination').appendChild(a);
+        } else if (page === data.lastPage - 2) {
+          const pages = `
+            <a class="link_page" href="/?page=1">1</a>
+            <a class="link_page" href="/?page=${page - 2}">...</a>
+            <a class="link_page" href="/?page=${page - 1}">${page - 1}</a>
+            <a class="link_page" href="/?page=${page}">${page}</a>
+            `;
+          const a = document.createElement('a');
+          a.innerHTML = pages;
+          return document.getElementById('pagination').appendChild(a);
         } else if (page < 3) {
           const pages = `
             <a class="link_page" href="/?page=1">1</a>
@@ -91,6 +122,8 @@
             <a class="link_page" href="/?page=${page - 2}">...</a>
             <a class="link_page" href="/?page=${page - 1}">${page - 1}</a>
             <a class="link_page" href="/?page=${page}">${page}</a>
+            <a class="link_page" href="/?page=${page + 1}">${page + 1}</a>
+            <a class="link_page" href="/?page=${page + 2}">...</a>
             <a class="link_page" href="/?page=${data.pageInfo.lastPage}">${data.pageInfo.lastPage}</a>
             `;
           const a = document.createElement('a');
