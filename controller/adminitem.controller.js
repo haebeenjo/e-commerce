@@ -5,8 +5,8 @@ class adminItemsController {
 
   createItem = async (req, res, next) => {
     try {
-      const adminId = res.locals.admin_id;
-
+      const adminId = res.locals.admin.admin_id;
+      console.log('adminId', adminId);
       // if (!adminId) {
       //   return res
       //     .status(401)
@@ -123,9 +123,9 @@ class adminItemsController {
 
       const itemlist = await this.adminitemsService.getItems();
 
-      res.status(200).json({ data: itemlist });
+      return res.status(200).json({ data: itemlist });
     } catch (err) {
-      res.status(500).json({
+      return res.status(500).json({
         errorMessage: err.message,
       });
     }
