@@ -45,7 +45,7 @@ class adminItemsRepository {
   };
 
   findAllItem = async () => {
-    const items = await this.itemsModel.findAll();
+    const items = await this.itemsModel.findAll({order: [['createdAt', 'desc']]});
     return items;
   };
 }

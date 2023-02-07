@@ -7,7 +7,7 @@ class ItemRepository {
 
   findAllItems = async (perPage, startIndex) => {
     const { count, rows } = await this.itemsModel.findAndCountAll({
-      order: [['itemId']],
+      order: [['itemId', 'desc']] ,
       offset: startIndex,
       limit: perPage,
     });
@@ -16,32 +16,32 @@ class ItemRepository {
   };
 
   findOfficeItem = async () => {
-    const catagory = await this.itemsModel.findAll({ where: { office: 1 } });
+    const catagory = await this.itemsModel.findAll({ where: { office: 1 } , order: [['itemId', 'desc']] });
     return catagory;
   };
 
   findDesignItem = async () => {
-    const catagory = await this.itemsModel.findAll({ where: { design: 1 } });
+    const catagory = await this.itemsModel.findAll({ where: { design: 1 }, order: [['itemId', 'desc']]  });
     return catagory;
   };
 
   findDeveloperItem = async () => {
-    const catagory = await this.itemsModel.findAll({ where: { developer: 1 } });
+    const catagory = await this.itemsModel.findAll({ where: { developer: 1 }, order: [['itemId', 'desc']]  });
     return catagory;
   };
 
   findMusicItem = async () => {
-    const catagory = await this.itemsModel.findAll({ where: { music: 1 } });
+    const catagory = await this.itemsModel.findAll({ where: { music: 1 } , order: [['itemId', 'desc']] });
     return catagory;
   };
 
   findSportsItem = async () => {
-    const catagory = await this.itemsModel.findAll({ where: { sports: 1 } });
+    const catagory = await this.itemsModel.findAll({ where: { sports: 1 }, order: [['itemId', 'desc']]  });
     return catagory;
   };
 
   findOneItem = async (itemId) => {
-    const item = await this.itemsModel.findOne({ where: { itemId } });
+    const item = await this.itemsModel.findOne({ where: { itemId }});
     return item;
   };
 }
