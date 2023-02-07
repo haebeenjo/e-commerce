@@ -6,18 +6,19 @@ class AdminOrderService {
 
   findAdminOrder = async () => {
     try {
-      const findAdminOrder = await this.adminOrderRepository.findAdminOrder();
+      const findAdminOrder = await this.adminOrderRepository.findAdminOrder({
+        order: [['createdAt', 'desc']],
+      });
       const adminOrder = findAdminOrder.map((data) => {
-        if (data.status != '배송 완료')
-          return {
-            orderId: data.orderId,
-            item_name: data.Item.item_name,
-            user_id: data.user_id,
-            name: data.name,
-            address: data.address,
-            phone_number: data.phone_number,
-            status: data.status,
-          };
+        return {
+          orderId: data.orderId,
+          item_name: data.Item.item_name,
+          user_id: data.user_id,
+          name: data.name,
+          address: data.address,
+          phone_number: data.phone_number,
+          status: data.status,
+        };
       });
       return adminOrder;
     } catch (error) {

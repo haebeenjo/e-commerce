@@ -10,7 +10,6 @@ function getAdminOrders() {
     .then((response) => {
       const { data } = response.data;
       let count = 0;
-
       for (let i in data) {
         count++;
         let orderId = data[i].orderId;
@@ -28,8 +27,8 @@ function getAdminOrders() {
           } >
           ${text}</option>`;
         });
-
-        let temp = `
+        if (status !== statusName[3]) {
+          let temp = `
         <tr>
           <td class="table_count">${count}</td>
           <td>${orderId}</td>
@@ -44,8 +43,8 @@ function getAdminOrders() {
             </select>
           </td>
         </tr>`;
-
-        $('#adminOrderList').append(temp);
+          $('#adminOrderList').append(temp);
+        }
       }
     })
     .catch((err) => {
