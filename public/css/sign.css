@@ -86,8 +86,8 @@ input[type="password"] {
 
 input[type="text"]:focus,
 input[type="password"]:focus {
-  border-bottom: 2px solid var(--sub-color-3);
-  color: var(--sub-color-3);
+  border-bottom: 2px solid var(--sub-color-1);
+  color: var(--sub-color-1);
   transition: 0.2s ease;
 }
 
@@ -139,7 +139,7 @@ input[type="button"] {
   /* background: #fff; */
   border: 2px solid #fff;
   border-radius: 2px;
-  color: #fff;
+  color: #000000;
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   text-align: center;

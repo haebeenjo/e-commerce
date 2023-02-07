@@ -1,4 +1,4 @@
-// repositories/users.repository.js
+// repositories/user.repository.js
 
 const { Users, Sequelize } = require('../models');
 

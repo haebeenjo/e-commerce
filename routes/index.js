@@ -13,6 +13,7 @@ const userUpdateRouter = require('./userUpdate.router');
 const loginRouter = require('./login.router');
 const logoutRouter = require('./logout.router');
 const findUserPoint = require('./findUserPoint.router');
+const adminLoginRouter = require('./adminLogin.router');
 
 router.use('/login', loginRouter);
 router.use('/signup', signupRouter);
@@ -27,6 +28,7 @@ router.use('/cart', userCartRouter);
 router.use('/logout', logoutRouter);
 router.use('/item', itemRouter);
 router.use('/userPoint', findUserPoint);
+router.use('/adminLogin', adminLoginRouter);
 
 router.use('/', adminitemRouter);
 
