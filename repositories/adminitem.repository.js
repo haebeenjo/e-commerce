@@ -1,5 +1,3 @@
-const { Items } = require('../models');
-
 class adminItemsRepository {
   constructor(ItemsModel) {
     this.itemsModel = ItemsModel;
@@ -14,7 +12,7 @@ class adminItemsRepository {
     developer,
     music,
     sports
-    ) => {
+  ) => {
     const created = await this.itemsModel.create({
       item_name,
       price,
@@ -45,7 +43,9 @@ class adminItemsRepository {
   };
 
   findAllItem = async () => {
-    const items = await this.itemsModel.findAll();
+    const items = await this.itemsModel.findAll({
+      order: [['itemId', 'desc']],
+    });
     return items;
   };
 }
