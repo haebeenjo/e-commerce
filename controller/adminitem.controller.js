@@ -1,4 +1,4 @@
-const adminItemsService = require("../services/adminitem.service");
+const adminItemsService = require('../services/adminitem.service');
 
 class adminItemsController {
   adminitemsService = new adminItemsService();
@@ -25,10 +25,10 @@ class adminItemsController {
       } = req.body;
       console.log(req.file);
       const imgPath = req.file.path;
-      const img = imgPath.split("\\")[1];
+      const img = imgPath.split('\\')[2];
 
       if (!item_name || !price || !detail) {
-        return res.status(412).json({ message: "빈 항목이 있습니다." });
+        return res.status(412).json({ message: '빈 항목이 있습니다.' });
       }
       const createItemData = await this.adminitemsService.createItems(
         item_name,
@@ -43,8 +43,8 @@ class adminItemsController {
       );
       res.status(201).json({ data: createItemData });
     } catch (err) {
-      console.log("1err:", err);
-      res.status(400).json({ message: "상품 등록에 실패하였습니다." });
+      console.log('1err:', err);
+      res.status(400).json({ message: '상품 등록에 실패하였습니다.' });
     }
   };
 
@@ -63,14 +63,14 @@ class adminItemsController {
         sports,
       } = req.body;
       const imgPath = req.file.path;
-      const img = imgPath.split("\\")[1];
+      const img = imgPath.split('\\')[2];
 
-      if (item_status !== "판매 중" && item_status !== "일시 품절") {
-        return res.status(400).json({ message: "잘못된 요청입니다." });
+      if (item_status !== '판매 중' && item_status !== '일시 품절') {
+        return res.status(400).json({ message: '잘못된 요청입니다.' });
       }
 
       if (!item_name | !price | !detail) {
-        return res.status(412).json({ message: "빈 항목이 있습니다." });
+        return res.status(412).json({ message: '빈 항목이 있습니다.' });
       }
 
       const putItemData = await this.adminitemsService.putItems(
@@ -91,10 +91,10 @@ class adminItemsController {
         return res.status(400).json({ message: putItemData.message });
       }
 
-      res.status(201).json({ message: "상품 수정에 성공하였습니다." });
+      res.status(201).json({ message: '상품 수정에 성공하였습니다.' });
     } catch (err) {
-      console.log("err:", err);
-      res.status(400).json({ message: "상품 수정에 실패하였습니다." });
+      console.log('err:', err);
+      res.status(400).json({ message: '상품 수정에 실패하였습니다.' });
     }
   };
   deleteItem = async (req, res, next) => {
@@ -102,10 +102,10 @@ class adminItemsController {
       const { itemId } = req.params;
       const deleteItemData = await this.adminitemsService.deleteItems(itemId);
 
-      res.status(200).json({ message: "상품 삭제에 성공하였습니다." });
+      res.status(200).json({ message: '상품 삭제에 성공하였습니다.' });
     } catch (err) {
-      console.log("cntr: ", err);
-      res.status(400).json({ message: "상품 삭제에 실패하였습니다." });
+      console.log('cntr: ', err);
+      res.status(400).json({ message: '상품 삭제에 실패하였습니다.' });
     }
   };
 

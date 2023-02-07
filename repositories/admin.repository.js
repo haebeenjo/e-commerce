@@ -5,11 +5,9 @@ class AdminRepository {
   }
 
   findOne = async (email, password) => {
-    console.log("✨✨✨", email, password, "✨✨✨");
     const findAdmin = await this.AdminModel.findOne({
       where: { email: email, password: password },
     });
-    console.log("✨✨✨", findAdmin, "✨✨✨");
 
     return findAdmin;
   };

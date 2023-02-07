@@ -1,8 +1,57 @@
 @import url('_variables.css');
 @import url('reset.css');
 
+/* 상품등록 버튼 */
+input[type='button'].itemAdd-btn {
+  position: absolute;
+  width: 70px;
+  height: 40px;
+  top: 100px;
+  right: 240px;
+  background: var(--sub-color-3);
+  border: 0px;
+}
+input[type='button'].itemAdd-btn:hover {
+  opacity: 0.8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  transition: 0.1s ease;
+  color: var(--point-color);
+}
+
+/* 상품 수정 삭제 버튼 */
+.btn11 {
+  position: relative;
+}
+
+#btn-css1 {
+  position: absolute;
+  top: 0;
+  left: 7px;
+  width: 60px;
+  height: 25px;
+  border: 0;
+  background: var(--sub-color-4);
+  color: var(--main-color);
+}
+
+#btn-css2 {
+  position: absolute;
+  top: 0;
+  right: 7px;
+  width: 60px;
+  height: 25px;
+  border: 0;
+  background: var(--sub-color-4);
+  color: var(--main-color);
+}
+
+/*  */
+
+div.item_register_wrap {
+  max-width: 550px;
+  height: 550px;
+}
 .wrapper {
-  max-width: 500px;
   width: 100%;
   background: #fff;
   margin: 50px auto;
@@ -14,7 +63,7 @@
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 25px;
-  color: #fec107;
+  color: var(--point-color);
   text-transform: uppercase;
   text-align: center;
 }
@@ -24,7 +73,7 @@
 }
 
 .wrapper .form .inputfield {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   display: flex;
   align-items: center;
 }
@@ -86,7 +135,7 @@
 .wrapper .form .inputfield .input:focus,
 .wrapper .form .inputfield .textarea:focus,
 .wrapper .form .inputfield .custom_select select:focus {
-  border: 1px solid #fec107;
+  border: 1px solid var(--point-color);
 }
 
 .wrapper .form .inputfield p {
@@ -109,7 +158,7 @@
 .wrapper .form .inputfield .check .checkmark {
   width: 15px;
   height: 15px;
-  border: 1px solid #fec107;
+  border: 1px solid var(--point-color);
   display: block;
   position: relative;
 }
@@ -126,7 +175,7 @@
   display: none;
 }
 .wrapper .form .inputfield .check input[type='checkbox']:checked ~ .checkmark {
-  background: #fec107;
+  background: var(--point-color);
 }
 
 .wrapper
@@ -143,7 +192,7 @@
   padding: 8px 10px;
   font-size: 15px;
   border: 0px;
-  background: #fec107;
+  background: var(--point-color);
   color: #fff;
   cursor: pointer;
   border-radius: 3px;
@@ -151,7 +200,9 @@
 }
 
 .wrapper .form .inputfield .btn:hover {
-  background: #ffd658;
+  background: var(--main-color);
+  color: var(--point-color);
+  border: 1px solid var(--point-color);
 }
 
 .wrapper .form .inputfield:last-child {

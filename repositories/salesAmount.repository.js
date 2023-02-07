@@ -7,7 +7,7 @@ class SalesAmountRepository {
   salesAmount = async () => {
     try {
       const salesAmount = await this.OrderModel.findAll({
-        where: { status: '판매 완료' },
+        where: { status: '배송 완료' },
         include: [{ model: this.ItemModel }, { model: this.UserModel }],
       });
       return salesAmount;

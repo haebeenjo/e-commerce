@@ -1,18 +1,15 @@
-const jwt = require("jsonwebtoken");
+const jwt = require('jsonwebtoken');
 
-const { Users } = require("../models");
-const { Admin } = require("../models");
+const { Users } = require('../models');
+const { Admin } = require('../models');
 
 let authMiddleware = {
   userMiddleware: (req, res, next) => {
     const token = req.cookies.token;
     if (!token) {
-      res
-        .status(401)
-        .send({
-          errorMessage: "로그인 후 이용해 주세요.",
-        })
-        .redirect("/api/login");
+      res.status(401).send({
+        errorMessage: '로그인 후 이용해 주세요.',
+      });
       return;
     }
 
@@ -27,7 +24,7 @@ let authMiddleware = {
       });
     } catch (err) {
       res.status(401).send({
-        errorMessage: "로그인을 다시 진행해 주세요.",
+        errorMessage: '로그인을 다시 진행해 주세요.',
       });
     }
   },
@@ -35,12 +32,9 @@ let authMiddleware = {
   adminMiddleware: (req, res, next) => {
     const token = req.cookies.token;
     if (!token) {
-      res
-        .status(401)
-        .send({
-          errorMessage: "로그인 후 이용해 주세요.",
-        })
-        .redirect("/api/login");
+      res.status(401).send({
+        errorMessage: '로그인 후 이용해 주세요.',
+      });
       return;
     }
 
@@ -55,7 +49,7 @@ let authMiddleware = {
       });
     } catch (err) {
       res.status(401).send({
-        errorMessage: "로그인을 다시 진행해 주세요.",
+        errorMessage: '로그인을 다시 진행해 주세요.',
       });
     }
   },

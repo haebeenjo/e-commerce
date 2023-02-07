@@ -5,8 +5,8 @@ $(document).ready(function () {
 // axios get
 function getSalesAmount() {
   axios({
-    method: "get",
-    url: "api/salesAmount",
+    method: 'get',
+    url: 'api/salesAmount',
   })
     .then((response) => {
       const { data } = response.data;
@@ -16,7 +16,7 @@ function getSalesAmount() {
         count++;
         let orderId = data[i].orderId;
         let email = data[i].email;
-        let order_price = data[i].order_price;
+        let order_price = data[i].order_price.toLocaleString();
         let item_name = data[i].item_name;
         let createdAt = data[i].createdAt.substring(0, 10);
         let updatedAt = data[i].updatedAt.substring(0, 10);
@@ -32,7 +32,7 @@ function getSalesAmount() {
           <td>${updatedAt}</td>
         </tr>`;
 
-        $("#salesList").append(temp);
+        $('#salesList').append(temp);
       }
     })
     .catch((err) => {
