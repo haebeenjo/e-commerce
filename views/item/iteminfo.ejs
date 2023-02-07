@@ -2,7 +2,7 @@
   <div class="info" id="info"></div>
 </div>
 <div class="bt_wrap">
-  <button onclick="createCart()"><a href="/">장바구니</a></button>
+  <button onclick="createCart()"><a href="/usercartlist">장바구니</a></button>
 </div>
 
 <script>
@@ -14,7 +14,7 @@
       const row = `
           ${
             data.img
-              ? `<div class="detail_img"><img src="${data.img}" /></div>`
+              ? `<div class="detail_img"><img src="./images/${data.img}" /></div>`
               : ''
           }
 					<div class="item_id" style="height: 50px">제품번호 : ${data.itemId}</div>

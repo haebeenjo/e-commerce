@@ -7,17 +7,17 @@ class AdminOrderService {
   findAdminOrder = async () => {
     try {
       const findAdminOrder = await this.adminOrderRepository.findAdminOrder();
-      // console.log("✨✨✨", "1 : ", findAdminOrder, "✨✨✨");
       const adminOrder = findAdminOrder.map((data) => {
-        return {
-          orderId: data.orderId,
-          item_name: data.Item.item_name,
-          user_id: data.user_id,
-          name: data.name,
-          address: data.address,
-          phone_number: data.phone_number,
-          status: data.status,
-        };
+        if (data.status != "판매 완료")
+          return {
+            orderId: data.orderId,
+            item_name: data.Item.item_name,
+            user_id: data.user_id,
+            name: data.name,
+            address: data.address,
+            phone_number: data.phone_number,
+            status: data.status,
+          };
       });
       return adminOrder;
     } catch (error) {

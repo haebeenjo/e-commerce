@@ -3,6 +3,10 @@
 const { Users, Sequelize } = require('../models');
 
 class UserRepository {
+  constructor(UserModel) {
+    this.UserModel = UserModel;
+  }
+
   createUser = async (
     email,
     phone_number,
@@ -12,7 +16,7 @@ class UserRepository {
     point,
     blacklist
   ) => {
-    const createUserData = await Users.create({
+    const createUserData = await this.UserModel.create({
       email,
       phone_number,
       password: hashPassword,
@@ -26,7 +30,7 @@ class UserRepository {
   };
 
   findOne = async (email, hashPassword) => {
-    const findUser = await Users.findOne({
+    const findUser = await this.UserModel.findOne({
       where: { email, password: hashPassword },
     });
 
@@ -34,7 +38,7 @@ class UserRepository {
   };
 
   findAllUser = async (email) => {
-    const users = await Users.findAll({
+    const users = await this.UserModel.findAll({
       where: { email },
     });
     return users;

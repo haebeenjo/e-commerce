@@ -16,8 +16,10 @@ const findUserPoint = require('./findUserPoint.router');
 const adminLoginRouter = require('./adminLogin.router');
 
 router.use('/login', loginRouter);
+router.use('/logout', logoutRouter);
 router.use('/signup', signupRouter);
 router.use('/user', userUpdateRouter);
+router.use('/adminLogin', adminLoginRouter);
 
 router.use('/member', memberRouter);
 router.use('/blackList', memberRouter);

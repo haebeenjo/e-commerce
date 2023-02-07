@@ -1,12 +1,6 @@
 @import url("_variables.css");
 @import url("reset.css");
 
-body {
-  margin: 0 auto;
-  font-family: 'Fira Mono, monospace Open Sans, sans-serif';
-  background-color: #ebebeb;
-  max-width: 2000px;
-}
 @media screen and (max-width: 767px) {
   .board__parent {
     grid-template-columns: 1fr;
@@ -70,9 +64,8 @@ body {
 }
 
 .content__thumbnail {
-  padding-bottom: 70%;
   background-size: center;
-  background-position: center 45%;
+  background-position: center;
 }
 
 .content__text {
@@ -92,4 +85,9 @@ body {
 .content__price {
   padding: 1rem;
   text-align: center;
+}
+
+.pagingg {
+  width: 200px;
+  margin: auto;
 }

@@ -1,10 +1,10 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
 
-const { userMiddleware } = require('../middlewares/auth-middleware');
-const SalesAmountController = require('../controller/salesAmount.controller');
+const { adminMiddleware } = require("../middlewares/auth-middleware");
+const SalesAmountController = require("../controller/salesAmount.controller");
 const salesAmountController = new SalesAmountController();
 
-router.get('/', userMiddleware, salesAmountController.salesAmount);
+router.get("/", adminMiddleware, salesAmountController.salesAmount);
 
 module.exports = router;

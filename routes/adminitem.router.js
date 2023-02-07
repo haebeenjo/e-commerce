@@ -19,7 +19,8 @@ router.put(
   '/item/detail/:itemId',
   adminMiddleware,
   upload.single('img'),
-  adminitemController.putItem);
+  adminitemController.putItem
+);
 
 router.delete('/item/:itemId', adminMiddleware, adminitemController.deleteItem);
 
