@@ -37,7 +37,6 @@
     width: 1000px;
     margin: auto;
 
-    margin-top: 50px;
     text-align: center;
     font-size: 15px;
     text-decoration: none;
@@ -66,4 +65,8 @@
 .myButton:active {
 	position:relative;
 	top:1px;
+}
+
+.item_id {
+    margin-top: 130px;
 }
