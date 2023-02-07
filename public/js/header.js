@@ -26,9 +26,9 @@ function findToken() {
   }
 
   if (token) {
-    const point = document.getElementById('user_point');
-    point.innerHTML = '잔여 포인트 : 1,000,000';
+    const point = document.getElementById("user_point");
+    point.innerHTML = "잔여 포인트 : 1,000,000";
   }
 
-  $('.member_wrap').append(empty_html);
+  $(".member_wrap").append(empty_html);
 }

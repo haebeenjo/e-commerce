@@ -1,8 +1,9 @@
 // repositories/user.repository.js
-
-const { Users } = require('../models');
-
 class UserRepository {
+  constructor(UserModel) {
+    this.UserModel = UserModel;
+  }
+
   createUser = async (
     email,
     phone_number,
@@ -12,7 +13,7 @@ class UserRepository {
     point,
     blacklist
   ) => {
-    const createUserData = await Users.create({
+    const createUserData = await this.UserModel.create({
       email,
       phone_number,
       password: hashPassword,
@@ -26,7 +27,7 @@ class UserRepository {
   };
 
   findOne = async (email, hashPassword) => {
-    const findUser = await Users.findOne({
+    const findUser = await this.UserModel.findOne({
       where: { email, password: hashPassword },
     });
 
@@ -34,18 +35,26 @@ class UserRepository {
   };
 
   findAllUser = async (email) => {
-    const users = await Users.findAll({
+    const users = await this.UserModel.findAll({
       where: { email },
     });
     return users;
   };
   userPointMinus = async (order_price, userId) => {
-    const user = await Users.findByPk(userId);
-    const users = await Users.update(
+    const user = await this.UserModel.findByPk(userId);
+    const users = await this.UserModel.update(
       { point: user.point - order_price },
       { where: { userId: userId } }
     );
   };
+
+  // adminLogin = async (email, password) => {
+  //   const adminLogin = await this.AdminModel.findOne({
+  //     where: { email, password },
+  //   });
+
+  //   return adminLogin;
+  // };
 }
 
 module.exports = UserRepository;

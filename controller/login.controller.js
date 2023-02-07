@@ -25,6 +25,23 @@ class LoginController {
       console.log(error);
     }
   };
+
+  // adminLogin = async (req, res, next) => {
+  //   try {
+  //     const { email, password } = req.body;
+  //     const adminId = await this.loginService.adminLogin(email, password);
+
+  //     const token = await this.loginService.adminIssueToken(adminId);
+  //     res.cookie("token", token["token"]);
+  //     res.status(200).json({
+  //       result: "success",
+  //       token: token,
+  //       adminId: adminId,
+  //     });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 }
 
 module.exports = LoginController;

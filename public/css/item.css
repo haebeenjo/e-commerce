@@ -1,12 +1,5 @@
 @import url("_variables.css");
 @import url("reset.css");
-
-body {
-  margin: 0 auto;
-  font-family: 'Fira Mono, monospace Open Sans, sans-serif';
-  background-color: #ebebeb;
-  max-width: 2000px;
-}
 @media screen and (max-width: 767px) {
   .board__parent {
     grid-template-columns: 1fr;

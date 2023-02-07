@@ -21,6 +21,14 @@ function getAdminOrders() {
         let address = data[i].address;
         let phone_number = data[i].phone_number;
         let status = data[i].status;
+        const statusName = ["결제 완료", "배송 준비중", "배송중", "배송 완료"];
+        let status_wrap = "";
+        statusName.map((text) => {
+          status_wrap += `<option value="${text}" ${
+            status === text ? "selected" : ""
+          } >
+          ${text}</option>`;
+        });
 
         let temp = `
         <tr>
@@ -32,18 +40,35 @@ function getAdminOrders() {
           <td>${address}</td>
           <td>${phone_number}</td>
           <td>
-            <select name="order_status" id="">
-              <option value="${status}" selected>${status}</option>
-              <option value="결제 완료">결제 완료</option>
-              <option value="배송 준비중">배송 준비중</option>
-              <option value="배송중">배송중</option>
-              <option value="배송 완료">배송 완료</option>
+            <select name="order_status" id="order_status">
+              ${status_wrap}
             </select>
           </td>
         </tr>`;
 
         $("#adminOrderList").append(temp);
       }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+const body = document.querySelector("body");
+body.addEventListener("change", function (e) {
+  if (e.target.id !== "order_status") return;
+  const orderId = e.target.parentElement.parentElement.children[1].innerText;
+  const order_status = e.target.value;
+  orderStatusUpdate(orderId, order_status);
+});
+function orderStatusUpdate(orderId, order_status) {
+  axios
+    .put("api/adminOrder", {
+      orderId: orderId,
+      status: order_status,
+    })
+    .then((response) => {
+      // alert(response.data.message);
     })
     .catch((err) => {
       console.log(err);

@@ -3,9 +3,9 @@
 const jwt = require("jsonwebtoken");
 
 const AdminRepository = require("../repositories/admin.repository");
-
+const { Admin } = require("../models");
 class AdminLoginService {
-  adminRepository = new AdminRepository();
+  adminRepository = new AdminRepository(Admin);
 
   findOne = async (email, password) => {
     const findAdmin = await this.adminRepository.findOne(email, password);

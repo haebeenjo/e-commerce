@@ -62,7 +62,7 @@ function blacklistAdd(blacklist_email, blacklist_checked) {
       blacklist: blacklist_checked,
     })
     .then((response) => {
-      alert(response.data.message);
+      // alert(response.data.message);
     })
     .catch((err) => {
       console.log(err);

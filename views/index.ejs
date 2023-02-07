@@ -16,7 +16,6 @@
     />
     <link rel="stylesheet" href="/css/reset.css" />
     <link rel="stylesheet" href="/css/header.css" />
-    <link rel="stylesheet" href="/css/adminOrder.css" />
     <link rel="stylesheet" href="/css/userOrderList.css" />
     <link rel="stylesheet" href="/css/admin.css" />
     <link rel="stylesheet" href="/css/sign.css" />
@@ -27,6 +26,7 @@
     <link rel="stylesheet" href="/css/item.css" />
     <link rel="stylesheet" href="/css/iteminfo.css" />
     <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/imageSlider.css" />
   </head>
 
   <body>
@@ -34,26 +34,34 @@
       <%- include("components/header") %> <% if (pageName === '') { %> <%-
       include("main.ejs") %> <% } %>
 
-      <!-- itme -->
+      <!-- item -->
       <% if (pageName === 'itemDetail') { %> <%- include("item/iteminfo.ejs") %>
-      <% } %> <% if (pageName === 'office') { %> <%- include("item/office.ejs")
-      %> <% } %> <% if (pageName === 'design') { %> <%-
-      include("item/design.ejs") %> <% } %> <% if (pageName === 'developer') {
-      %> <%- include("item/developer.ejs") %> <% } %> <% if (pageName ===
-      'music') { %> <%- include("item/music.ejs") %> <% } %> <% if (pageName ===
-      'sports') { %> <%- include("item/sports.ejs") %> <% } %>
+      <% } %>
+      <!---->
+      <% if (pageName === 'office') { %> <%- include("item/office.ejs") %> <% }
+      %>
+      <!---->
+      <% if (pageName === 'design') { %> <%- include("item/design.ejs") %> <% }
+      %>
+      <!---->
+      <% if (pageName === 'developer') { %> <%- include("item/developer.ejs") %>
+      <% } %>
+      <!---->
+      <% if (pageName === 'music') { %> <%- include("item/music.ejs") %> <% } %>
+      <!---->
+      <% if (pageName === 'sports') { %> <%- include("item/sports.ejs") %> <% }
+      %><!---->
 
       <!-- login -->
       <% if (pageName==="login" ) { %> <%- include("components/login") %> <% }
       %> <% if (pageName === "signup") { %> <%- include("components/signup") %>
-      <% } %>
+      <% } %> <% if (pageName==="adminLogin" ) { %> <%-
+      include("components/adminLogin") %> <% } %>
 
       <!-- admin -->
 
-      <% if (pageName==="adminOrder" ) { %><!---->
-      <!---->
-      <%- include("admin/adminOrder") %> <% } else if (pageName==="adminItem" )
-      { %>
+      <% if (pageName==="adminOrder" ) { %> <%- include("admin/adminOrder") %>
+      <% } else if (pageName==="adminItem" ) { %>
       <!---->
       <%- include("admin/adminItem") %> <% } else if (pageName==="adminMember" )
       { %>

@@ -1,10 +1,10 @@
-const express = require('express');
-const cookieParser = require('cookie-parser');
-const path = require('path');
-const render = require('./render');
-const socket = require('socket.io');
-const fs = require('fs');
-const http = require('http');
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const path = require("path");
+const render = require("./render");
+const socket = require("socket.io");
+const fs = require("fs");
+const http = require("http");
 
 /* express http 서버 생성 */
 // const server = http.createServer(app);
@@ -12,18 +12,18 @@ const http = require('http');
 /* 생성된 서버를 socket.io에 바인딩 */
 // const io = socket(server);
 
-const router = require('./routes');
+const router = require("./routes");
 const app = express();
 
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.set('view engine', 'ejs');
-app.use('/api', router);
-app.use('/', render);
-app.set('views', path.join(__dirname, './views'));
-app.use(express.static('upload'));
-app.use(express.static('public'));
+app.set("view engine", "ejs");
+app.use("/api", router);
+app.use("/", render);
+app.set("views", path.join(__dirname, "./views"));
+// app.use(express.static('upload'));
+app.use(express.static("public"));
 
 /* Get 방식으로 / 경로에 접속하면 실행 됨 */
 // app.get("/", function (request, response) {
@@ -79,7 +79,7 @@ app.use(express.static('public'));
 // });
 
 app.listen(process.env.PORT, () => {
-  console.log(process.env.PORT, '포트로 서버가 열렸어요!');
+  console.log(process.env.PORT, "포트로 서버가 열렸어요!");
 });
 
 module.exports = app;
