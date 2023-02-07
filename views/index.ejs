@@ -16,7 +16,6 @@
     rel="stylesheet" />
   <link rel="stylesheet" href="/css/reset.css" />
   <link rel="stylesheet" href="/css/header.css" />
-  <link rel="stylesheet" href="/css/adminOrder.css" />
   <link rel="stylesheet" href="/css/userOrderList.css" />
   <link rel="stylesheet" href="/css/admin.css" />
   <link rel="stylesheet" href="/css/sign.css" />
@@ -35,7 +34,7 @@
       <% if (pageName==='' ) { %> <%- include("main.ejs") %>
           <% } %>
 
-            <!-- itme -->
+            <!-- item -->
             <% if (pageName==='itemDetail' ) { %> <%- include("item/iteminfo.ejs") %>
                 <% } %>
                   <% if (pageName==='office' ) { %> <%- include("item/office.ejs") %>
@@ -74,36 +73,30 @@
                                                                               %>
                                                                               <!---->
                                                                               <%- include("admin/itemregister") %>
-                                                                                <% } else if (pageName==="itemstatus" )
+                                                                                <% } else if (pageName==="itemdetail" )
                                                                                   { %>
                                                                                   <!---->
-                                                                                  <%- include("admin/itemstatus") %>
+                                                                                  <%- include("admin/itemdetail") %>
+                                                                                    <!--user-->
                                                                                     <% } else if
-                                                                                      (pageName==="itemdetail" ) { %>
+                                                                                      (pageName==="userorderlist" ) {%>
                                                                                       <!---->
-                                                                                      <%- include("admin/itemdetail") %>
-                                                                                        <!--user-->
+                                                                                      <%- include("user/userOrderList")
+                                                                                        %><!---->
                                                                                         <% } else if
-                                                                                          (pageName==="userorderlist" )
+                                                                                          (pageName==="usercartlist" )
                                                                                           {%><!---->
                                                                                           <%-
-                                                                                            include("user/userOrderList")
+                                                                                            include("user/userWishList")
                                                                                             %><!---->
-                                                                                            <% } else if
-                                                                                              (pageName==="usercartlist"
-                                                                                              ) {%><!---->
-                                                                                              <%-
-                                                                                                include("user/userWishList")
-                                                                                                %><!---->
-                                                                                                <% } %><!---->
+                                                                                            <% } %><!---->
 
-                                                                                                  <!-- chat -->
-                                                                                                  <% if
-                                                                                                    (pageName==="chat" )
-                                                                                                    { %> <%-
-                                                                                                      include("components/chat")
-                                                                                                      %>
-                                                                                                      <% } %>
+                                                                                              <!-- chat -->
+                                                                                              <% if (pageName==="chat" )
+                                                                                                { %> <%-
+                                                                                                  include("components/chat")
+                                                                                                  %>
+                                                                                                  <% } %>
   </main>
 </body>
 
