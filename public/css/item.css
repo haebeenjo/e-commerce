@@ -1,5 +1,5 @@
-@import url("_variables.css");
-@import url("reset.css");
+@import url('_variables.css');
+@import url('reset.css');
 
 @media screen and (max-width: 767px) {
   .board__parent {
@@ -73,9 +73,9 @@
 }
 
 .content__title {
-  padding: 1rem;
-  color: var(--content-title);
-
+  padding: 1rem 0;
+  color: var(--point-color);
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -83,8 +83,10 @@
 }
 
 .content__price {
-  padding: 1rem;
+  padding: 0 0 1rem;
   text-align: center;
+  font-size: 15px;
+  color: var(--sub-color-4);
 }
 
 .pagingg {

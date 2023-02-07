@@ -2,7 +2,6 @@ $(document).ready(function () {
   getItems();
 });
 
-// axios get
 function getItems() {
   axios({
     method: 'get',
@@ -70,7 +69,6 @@ function getItems() {
     });
 }
 
-// axios delete
 function deleteItem(itemId) {
   axios
     .delete(`/api/item/${itemId}`)

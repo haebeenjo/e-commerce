@@ -1,4 +1,4 @@
-const AdminOrderService = require("../services/adminOrder.service");
+const AdminOrderService = require('../services/adminOrder.service');
 
 class AdminOrderController {
   adminOrderService = new AdminOrderService();
@@ -6,7 +6,6 @@ class AdminOrderController {
   findAdminOrder = async (req, res, next) => {
     try {
       const { adminId } = res.locals.admin;
-      console.log("✨✨✨", adminId, "✨✨✨");
       const findAdminOrder = await this.adminOrderService.findAdminOrder();
 
       res.status(201).json({ data: findAdminOrder });
@@ -22,7 +21,7 @@ class AdminOrderController {
         orderId,
         status
       );
-      res.status(201).json({ message: "수정이 완료되었습니다." });
+      res.status(201).json({ message: '수정이 완료되었습니다.' });
     } catch (error) {
       res.status(400).json({ errorMessage: error.message });
     }

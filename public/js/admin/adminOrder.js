@@ -2,11 +2,10 @@ $(document).ready(function () {
   getAdminOrders();
 });
 
-// axios get
 function getAdminOrders() {
   axios({
-    method: "get",
-    url: "api/adminOrder",
+    method: 'get',
+    url: 'api/adminOrder',
   })
     .then((response) => {
       const { data } = response.data;
@@ -21,11 +20,11 @@ function getAdminOrders() {
         let address = data[i].address;
         let phone_number = data[i].phone_number;
         let status = data[i].status;
-        const statusName = ["결제 완료", "배송 준비중", "배송중", "배송 완료"];
-        let status_wrap = "";
+        const statusName = ['결제 완료', '배송 준비중', '배송중', '배송 완료'];
+        let status_wrap = '';
         statusName.map((text) => {
           status_wrap += `<option value="${text}" ${
-            status === text ? "selected" : ""
+            status === text ? 'selected' : ''
           } >
           ${text}</option>`;
         });
@@ -46,7 +45,7 @@ function getAdminOrders() {
           </td>
         </tr>`;
 
-        $("#adminOrderList").append(temp);
+        $('#adminOrderList').append(temp);
       }
     })
     .catch((err) => {
@@ -54,22 +53,20 @@ function getAdminOrders() {
     });
 }
 
-const body = document.querySelector("body");
-body.addEventListener("change", function (e) {
-  if (e.target.id !== "order_status") return;
+const body = document.querySelector('body');
+body.addEventListener('change', function (e) {
+  if (e.target.id !== 'order_status') return;
   const orderId = e.target.parentElement.parentElement.children[1].innerText;
   const order_status = e.target.value;
   orderStatusUpdate(orderId, order_status);
 });
 function orderStatusUpdate(orderId, order_status) {
   axios
-    .put("api/adminOrder", {
+    .put('api/adminOrder', {
       orderId: orderId,
       status: order_status,
     })
-    .then((response) => {
-      // alert(response.data.message);
-    })
+    .then((response) => {})
     .catch((err) => {
       console.log(err);
     });

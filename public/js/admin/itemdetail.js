@@ -1,30 +1,25 @@
 function is_checked() {
-
-  // 1. checkbox element를 찾습니다.
   const checkbox_office = document.getElementById('office');
   const checkbox_design = document.getElementById('design');
   const checkbox_developer = document.getElementById('developer');
   const checkbox_music = document.getElementById('music');
   const checkbox_sports = document.getElementById('sports');
 
-
-  // 2. checked 속성을 체크합니다.
   const is_checked_office = checkbox_office.checked;
   const is_checked_design = checkbox_design.checked;
   const is_checked_developer = checkbox_developer.checked;
   const is_checked_music = checkbox_music.checked;
   const is_checked_sports = checkbox_sports.checked;
 
-  // 3. 결과를 출력합니다.
-  return [is_checked_office, is_checked_design, is_checked_developer, is_checked_music, is_checked_sports];
-
+  return [
+    is_checked_office,
+    is_checked_design,
+    is_checked_developer,
+    is_checked_music,
+    is_checked_sports,
+  ];
 }
 
-// function  is_checked_radio() {
-
-// }
-
-// axios put
 function putItem() {
   let query = window.location.search;
   let param = new URLSearchParams(query);
@@ -54,14 +49,11 @@ function putItem() {
   formData.append('item_status', item_status);
 
   axios
-    .put(`/api/item/detail/${itemId}`,
-      formData,
-      {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      }
-    )
+    .put(`/api/item/detail/${itemId}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    })
     .then((res) => {
       console.log(res);
       window.location.replace(`/adminItem`);
@@ -70,4 +62,3 @@ function putItem() {
       console.log('axios error: ', error);
     });
 }
-
