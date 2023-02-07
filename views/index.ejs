@@ -31,8 +31,8 @@
 
   <body>
     <main>
-      <%- include("components/header") %> <% if (pageName === '') { %> <%-
-      include("main.ejs") %> <% } %>
+      <%- include("components/header") %> 
+      <% if (pageName === '') { %> <%-include("item/main.ejs") %> <% } %>
 
       <!-- item -->
       <% if (pageName === 'itemDetail') { %> <%- include("item/iteminfo.ejs") %>

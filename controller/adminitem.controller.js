@@ -5,6 +5,14 @@ class adminItemsController {
 
   createItem = async (req, res, next) => {
     try {
+      const adminId = res.locals.admin_id;
+
+      // if (!adminId) {
+      //   return res
+      //     .status(401)
+      //     .json({ message: '권한이 없습니다.' });
+      // }
+
       const {
         item_name,
         price,
@@ -15,7 +23,7 @@ class adminItemsController {
         music,
         sports,
       } = req.body;
-
+      console.log(req.file);
       const imgPath = req.file.path;
       const img = imgPath.split("\\")[1];
 
