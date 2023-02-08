@@ -19,6 +19,7 @@
 
 <br/>
 ### 개발 환경
+
 <br/>
 <div align="center">
   <p style="font-size:20px;">📚Tech Stack📚</p>
@@ -45,8 +46,9 @@
 </div>
 <br/><br/>
 ### Installation
+
 ```
- $ npm install 
+ $ npm install
 ```
 
 ### Running the app
