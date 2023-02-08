@@ -25,6 +25,10 @@
   border-bottom: 1px solid #fff;
 }
 
+.register_wrap > h2.user_update {
+  margin-top: 20px;
+}
+
 .register_wrap > h2.update {
   margin-bottom: 30px;
 }
