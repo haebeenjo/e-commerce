@@ -31,38 +31,29 @@ class adminItemsService {
     return createItemData;
   };
 
-  putItems = async (
-    itemId,
-    item_name,
-    price,
-    detail,
-    img,
-    item_status,
-    office,
-    design,
-    developer,
-    music,
-    sports
-  ) => {
+  putItems = async (itemInfo, itemId) => {
     try {
       const existItem = await this.adminitemsRepository.findItemById(itemId);
+      if (!existItem) throw new Error('해당 상품이 존재하지 않습니다.');
 
-      if (!existItem) {
-        return { message: '해당 상품이 존재하지 않습니다.' };
+      await this.adminitemsRepository.putItem(itemInfo, itemId);
+
+      const putItemData = await this.adminitemsRepository.findItemById(itemId);
+
+      return {
+        itemId: putItemData.itemId,
+        item_name: putItemData.item_name,
+        price: putItemData.price,
+        detail: putItemData.detail,
+        img: putItemData.img,
+        item_status: putItemData.item_status,
+        office: putItemData.office,
+        design: putItemData.design,
+        developer: putItemData.developer,
+        music: putItemData.music,
+        sports: putItemData.sports
       }
-      (existItem.item_name = item_name),
-        (existItem.price = price),
-        (existItem.detail = detail),
-        (existItem.img = img),
-        (existItem.item_status = item_status),
-        (existItem.office = office),
-        (existItem.design = design),
-        (existItem.developer = developer),
-        (existItem.music = music),
-        (existItem.sports = sports);
-      const putItemData = await this.adminitemsRepository.putItem(existItem);
 
-      return putItemData;
     } catch (err) {
       console.log('err:', err);
     }

@@ -32,8 +32,10 @@ class adminItemsRepository {
     return item;
   };
 
-  putItem = async (item) => {
-    const updated = await item.save();
+  putItem = async (itemInfo, itemId) => {
+    const updated = await this.itemsModel.update(itemInfo,
+      { where: { itemId } });
+
     return updated;
   };
 
