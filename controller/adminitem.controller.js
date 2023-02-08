@@ -55,6 +55,7 @@ class adminItemsController {
         music,
         sports,
       } = req.body;
+
       const imgPath = req.file.path;
       const img = imgPath.split('\\')[2];
 
@@ -66,23 +67,12 @@ class adminItemsController {
         return res.status(412).json({ message: '빈 항목이 있습니다.' });
       }
 
-      const putItemData = await this.adminitemsService.putItems(
-        itemId,
-        item_name,
-        price,
-        detail,
-        img,
-        item_status,
-        office,
-        design,
-        developer,
-        music,
-        sports
-      );
-
-      if (putItemData.message) {
-        return res.status(400).json({ message: putItemData.message });
+      const itemInfo = {
+        ...req.body,
+        img
       }
+
+      await this.adminitemsService.putItems(itemInfo, itemId);
 
       res.status(201).json({ message: '상품 수정에 성공하였습니다.' });
     } catch (err) {

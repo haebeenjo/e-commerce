@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
+
 const { adminMiddleware } = require('../middlewares/auth-middleware');
 const { upload } = require('../multer');
-
 const adminItemController = require('../controller/adminitem.controller');
 const adminitemController = new adminItemController();
+
 router.post(
   '/item/register',
   adminMiddleware,

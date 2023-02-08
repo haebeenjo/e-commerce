@@ -35,7 +35,6 @@ function putItem() {
   let music = is_checked()[3];
   let sports = is_checked()[4];
   let item_status = $('input[name=status]:checked').val();
-
   const formData = new FormData();
   formData.append('item_name', item_name);
   formData.append('img', img);
