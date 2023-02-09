@@ -1,4 +1,4 @@
-const adminItemsRepository = require('../repositories/adminitem.repository');
+const adminItemsRepository = require('../repositories/adminItem.repository');
 
 const { Items } = require('../models');
 

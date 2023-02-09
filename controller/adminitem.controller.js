@@ -1,4 +1,4 @@
-const adminItemsService = require('../services/adminitem.service');
+const adminItemsService = require('../services/adminItem.service');
 
 class adminItemsController {
   adminitemsService = new adminItemsService();
